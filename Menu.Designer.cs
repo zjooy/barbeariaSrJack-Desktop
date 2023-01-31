@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.lblAjuda = new System.Windows.Forms.Label();
             this.lblSobre = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@
             this.lblCliente = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.pctSair = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -455,6 +457,10 @@
             this.pctSair.TabStop = false;
             this.pctSair.Click += new System.EventHandler(this.pctSair_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -522,5 +528,6 @@
         private System.Windows.Forms.Label lblMensagem;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Timer timer1;
     }
 }

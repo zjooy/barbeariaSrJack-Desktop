@@ -41,15 +41,26 @@ namespace barbeariaSrJack
 
             if (hora >= 6 && hora <= 12)
             {
-                lblMensagem.Text = "Bom dia, " + "Joyce" + "!";
+                lblMensagem.Text = "Bom dia, " + variaveis.usuario + "!";
             }
             else if (hora >= 12 && hora < 18)
             {
-                lblMensagem.Text = "Boa tarde, " + "Joyce" + "!";
+                lblMensagem.Text = "Boa tarde, " + variaveis.usuario + "!";
             }
             else
             {
-                lblMensagem.Text = "Boa noite, " + "Joyce" + "!";
+                lblMensagem.Text = "Boa noite, " + variaveis.usuario + "!";
+            }
+
+            if (variaveis.nivel != "ADM")
+            {
+                pctFuncionario.Enabled = false;
+                pctEmpresa.Enabled = false;
+            }
+            else
+            {
+                pctFuncionario.Enabled = true;
+                pctEmpresa.Enabled = true;
             }
 
         }
@@ -133,6 +144,12 @@ namespace barbeariaSrJack
         {
             new frmFuncionario().Show();
             Hide();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }
