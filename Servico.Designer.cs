@@ -1,6 +1,6 @@
 ﻿namespace barbeariaSrJack
 {
-    partial class frmFuncionario
+    partial class frmServico
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlFuncionario = new System.Windows.Forms.Panel();
+            this.pnlServico = new System.Windows.Forms.Panel();
             this.pnlClienteBusca = new System.Windows.Forms.Panel();
             this.lblExcluir = new System.Windows.Forms.Label();
             this.lblAlterar = new System.Windows.Forms.Label();
             this.lblCadastrar = new System.Windows.Forms.Label();
-            this.dgvFuncionario = new System.Windows.Forms.DataGridView();
+            this.dgvServico = new System.Windows.Forms.DataGridView();
             this.pnlBusca = new System.Windows.Forms.Panel();
             this.pctVoltar = new System.Windows.Forms.PictureBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.txtFuncionario = new System.Windows.Forms.TextBox();
+            this.txtServico = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.lblFuncionario = new System.Windows.Forms.Label();
+            this.lblServico = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
-            this.pnlFuncionario.SuspendLayout();
+            this.pnlServico.SuspendLayout();
             this.pnlClienteBusca.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).BeginInit();
             this.pnlBusca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlFuncionario
+            // pnlServico
             // 
-            this.pnlFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
-            this.pnlFuncionario.Controls.Add(this.pnlClienteBusca);
-            this.pnlFuncionario.Controls.Add(this.pctLogo);
-            this.pnlFuncionario.Location = new System.Drawing.Point(128, 119);
-            this.pnlFuncionario.Name = "pnlFuncionario";
-            this.pnlFuncionario.Size = new System.Drawing.Size(1240, 655);
-            this.pnlFuncionario.TabIndex = 2;
+            this.pnlServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
+            this.pnlServico.Controls.Add(this.pnlClienteBusca);
+            this.pnlServico.Controls.Add(this.pctLogo);
+            this.pnlServico.Location = new System.Drawing.Point(145, 106);
+            this.pnlServico.Name = "pnlServico";
+            this.pnlServico.Size = new System.Drawing.Size(1240, 655);
+            this.pnlServico.TabIndex = 1;
             // 
             // pnlClienteBusca
             // 
@@ -65,7 +65,7 @@
             this.pnlClienteBusca.Controls.Add(this.lblExcluir);
             this.pnlClienteBusca.Controls.Add(this.lblAlterar);
             this.pnlClienteBusca.Controls.Add(this.lblCadastrar);
-            this.pnlClienteBusca.Controls.Add(this.dgvFuncionario);
+            this.pnlClienteBusca.Controls.Add(this.dgvServico);
             this.pnlClienteBusca.Controls.Add(this.pnlBusca);
             this.pnlClienteBusca.Location = new System.Drawing.Point(218, 0);
             this.pnlClienteBusca.Name = "pnlClienteBusca";
@@ -107,25 +107,24 @@
             this.lblCadastrar.TabIndex = 19;
             this.lblCadastrar.Text = "CADASTRAR";
             this.lblCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCadastrar.Click += new System.EventHandler(this.lblCadastrar_Click);
             // 
-            // dgvFuncionario
+            // dgvServico
             // 
-            this.dgvFuncionario.BackgroundColor = System.Drawing.Color.Black;
-            this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFuncionario.Location = new System.Drawing.Point(17, 69);
-            this.dgvFuncionario.Name = "dgvFuncionario";
-            this.dgvFuncionario.Size = new System.Drawing.Size(991, 498);
-            this.dgvFuncionario.TabIndex = 7;
+            this.dgvServico.BackgroundColor = System.Drawing.Color.Black;
+            this.dgvServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServico.Location = new System.Drawing.Point(17, 69);
+            this.dgvServico.Name = "dgvServico";
+            this.dgvServico.Size = new System.Drawing.Size(991, 498);
+            this.dgvServico.TabIndex = 7;
             // 
             // pnlBusca
             // 
             this.pnlBusca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
             this.pnlBusca.Controls.Add(this.pctVoltar);
             this.pnlBusca.Controls.Add(this.cmbStatus);
-            this.pnlBusca.Controls.Add(this.txtFuncionario);
+            this.pnlBusca.Controls.Add(this.txtServico);
             this.pnlBusca.Controls.Add(this.lblStatus);
-            this.pnlBusca.Controls.Add(this.lblFuncionario);
+            this.pnlBusca.Controls.Add(this.lblServico);
             this.pnlBusca.Location = new System.Drawing.Point(0, 0);
             this.pnlBusca.Name = "pnlBusca";
             this.pnlBusca.Size = new System.Drawing.Size(1022, 50);
@@ -141,7 +140,6 @@
             this.pctVoltar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctVoltar.TabIndex = 29;
             this.pctVoltar.TabStop = false;
-            this.pctVoltar.Click += new System.EventHandler(this.pctVoltar_Click);
             // 
             // cmbStatus
             // 
@@ -152,41 +150,41 @@
             "TODOS",
             "ATIVO",
             "INATIVO"});
-            this.cmbStatus.Location = new System.Drawing.Point(752, 9);
+            this.cmbStatus.Location = new System.Drawing.Point(743, 11);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(179, 29);
             this.cmbStatus.TabIndex = 4;
             // 
-            // txtFuncionario
+            // txtServico
             // 
-            this.txtFuncionario.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFuncionario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
-            this.txtFuncionario.Location = new System.Drawing.Point(158, 11);
-            this.txtFuncionario.Name = "txtFuncionario";
-            this.txtFuncionario.Size = new System.Drawing.Size(496, 29);
-            this.txtFuncionario.TabIndex = 3;
+            this.txtServico.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(10)))), ((int)(((byte)(45)))));
+            this.txtServico.Location = new System.Drawing.Point(105, 11);
+            this.txtServico.Name = "txtServico";
+            this.txtServico.Size = new System.Drawing.Size(539, 29);
+            this.txtServico.TabIndex = 3;
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.White;
-            this.lblStatus.Location = new System.Drawing.Point(660, 11);
+            this.lblStatus.Location = new System.Drawing.Point(651, 13);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(90, 27);
             this.lblStatus.TabIndex = 3;
             this.lblStatus.Text = "STATUS";
             // 
-            // lblFuncionario
+            // lblServico
             // 
-            this.lblFuncionario.AutoSize = true;
-            this.lblFuncionario.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuncionario.ForeColor = System.Drawing.Color.White;
-            this.lblFuncionario.Location = new System.Drawing.Point(5, 11);
-            this.lblFuncionario.Name = "lblFuncionario";
-            this.lblFuncionario.Size = new System.Drawing.Size(155, 27);
-            this.lblFuncionario.TabIndex = 1;
-            this.lblFuncionario.Text = "FUNCIONÁRIO";
+            this.lblServico.AutoSize = true;
+            this.lblServico.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServico.ForeColor = System.Drawing.Color.White;
+            this.lblServico.Location = new System.Drawing.Point(4, 11);
+            this.lblServico.Name = "lblServico";
+            this.lblServico.Size = new System.Drawing.Size(103, 27);
+            this.lblServico.TabIndex = 1;
+            this.lblServico.Text = "SERVIÇO";
             // 
             // pctLogo
             // 
@@ -199,24 +197,24 @@
             this.pctLogo.TabIndex = 1;
             this.pctLogo.TabStop = false;
             // 
-            // frmFuncionario
+            // frmServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::barbeariaSrJack.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1446, 848);
-            this.Controls.Add(this.pnlFuncionario);
+            this.ClientSize = new System.Drawing.Size(1530, 866);
+            this.Controls.Add(this.pnlServico);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmFuncionario";
+            this.Name = "frmServico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Funcionario";
+            this.Text = "Servico";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmFuncionario_Load);
-            this.pnlFuncionario.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.frmServico_Load);
+            this.pnlServico.ResumeLayout(false);
             this.pnlClienteBusca.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).EndInit();
             this.pnlBusca.ResumeLayout(false);
             this.pnlBusca.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).EndInit();
@@ -227,18 +225,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlFuncionario;
+        private System.Windows.Forms.Panel pnlServico;
         private System.Windows.Forms.Panel pnlClienteBusca;
         private System.Windows.Forms.Label lblExcluir;
         private System.Windows.Forms.Label lblAlterar;
         private System.Windows.Forms.Label lblCadastrar;
-        private System.Windows.Forms.DataGridView dgvFuncionario;
+        private System.Windows.Forms.DataGridView dgvServico;
         private System.Windows.Forms.Panel pnlBusca;
         private System.Windows.Forms.PictureBox pctVoltar;
         private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.TextBox txtFuncionario;
+        private System.Windows.Forms.TextBox txtServico;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Label lblFuncionario;
+        private System.Windows.Forms.Label lblServico;
         private System.Windows.Forms.PictureBox pctLogo;
     }
 }
