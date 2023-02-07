@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlFuncionario = new System.Windows.Forms.Panel();
             this.pnlClienteBusca = new System.Windows.Forms.Panel();
             this.lblExcluir = new System.Windows.Forms.Label();
             this.lblAlterar = new System.Windows.Forms.Label();
             this.lblCadastrar = new System.Windows.Forms.Label();
-            this.dgvFuncionario = new System.Windows.Forms.DataGridView();
             this.pnlBusca = new System.Windows.Forms.Panel();
             this.pctVoltar = new System.Windows.Forms.PictureBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
@@ -41,12 +43,13 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblFuncionario = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.dgvFuncionario = new System.Windows.Forms.DataGridView();
             this.pnlFuncionario.SuspendLayout();
             this.pnlClienteBusca.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             this.pnlBusca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlFuncionario
@@ -62,10 +65,10 @@
             // pnlClienteBusca
             // 
             this.pnlClienteBusca.BackColor = System.Drawing.Color.Black;
+            this.pnlClienteBusca.Controls.Add(this.dgvFuncionario);
             this.pnlClienteBusca.Controls.Add(this.lblExcluir);
             this.pnlClienteBusca.Controls.Add(this.lblAlterar);
             this.pnlClienteBusca.Controls.Add(this.lblCadastrar);
-            this.pnlClienteBusca.Controls.Add(this.dgvFuncionario);
             this.pnlClienteBusca.Controls.Add(this.pnlBusca);
             this.pnlClienteBusca.Location = new System.Drawing.Point(218, 0);
             this.pnlClienteBusca.Name = "pnlClienteBusca";
@@ -109,15 +112,6 @@
             this.lblCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCadastrar.Click += new System.EventHandler(this.lblCadastrar_Click);
             // 
-            // dgvFuncionario
-            // 
-            this.dgvFuncionario.BackgroundColor = System.Drawing.Color.Black;
-            this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFuncionario.Location = new System.Drawing.Point(17, 69);
-            this.dgvFuncionario.Name = "dgvFuncionario";
-            this.dgvFuncionario.Size = new System.Drawing.Size(991, 498);
-            this.dgvFuncionario.TabIndex = 7;
-            // 
             // pnlBusca
             // 
             this.pnlBusca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
@@ -156,6 +150,7 @@
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(179, 29);
             this.cmbStatus.TabIndex = 4;
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // txtFuncionario
             // 
@@ -165,6 +160,7 @@
             this.txtFuncionario.Name = "txtFuncionario";
             this.txtFuncionario.Size = new System.Drawing.Size(496, 29);
             this.txtFuncionario.TabIndex = 3;
+            this.txtFuncionario.TextChanged += new System.EventHandler(this.txtFuncionario_TextChanged);
             // 
             // lblStatus
             // 
@@ -199,6 +195,49 @@
             this.pctLogo.TabIndex = 1;
             this.pctLogo.TabStop = false;
             // 
+            // dgvFuncionario
+            // 
+            this.dgvFuncionario.AllowUserToAddRows = false;
+            this.dgvFuncionario.AllowUserToDeleteRows = false;
+            this.dgvFuncionario.AllowUserToResizeColumns = false;
+            this.dgvFuncionario.AllowUserToResizeRows = false;
+            this.dgvFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvFuncionario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvFuncionario.BackgroundColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFuncionario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFuncionario.EnableHeadersVisualStyles = false;
+            this.dgvFuncionario.Location = new System.Drawing.Point(2, 72);
+            this.dgvFuncionario.MultiSelect = false;
+            this.dgvFuncionario.Name = "dgvFuncionario";
+            this.dgvFuncionario.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvFuncionario.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFuncionario.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFuncionario.Size = new System.Drawing.Size(1019, 511);
+            this.dgvFuncionario.TabIndex = 22;
+            // 
             // frmFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,11 +255,11 @@
             this.Load += new System.EventHandler(this.frmFuncionario_Load);
             this.pnlFuncionario.ResumeLayout(false);
             this.pnlClienteBusca.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             this.pnlBusca.ResumeLayout(false);
             this.pnlBusca.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,7 +271,6 @@
         private System.Windows.Forms.Label lblExcluir;
         private System.Windows.Forms.Label lblAlterar;
         private System.Windows.Forms.Label lblCadastrar;
-        private System.Windows.Forms.DataGridView dgvFuncionario;
         private System.Windows.Forms.Panel pnlBusca;
         private System.Windows.Forms.PictureBox pctVoltar;
         private System.Windows.Forms.ComboBox cmbStatus;
@@ -240,5 +278,6 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblFuncionario;
         private System.Windows.Forms.PictureBox pctLogo;
+        private System.Windows.Forms.DataGridView dgvFuncionario;
     }
 }

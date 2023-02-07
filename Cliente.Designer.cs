@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlCliente = new System.Windows.Forms.Panel();
             this.pnlClienteBusca = new System.Windows.Forms.Panel();
             this.lblExcluir = new System.Windows.Forms.Label();
             this.lblAlterar = new System.Windows.Forms.Label();
             this.lblCadastrar = new System.Windows.Forms.Label();
-            this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.pnlBusca = new System.Windows.Forms.Panel();
             this.pctVoltar = new System.Windows.Forms.PictureBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
@@ -41,12 +43,13 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.pnlCliente.SuspendLayout();
             this.pnlClienteBusca.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.pnlBusca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCliente
@@ -62,10 +65,10 @@
             // pnlClienteBusca
             // 
             this.pnlClienteBusca.BackColor = System.Drawing.Color.Black;
+            this.pnlClienteBusca.Controls.Add(this.dgvCliente);
             this.pnlClienteBusca.Controls.Add(this.lblExcluir);
             this.pnlClienteBusca.Controls.Add(this.lblAlterar);
             this.pnlClienteBusca.Controls.Add(this.lblCadastrar);
-            this.pnlClienteBusca.Controls.Add(this.dgvCliente);
             this.pnlClienteBusca.Controls.Add(this.pnlBusca);
             this.pnlClienteBusca.Location = new System.Drawing.Point(218, 0);
             this.pnlClienteBusca.Name = "pnlClienteBusca";
@@ -109,15 +112,6 @@
             this.lblCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCadastrar.Click += new System.EventHandler(this.lblCadastrar_Click);
             // 
-            // dgvCliente
-            // 
-            this.dgvCliente.BackgroundColor = System.Drawing.Color.Black;
-            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(17, 69);
-            this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(991, 498);
-            this.dgvCliente.TabIndex = 7;
-            // 
             // pnlBusca
             // 
             this.pnlBusca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
@@ -156,6 +150,7 @@
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(179, 29);
             this.cmbStatus.TabIndex = 4;
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // txtCliente
             // 
@@ -165,6 +160,7 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(539, 29);
             this.txtCliente.TabIndex = 3;
+            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // lblStatus
             // 
@@ -199,6 +195,49 @@
             this.pctLogo.TabIndex = 1;
             this.pctLogo.TabStop = false;
             // 
+            // dgvCliente
+            // 
+            this.dgvCliente.AllowUserToAddRows = false;
+            this.dgvCliente.AllowUserToDeleteRows = false;
+            this.dgvCliente.AllowUserToResizeColumns = false;
+            this.dgvCliente.AllowUserToResizeRows = false;
+            this.dgvCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCliente.BackgroundColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.EnableHeadersVisualStyles = false;
+            this.dgvCliente.Location = new System.Drawing.Point(0, 72);
+            this.dgvCliente.MultiSelect = false;
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCliente.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCliente.Size = new System.Drawing.Size(1019, 511);
+            this.dgvCliente.TabIndex = 22;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,11 +255,11 @@
             this.Load += new System.EventHandler(this.frmCliente_Load);
             this.pnlCliente.ResumeLayout(false);
             this.pnlClienteBusca.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.pnlBusca.ResumeLayout(false);
             this.pnlBusca.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,10 +274,10 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Panel pnlClienteBusca;
-        private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.Label lblExcluir;
         private System.Windows.Forms.Label lblAlterar;
         private System.Windows.Forms.Label lblCadastrar;
         private System.Windows.Forms.PictureBox pctVoltar;
+        private System.Windows.Forms.DataGridView dgvCliente;
     }
 }

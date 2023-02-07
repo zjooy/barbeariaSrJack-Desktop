@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,99 @@ namespace barbeariaSrJack
             InitializeComponent();
         }
 
+        private void CarregarFuncionario()
+        {
+            try
+            {
+                banco.Conectar();
+                string selecionar = "SELECT * FROM funcionariocompleto;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+
+                dgvFuncionario.DataSource = dt;
+
+                dgvFuncionario.ClearSelection();
+
+                banco.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao selecionar a lista de Funcionarios! \n\n" + ex);
+            }
+        }
+
+        private void CarregarFuncionarioAtivo()
+        {
+            try
+            {
+                banco.Conectar();
+                string selecionar = "SELECT * FROM funcionarioativo;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvFuncionario.DataSource = dt;
+
+                dgvFuncionario.ClearSelection();
+
+                banco.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao selecionar a lista de funcionários ativos!! \n\n" + ex);
+            }
+        }
+
+        private void CarregarFuncionarioInativo()
+        {
+            try
+            {
+                banco.Conectar();
+                string selecionar = "SELECT * FROM funcionarioinativo;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvFuncionario.DataSource = dt;
+
+                dgvFuncionario.ClearSelection();
+
+                banco.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao selecionar a lista de funcionários inativos!! \n\n" + ex);
+            }
+        }
+
+        private void CarregarFuncionarioNome()
+        {
+            try
+            {
+                banco.Conectar();
+                string selecionar = "SELECT * FROM clientecompleto WHERE `NOME FUNCIONÁRIO` LIKE '%" + variaveis.nomeFuncionario + "%';";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvFuncionario.DataSource = dt;
+
+                dgvFuncionario.ClearSelection();
+
+                banco.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao encontrar o funcionário pelo nome!! \n\n" + ex);
+            }
+        }
+
         private void pctVoltar_Click(object sender, EventArgs e)
         {
             new frmMenu().Show();
@@ -27,12 +121,47 @@ namespace barbeariaSrJack
         {
             pnlFuncionario.Location = new Point(this.Width / 2 - pnlFuncionario.Width / 2, this.Height / 2 - pnlFuncionario.Height / 2);
 
+            CarregarFuncionario();
         }
 
         private void lblCadastrar_Click(object sender, EventArgs e)
         {
             new frmCadFuncionario().Show();
             Hide();
+        }
+
+        private void txtFuncionario_TextChanged(object sender, EventArgs e)
+        {
+            variaveis.nomeFuncionario = txtFuncionario.Text;
+
+            if (variaveis.nomeFuncionario == "")
+            {
+                cmbStatus.Enabled = true;
+                cmbStatus.Text = "TODOS";
+                CarregarFuncionario();
+            }
+            else
+            {
+                cmbStatus.Enabled = false;
+                cmbStatus.Text = "TODOS";
+                CarregarFuncionarioNome();
+            }
+        }
+
+        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbStatus.Text == "ATIVO")
+            {
+                CarregarFuncionarioAtivo();
+            }
+            else if (cmbStatus.Text == "INATIVO")
+            {
+                CarregarFuncionarioInativo();
+            }
+            else
+            {
+                CarregarFuncionario();
+            }
         }
     }
 }

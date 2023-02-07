@@ -32,21 +32,21 @@
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.pnlSenha = new System.Windows.Forms.Panel();
+            this.pctSenha = new System.Windows.Forms.PictureBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.pnlEmail = new System.Windows.Forms.Panel();
+            this.pctEmail = new System.Windows.Forms.PictureBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.pctSair = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pctEmail = new System.Windows.Forms.PictureBox();
-            this.pctSenha = new System.Windows.Forms.PictureBox();
             this.pnlLogin.SuspendLayout();
             this.pnlSenha.SuspendLayout();
-            this.pnlEmail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctSair)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSenha)).BeginInit();
+            this.pnlEmail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSair)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLogin
@@ -89,12 +89,24 @@
             this.pnlSenha.Size = new System.Drawing.Size(469, 58);
             this.pnlSenha.TabIndex = 1;
             // 
+            // pctSenha
+            // 
+            this.pctSenha.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pctSenha.Image = global::barbeariaSrJack.Properties.Resources.senha;
+            this.pctSenha.Location = new System.Drawing.Point(8, 7);
+            this.pctSenha.Name = "pctSenha";
+            this.pctSenha.Size = new System.Drawing.Size(44, 44);
+            this.pctSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctSenha.TabIndex = 4;
+            this.pctSenha.TabStop = false;
+            // 
             // txtSenha
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(57, 21);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(407, 20);
             this.txtSenha.TabIndex = 3;
             this.toolTip1.SetToolTip(this.txtSenha, "Digite sua senha");
@@ -119,6 +131,17 @@
             this.pnlEmail.Name = "pnlEmail";
             this.pnlEmail.Size = new System.Drawing.Size(469, 58);
             this.pnlEmail.TabIndex = 0;
+            // 
+            // pctEmail
+            // 
+            this.pctEmail.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pctEmail.Image = global::barbeariaSrJack.Properties.Resources.email;
+            this.pctEmail.Location = new System.Drawing.Point(7, 7);
+            this.pctEmail.Name = "pctEmail";
+            this.pctEmail.Size = new System.Drawing.Size(44, 44);
+            this.pctEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctEmail.TabIndex = 3;
+            this.pctEmail.TabStop = false;
             // 
             // txtEmail
             // 
@@ -155,28 +178,6 @@
             this.toolTip1.SetToolTip(this.pctSair, "Sair");
             this.pctSair.Click += new System.EventHandler(this.pctSair_Click);
             // 
-            // pctEmail
-            // 
-            this.pctEmail.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pctEmail.Image = global::barbeariaSrJack.Properties.Resources.email;
-            this.pctEmail.Location = new System.Drawing.Point(7, 7);
-            this.pctEmail.Name = "pctEmail";
-            this.pctEmail.Size = new System.Drawing.Size(44, 44);
-            this.pctEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctEmail.TabIndex = 3;
-            this.pctEmail.TabStop = false;
-            // 
-            // pctSenha
-            // 
-            this.pctSenha.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pctSenha.Image = global::barbeariaSrJack.Properties.Resources.senha;
-            this.pctSenha.Location = new System.Drawing.Point(8, 7);
-            this.pctSenha.Name = "pctSenha";
-            this.pctSenha.Size = new System.Drawing.Size(44, 44);
-            this.pctSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctSenha.TabIndex = 4;
-            this.pctSenha.TabStop = false;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,11 +197,11 @@
             this.pnlLogin.ResumeLayout(false);
             this.pnlSenha.ResumeLayout(false);
             this.pnlSenha.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSenha)).EndInit();
             this.pnlEmail.ResumeLayout(false);
             this.pnlEmail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctSair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctSenha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSair)).EndInit();
             this.ResumeLayout(false);
 
         }
