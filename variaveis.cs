@@ -10,7 +10,7 @@ namespace barbeariaSrJack
     {
         //Geral
         public static string funcao;
-
+        public static int linhaSelecionada;
 
         //Login
         public static string usuario, senha, nivel;
@@ -27,7 +27,7 @@ namespace barbeariaSrJack
 
         //Funcionario
         public static int codFuncionario;
-        public static string nomeFuncionario, emailFuncionario, senhaFuncionario, statusFuncionario, fotoFuncionario;
+        public static string nomeFuncionario, emailFuncionario, senhaFuncionario, nivelFuncionario, statusFuncionario, fotoFuncionario;
         public static DateTime dataCadFuncionario, horarioTrabalhoFuncionario;
     }
 }

@@ -114,6 +114,8 @@ namespace barbeariaSrJack
         {
             pnlCliente.Location = new Point(this.Width / 2 - pnlCliente.Width / 2, this.Height / 2 - pnlCliente.Height / 2);
 
+            variaveis.linhaSelecionada = -1;
+
             CarregarCliente();
 
         }
@@ -126,6 +128,8 @@ namespace barbeariaSrJack
 
         private void lblCadastrar_Click(object sender, EventArgs e)
         {
+            variaveis.funcao = "CADASTRAR";
+
             new frmCadCliente().Show();
             Hide();
         }
@@ -161,6 +165,35 @@ namespace barbeariaSrJack
             else
             {
                 CarregarCliente();
+            }
+        }
+
+        private void dgvCliente_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvCliente.Sort(dgvCliente.Columns[1], ListSortDirection.Ascending);
+            dgvCliente.ClearSelection();
+        }
+
+        private void lblAlterar_Click(object sender, EventArgs e)
+        {
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.funcao = "ALTERAR";
+                new frmCadCliente().Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Para alterar selecione uma linha!");
+            }
+        }
+
+        private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.codCliente = Convert.ToInt32(dgvCliente[0, variaveis.linhaSelecionada].Value);
             }
         }
     }

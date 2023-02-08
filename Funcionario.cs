@@ -121,6 +121,8 @@ namespace barbeariaSrJack
         {
             pnlFuncionario.Location = new Point(this.Width / 2 - pnlFuncionario.Width / 2, this.Height / 2 - pnlFuncionario.Height / 2);
 
+            variaveis.linhaSelecionada = -1;
+
             CarregarFuncionario();
         }
 
@@ -161,6 +163,35 @@ namespace barbeariaSrJack
             else
             {
                 CarregarFuncionario();
+            }
+        }
+
+        private void dgvFuncionario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.codFuncionario = Convert.ToInt32(dgvFuncionario[0, variaveis.linhaSelecionada].Value);
+            }
+        }
+
+        private void dgvFuncionario_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvFuncionario.Sort(dgvFuncionario.Columns[1], ListSortDirection.Ascending);
+            dgvFuncionario.ClearSelection();
+        }
+
+        private void lblAlterar_Click(object sender, EventArgs e)
+        {
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.funcao = "ALTERAR";
+                new frmCadFuncionario().Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Para alterar selecione uma linha!");
             }
         }
     }

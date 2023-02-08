@@ -126,6 +126,8 @@ namespace barbeariaSrJack
         {
             pnlEmpresa.Location = new Point(this.Width / 2 - pnlEmpresa.Width / 2, this.Height / 2 - pnlEmpresa.Height / 2);
 
+            variaveis.linhaSelecionada = -1;
+
             CarregarEmpresa();
         }
 
@@ -160,6 +162,35 @@ namespace barbeariaSrJack
                 cmbStatus.Enabled = false;
                 cmbStatus.Text = "TODOS";
                 CarregarEmpresaNome();
+            }
+        }
+
+        private void dgvEmpresa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.codEmpresa = Convert.ToInt32(dgvEmpresa[0, variaveis.linhaSelecionada].Value);
+            }
+        }
+
+        private void dgvEmpresa_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvEmpresa.Sort(dgvEmpresa.Columns[1], ListSortDirection.Ascending);
+            dgvEmpresa.ClearSelection();
+        }
+
+        private void lblAlterar_Click(object sender, EventArgs e)
+        {
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.funcao = "ALTERAR";
+                new frmCadastrarEmpresa().Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Para alterar selecione uma linha!");
             }
         }
     }

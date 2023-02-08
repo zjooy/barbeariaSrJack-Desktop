@@ -38,6 +38,7 @@ namespace barbeariaSrJack
         {
             pnlMenu.Location = new Point(this.Width / 2 - pnlMenu.Width / 2, this.Height / 2 - pnlMenu.Height / 2);
 
+            timer1.Start();
 
             if (hora >= 6 && hora <= 12)
             {

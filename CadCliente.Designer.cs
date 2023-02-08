@@ -32,6 +32,8 @@
             this.btnSalvar = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Label();
             this.pnlReserva = new System.Windows.Forms.Panel();
+            this.btnFoto = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pctVoltar = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblCadastro = new System.Windows.Forms.Label();
@@ -50,17 +52,15 @@
             this.lblNomeFantasiaEmpresa = new System.Windows.Forms.Label();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.lblCadastrarEmpresa = new System.Windows.Forms.Label();
+            this.lblCadastrarCliente = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnFoto = new System.Windows.Forms.Button();
             this.pnlCadCliente.SuspendLayout();
             this.pnlReserva.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
             this.pnlTelefone.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCadCliente
@@ -87,6 +87,7 @@
             this.btnSalvar.TabIndex = 15;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
             // 
@@ -119,13 +120,38 @@
             this.pnlReserva.Controls.Add(this.lblNomeFantasiaEmpresa);
             this.pnlReserva.Controls.Add(this.txtNomeCliente);
             this.pnlReserva.Controls.Add(this.txtCodigo);
-            this.pnlReserva.Controls.Add(this.lblCadastrarEmpresa);
+            this.pnlReserva.Controls.Add(this.lblCadastrarCliente);
             this.pnlReserva.Controls.Add(this.lblCodigo);
             this.pnlReserva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
             this.pnlReserva.Location = new System.Drawing.Point(258, 0);
             this.pnlReserva.Name = "pnlReserva";
             this.pnlReserva.Size = new System.Drawing.Size(982, 655);
             this.pnlReserva.TabIndex = 1;
+            // 
+            // btnFoto
+            // 
+            this.btnFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            this.btnFoto.Enabled = false;
+            this.btnFoto.FlatAppearance.BorderSize = 0;
+            this.btnFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFoto.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFoto.ForeColor = System.Drawing.Color.White;
+            this.btnFoto.Location = new System.Drawing.Point(937, 449);
+            this.btnFoto.Name = "btnFoto";
+            this.btnFoto.Size = new System.Drawing.Size(35, 35);
+            this.btnFoto.TabIndex = 32;
+            this.btnFoto.Text = "+";
+            this.btnFoto.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::barbeariaSrJack.Properties.Resources.cliente;
+            this.pictureBox1.Location = new System.Drawing.Point(678, 251);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(294, 233);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
             // 
             // pctVoltar
             // 
@@ -267,8 +293,8 @@
             this.cmbStatus.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
-            "ATIVA",
-            "INATIVA"});
+            "ATIVO",
+            "INATIVO"});
             this.cmbStatus.Location = new System.Drawing.Point(20, 251);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(232, 30);
@@ -336,18 +362,18 @@
             this.txtCodigo.Size = new System.Drawing.Size(146, 31);
             this.txtCodigo.TabIndex = 4;
             // 
-            // lblCadastrarEmpresa
+            // lblCadastrarCliente
             // 
-            this.lblCadastrarEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            this.lblCadastrarEmpresa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblCadastrarEmpresa.Font = new System.Drawing.Font("Impact", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastrarEmpresa.ForeColor = System.Drawing.Color.White;
-            this.lblCadastrarEmpresa.Location = new System.Drawing.Point(0, 0);
-            this.lblCadastrarEmpresa.Name = "lblCadastrarEmpresa";
-            this.lblCadastrarEmpresa.Size = new System.Drawing.Size(982, 48);
-            this.lblCadastrarEmpresa.TabIndex = 3;
-            this.lblCadastrarEmpresa.Text = "Cadastrar Cliente";
-            this.lblCadastrarEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCadastrarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            this.lblCadastrarCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblCadastrarCliente.Font = new System.Drawing.Font("Impact", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadastrarCliente.ForeColor = System.Drawing.Color.White;
+            this.lblCadastrarCliente.Location = new System.Drawing.Point(0, 0);
+            this.lblCadastrarCliente.Name = "lblCadastrarCliente";
+            this.lblCadastrarCliente.Size = new System.Drawing.Size(982, 48);
+            this.lblCadastrarCliente.TabIndex = 3;
+            this.lblCadastrarCliente.Text = "Cadastrar Cliente";
+            this.lblCadastrarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblCodigo
             // 
@@ -372,31 +398,6 @@
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::barbeariaSrJack.Properties.Resources.cliente;
-            this.pictureBox1.Location = new System.Drawing.Point(678, 251);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(294, 233);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnFoto
-            // 
-            this.btnFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            this.btnFoto.Enabled = false;
-            this.btnFoto.FlatAppearance.BorderSize = 0;
-            this.btnFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFoto.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFoto.ForeColor = System.Drawing.Color.White;
-            this.btnFoto.Location = new System.Drawing.Point(937, 449);
-            this.btnFoto.Name = "btnFoto";
-            this.btnFoto.Size = new System.Drawing.Size(35, 35);
-            this.btnFoto.TabIndex = 32;
-            this.btnFoto.Text = "+";
-            this.btnFoto.UseVisualStyleBackColor = false;
-            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,10 +416,10 @@
             this.pnlCadCliente.ResumeLayout(false);
             this.pnlReserva.ResumeLayout(false);
             this.pnlReserva.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).EndInit();
             this.pnlTelefone.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,7 +448,7 @@
         private System.Windows.Forms.Label lblNomeFantasiaEmpresa;
         private System.Windows.Forms.TextBox txtNomeCliente;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Label lblCadastrarEmpresa;
+        private System.Windows.Forms.Label lblCadastrarCliente;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.PictureBox pctLogo;
         private System.Windows.Forms.Button btnFoto;

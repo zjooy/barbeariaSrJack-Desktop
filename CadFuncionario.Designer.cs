@@ -32,6 +32,10 @@
             this.btnSalvar = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Label();
             this.pnlReserva = new System.Windows.Forms.Panel();
+            this.lblNivel = new System.Windows.Forms.Label();
+            this.cmbNivel = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbCargaHoraria = new System.Windows.Forms.ComboBox();
             this.btnFoto = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pctVoltar = new System.Windows.Forms.PictureBox();
@@ -50,7 +54,7 @@
             this.lblSenha = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.lblNomeFuncionario = new System.Windows.Forms.Label();
-            this.txtNomeCliente = new System.Windows.Forms.TextBox();
+            this.txtNomeFuncionario = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCadastrarFuncionario = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -87,6 +91,7 @@
             this.btnSalvar.TabIndex = 15;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
             // 
@@ -103,6 +108,10 @@
             // pnlReserva
             // 
             this.pnlReserva.BackColor = System.Drawing.Color.Black;
+            this.pnlReserva.Controls.Add(this.lblNivel);
+            this.pnlReserva.Controls.Add(this.cmbNivel);
+            this.pnlReserva.Controls.Add(this.label1);
+            this.pnlReserva.Controls.Add(this.cmbCargaHoraria);
             this.pnlReserva.Controls.Add(this.btnFoto);
             this.pnlReserva.Controls.Add(this.pictureBox1);
             this.pnlReserva.Controls.Add(this.pctVoltar);
@@ -117,7 +126,7 @@
             this.pnlReserva.Controls.Add(this.lblSenha);
             this.pnlReserva.Controls.Add(this.txtSenha);
             this.pnlReserva.Controls.Add(this.lblNomeFuncionario);
-            this.pnlReserva.Controls.Add(this.txtNomeCliente);
+            this.pnlReserva.Controls.Add(this.txtNomeFuncionario);
             this.pnlReserva.Controls.Add(this.txtCodigo);
             this.pnlReserva.Controls.Add(this.lblCadastrarFuncionario);
             this.pnlReserva.Controls.Add(this.lblCodigo);
@@ -126,6 +135,61 @@
             this.pnlReserva.Name = "pnlReserva";
             this.pnlReserva.Size = new System.Drawing.Size(982, 655);
             this.pnlReserva.TabIndex = 1;
+            // 
+            // lblNivel
+            // 
+            this.lblNivel.AutoSize = true;
+            this.lblNivel.BackColor = System.Drawing.Color.Transparent;
+            this.lblNivel.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel.ForeColor = System.Drawing.Color.White;
+            this.lblNivel.Location = new System.Drawing.Point(227, 222);
+            this.lblNivel.Name = "lblNivel";
+            this.lblNivel.Size = new System.Drawing.Size(56, 26);
+            this.lblNivel.TabIndex = 36;
+            this.lblNivel.Text = "NIVEL";
+            // 
+            // cmbNivel
+            // 
+            this.cmbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNivel.Enabled = false;
+            this.cmbNivel.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
+            this.cmbNivel.FormattingEnabled = true;
+            this.cmbNivel.Items.AddRange(new object[] {
+            "ADM",
+            "OUTROS"});
+            this.cmbNivel.Location = new System.Drawing.Point(221, 251);
+            this.cmbNivel.Name = "cmbNivel";
+            this.cmbNivel.Size = new System.Drawing.Size(201, 30);
+            this.cmbNivel.TabIndex = 35;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(660, 222);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 26);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "CARGA HORÁRIA";
+            // 
+            // cmbCargaHoraria
+            // 
+            this.cmbCargaHoraria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCargaHoraria.Enabled = false;
+            this.cmbCargaHoraria.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
+            this.cmbCargaHoraria.FormattingEnabled = true;
+            this.cmbCargaHoraria.Items.AddRange(new object[] {
+            "03:00",
+            "04:00",
+            "06:00",
+            "08:00",
+            "11:00"});
+            this.cmbCargaHoraria.Location = new System.Drawing.Point(656, 251);
+            this.cmbCargaHoraria.Name = "cmbCargaHoraria";
+            this.cmbCargaHoraria.Size = new System.Drawing.Size(319, 30);
+            this.cmbCargaHoraria.TabIndex = 33;
             // 
             // btnFoto
             // 
@@ -145,7 +209,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::barbeariaSrJack.Properties.Resources.cliente;
-            this.pictureBox1.Location = new System.Drawing.Point(678, 251);
+            this.pictureBox1.Location = new System.Drawing.Point(678, 404);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(294, 233);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -170,7 +234,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(673, 222);
+            this.label5.Location = new System.Drawing.Point(673, 375);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 26);
             this.label5.TabIndex = 27;
@@ -182,7 +246,7 @@
             this.lblCadastro.BackColor = System.Drawing.Color.Transparent;
             this.lblCadastro.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCadastro.ForeColor = System.Drawing.Color.White;
-            this.lblCadastro.Location = new System.Drawing.Point(295, 222);
+            this.lblCadastro.Location = new System.Drawing.Point(455, 222);
             this.lblCadastro.Name = "lblCadastro";
             this.lblCadastro.Size = new System.Drawing.Size(172, 26);
             this.lblCadastro.TabIndex = 26;
@@ -192,10 +256,10 @@
             // 
             this.mkdDataDeCadastro.Enabled = false;
             this.mkdDataDeCadastro.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mkdDataDeCadastro.Location = new System.Drawing.Point(293, 251);
+            this.mkdDataDeCadastro.Location = new System.Drawing.Point(433, 251);
             this.mkdDataDeCadastro.Mask = "00/00/0000";
             this.mkdDataDeCadastro.Name = "mkdDataDeCadastro";
-            this.mkdDataDeCadastro.Size = new System.Drawing.Size(256, 31);
+            this.mkdDataDeCadastro.Size = new System.Drawing.Size(210, 31);
             this.mkdDataDeCadastro.TabIndex = 24;
             this.mkdDataDeCadastro.ValidatingType = typeof(System.DateTime);
             // 
@@ -292,11 +356,11 @@
             this.cmbStatus.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
-            "ATIVA",
-            "INATIVA"});
+            "ATIVO",
+            "INATIVO"});
             this.cmbStatus.Location = new System.Drawing.Point(20, 251);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(232, 30);
+            this.cmbStatus.Size = new System.Drawing.Size(185, 30);
             this.cmbStatus.TabIndex = 20;
             // 
             // txtEmail
@@ -343,14 +407,14 @@
             this.lblNomeFuncionario.TabIndex = 7;
             this.lblNomeFuncionario.Text = "NOME FUNCIONÁRIO";
             // 
-            // txtNomeCliente
+            // txtNomeFuncionario
             // 
-            this.txtNomeCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNomeCliente.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeCliente.Location = new System.Drawing.Point(177, 87);
-            this.txtNomeCliente.Name = "txtNomeCliente";
-            this.txtNomeCliente.Size = new System.Drawing.Size(795, 31);
-            this.txtNomeCliente.TabIndex = 6;
+            this.txtNomeFuncionario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNomeFuncionario.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeFuncionario.Location = new System.Drawing.Point(177, 87);
+            this.txtNomeFuncionario.Name = "txtNomeFuncionario";
+            this.txtNomeFuncionario.Size = new System.Drawing.Size(795, 31);
+            this.txtNomeFuncionario.TabIndex = 6;
             // 
             // txtCodigo
             // 
@@ -447,10 +511,14 @@
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label lblNomeFuncionario;
-        private System.Windows.Forms.TextBox txtNomeCliente;
+        private System.Windows.Forms.TextBox txtNomeFuncionario;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCadastrarFuncionario;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.PictureBox pctLogo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbCargaHoraria;
+        private System.Windows.Forms.Label lblNivel;
+        private System.Windows.Forms.ComboBox cmbNivel;
     }
 }
