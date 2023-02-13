@@ -29,6 +29,19 @@ namespace barbeariaSrJack
         public static int codFuncionario;
         public static string nomeFuncionario, emailFuncionario, senhaFuncionario, nivelFuncionario, statusFuncionario, fotoFuncionario;
         public static DateTime dataCadFuncionario, horarioTrabalhoFuncionario;
+
+        //FONE EMPRESA
+        public static int codFoneEmpresa;
+        public static string numeroFoneEmpresa, operadoraEmpresa, descricaoEmpresa;
+
+        //FONE FUNCIONARIO
+        public static int codFoneFuncionario;
+        public static string numeroFoneFuncionario, operadoraFuncionario, descricaoFuncionario;
+
+        //FONE CLIENTE
+        public static int codFoneCliente;
+        public static string numeroFoneCliente, operadoraCliente, descricaoCliente;
+
     }
 }
 

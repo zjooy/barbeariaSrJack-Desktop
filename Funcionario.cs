@@ -93,7 +93,7 @@ namespace barbeariaSrJack
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT * FROM clientecompleto WHERE `NOME FUNCIONÁRIO` LIKE '%" + variaveis.nomeFuncionario + "%';";
+                string selecionar = "SELECT * FROM funcionariocompleto WHERE `NOME FUNCIONÁRIO` LIKE '%" + variaveis.nomeFuncionario + "%';";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

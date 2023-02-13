@@ -152,5 +152,7 @@ namespace barbeariaSrJack
             lblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
             lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
+
+        
     }
 }
