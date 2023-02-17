@@ -67,7 +67,7 @@ namespace barbeariaSrJack
             try
             {
                 banco.Conectar();
-                string inserir = "INSERT INTO `empresa`(`idEmpresa`, `nomeFantasia`, `cnpjCpfEmpresa`, `razaoSocialEmpresa`, `emailEmpresa`, `statusEmpresa`, `dataCadEmpresa`, `horarioAtendEmpresa`) VALUES (DEFAULT,@nomeEmpresa,@cnpjCpfEmpresa,@razaoSocialEmpresa,@emailEmpresa,@statusEmpresa,@dataCadEmpresa,@horarioAtendEmpresa)";
+                string inserir = "INSERT INTO `empresa`(`idEmpresa`, `nomeFantasiaEmpresa`, `cnpjCpfEmpresa`, `razaoSocialEmpresa`, `emailEmpresa`, `statusEmpresa`, `dataCadEmpresa`, `horarioAtendEmpresa`) VALUES (DEFAULT,@nomeEmpresa,@cnpjCpfEmpresa,@razaoSocialEmpresa,@emailEmpresa,@statusEmpresa,@dataCadEmpresa,@horarioAtendEmpresa)";
                 MySqlCommand cmd = new MySqlCommand(inserir, banco.conexao);
                 cmd.Parameters.AddWithValue("@nomeEmpresa", variaveis.nomeEmpresa);
                 cmd.Parameters.AddWithValue("@cnpjCpfEmpresa", variaveis.cnpjCpfEmpresa);

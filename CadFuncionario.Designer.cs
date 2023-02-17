@@ -32,6 +32,8 @@
             this.btnSalvar = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Label();
             this.pnlReserva = new System.Windows.Forms.Panel();
+            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.cmbEmpresa = new System.Windows.Forms.ComboBox();
             this.lblNivel = new System.Windows.Forms.Label();
             this.cmbNivel = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +45,7 @@
             this.lblCadastro = new System.Windows.Forms.Label();
             this.mkdDataDeCadastro = new System.Windows.Forms.MaskedTextBox();
             this.pnlTelefone = new System.Windows.Forms.Panel();
+            this.dgvTelefone = new System.Windows.Forms.DataGridView();
             this.lblExcluir = new System.Windows.Forms.Label();
             this.lblAlterar = new System.Windows.Forms.Label();
             this.lblCadastrar = new System.Windows.Forms.Label();
@@ -59,7 +62,6 @@
             this.lblCadastrarFuncionario = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
-            this.dgvTelefone = new System.Windows.Forms.DataGridView();
             this.pnlCadFone = new System.Windows.Forms.Panel();
             this.btnFecharFone = new System.Windows.Forms.PictureBox();
             this.lblLimparFone = new System.Windows.Forms.Label();
@@ -78,8 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
             this.pnlTelefone.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.pnlCadFone.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFecharFone)).BeginInit();
             this.SuspendLayout();
@@ -125,6 +127,8 @@
             // pnlReserva
             // 
             this.pnlReserva.BackColor = System.Drawing.Color.Black;
+            this.pnlReserva.Controls.Add(this.lblEmpresa);
+            this.pnlReserva.Controls.Add(this.cmbEmpresa);
             this.pnlReserva.Controls.Add(this.lblNivel);
             this.pnlReserva.Controls.Add(this.cmbNivel);
             this.pnlReserva.Controls.Add(this.label1);
@@ -153,13 +157,42 @@
             this.pnlReserva.Size = new System.Drawing.Size(982, 655);
             this.pnlReserva.TabIndex = 1;
             // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpresa.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpresa.ForeColor = System.Drawing.Color.White;
+            this.lblEmpresa.Location = new System.Drawing.Point(657, 222);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(88, 26);
+            this.lblEmpresa.TabIndex = 38;
+            this.lblEmpresa.Text = "EMPRESA";
+            // 
+            // cmbEmpresa
+            // 
+            this.cmbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEmpresa.Enabled = false;
+            this.cmbEmpresa.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
+            this.cmbEmpresa.FormattingEnabled = true;
+            this.cmbEmpresa.Items.AddRange(new object[] {
+            "BARBEARIA SR. JACK",
+            "BARBEARIA SR. JACK FILIAL 1",
+            "BARBEARIA SR. JACK FILIAL 2",
+            "BARBEARIA SR. JACK FILIAL 3"});
+            this.cmbEmpresa.Location = new System.Drawing.Point(653, 251);
+            this.cmbEmpresa.Name = "cmbEmpresa";
+            this.cmbEmpresa.Size = new System.Drawing.Size(319, 30);
+            this.cmbEmpresa.TabIndex = 37;
+            this.cmbEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEmpresa_KeyPress);
+            // 
             // lblNivel
             // 
             this.lblNivel.AutoSize = true;
             this.lblNivel.BackColor = System.Drawing.Color.Transparent;
             this.lblNivel.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNivel.ForeColor = System.Drawing.Color.White;
-            this.lblNivel.Location = new System.Drawing.Point(227, 222);
+            this.lblNivel.Location = new System.Drawing.Point(26, 222);
             this.lblNivel.Name = "lblNivel";
             this.lblNivel.Size = new System.Drawing.Size(56, 26);
             this.lblNivel.TabIndex = 36;
@@ -174,7 +207,7 @@
             this.cmbNivel.Items.AddRange(new object[] {
             "ADM",
             "OUTROS"});
-            this.cmbNivel.Location = new System.Drawing.Point(221, 251);
+            this.cmbNivel.Location = new System.Drawing.Point(20, 251);
             this.cmbNivel.Name = "cmbNivel";
             this.cmbNivel.Size = new System.Drawing.Size(201, 30);
             this.cmbNivel.TabIndex = 35;
@@ -186,7 +219,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(660, 222);
+            this.label1.Location = new System.Drawing.Point(466, 222);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 26);
             this.label1.TabIndex = 34;
@@ -204,9 +237,9 @@
             "06:00",
             "08:00",
             "11:00"});
-            this.cmbCargaHoraria.Location = new System.Drawing.Point(656, 251);
+            this.cmbCargaHoraria.Location = new System.Drawing.Point(462, 251);
             this.cmbCargaHoraria.Name = "cmbCargaHoraria";
-            this.cmbCargaHoraria.Size = new System.Drawing.Size(319, 30);
+            this.cmbCargaHoraria.Size = new System.Drawing.Size(181, 30);
             this.cmbCargaHoraria.TabIndex = 33;
             this.cmbCargaHoraria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCargaHoraria_KeyPress);
             // 
@@ -265,7 +298,7 @@
             this.lblCadastro.BackColor = System.Drawing.Color.Transparent;
             this.lblCadastro.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCadastro.ForeColor = System.Drawing.Color.White;
-            this.lblCadastro.Location = new System.Drawing.Point(455, 222);
+            this.lblCadastro.Location = new System.Drawing.Point(258, 222);
             this.lblCadastro.Name = "lblCadastro";
             this.lblCadastro.Size = new System.Drawing.Size(172, 26);
             this.lblCadastro.TabIndex = 26;
@@ -275,7 +308,7 @@
             // 
             this.mkdDataDeCadastro.Enabled = false;
             this.mkdDataDeCadastro.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mkdDataDeCadastro.Location = new System.Drawing.Point(433, 251);
+            this.mkdDataDeCadastro.Location = new System.Drawing.Point(236, 251);
             this.mkdDataDeCadastro.Mask = "00/00/0000";
             this.mkdDataDeCadastro.Name = "mkdDataDeCadastro";
             this.mkdDataDeCadastro.Size = new System.Drawing.Size(210, 31);
@@ -294,6 +327,16 @@
             this.pnlTelefone.Name = "pnlTelefone";
             this.pnlTelefone.Size = new System.Drawing.Size(623, 302);
             this.pnlTelefone.TabIndex = 23;
+            // 
+            // dgvTelefone
+            // 
+            this.dgvTelefone.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTelefone.Location = new System.Drawing.Point(40, 73);
+            this.dgvTelefone.Name = "dgvTelefone";
+            this.dgvTelefone.Size = new System.Drawing.Size(543, 150);
+            this.dgvTelefone.TabIndex = 20;
+            this.dgvTelefone.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefone_CellClick);
             // 
             // lblExcluir
             // 
@@ -353,7 +396,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(26, 222);
+            this.label3.Location = new System.Drawing.Point(790, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 26);
             this.label3.TabIndex = 22;
@@ -380,7 +423,7 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "ATIVO",
             "INATIVO"});
-            this.cmbStatus.Location = new System.Drawing.Point(20, 251);
+            this.cmbStatus.Location = new System.Drawing.Point(784, 165);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(185, 30);
             this.cmbStatus.TabIndex = 20;
@@ -393,7 +436,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(22, 165);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(621, 31);
+            this.txtEmail.Size = new System.Drawing.Size(481, 31);
             this.txtEmail.TabIndex = 19;
             this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
@@ -403,7 +446,7 @@
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.White;
-            this.lblSenha.Location = new System.Drawing.Point(660, 134);
+            this.lblSenha.Location = new System.Drawing.Point(509, 139);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(65, 26);
             this.lblSenha.TabIndex = 18;
@@ -414,10 +457,10 @@
             this.txtSenha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSenha.Enabled = false;
             this.txtSenha.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(656, 163);
+            this.txtSenha.Location = new System.Drawing.Point(514, 165);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(316, 31);
+            this.txtSenha.Size = new System.Drawing.Size(252, 31);
             this.txtSenha.TabIndex = 14;
             this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
@@ -487,16 +530,6 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
-            // 
-            // dgvTelefone
-            // 
-            this.dgvTelefone.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTelefone.Location = new System.Drawing.Point(40, 73);
-            this.dgvTelefone.Name = "dgvTelefone";
-            this.dgvTelefone.Size = new System.Drawing.Size(543, 150);
-            this.dgvTelefone.TabIndex = 20;
-            this.dgvTelefone.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefone_CellClick);
             // 
             // pnlCadFone
             // 
@@ -686,8 +719,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).EndInit();
             this.pnlTelefone.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.pnlCadFone.ResumeLayout(false);
             this.pnlCadFone.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFecharFone)).EndInit();
@@ -742,5 +775,7 @@
         private System.Windows.Forms.Label lblCodCadastro;
         private System.Windows.Forms.TextBox txtCodCadastro;
         private System.Windows.Forms.Label lblCadTelefone;
+        private System.Windows.Forms.Label lblEmpresa;
+        private System.Windows.Forms.ComboBox cmbEmpresa;
     }
 }

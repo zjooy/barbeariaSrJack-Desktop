@@ -69,6 +69,8 @@
             this.lblCodCadastro = new System.Windows.Forms.Label();
             this.txtCodCadastro = new System.Windows.Forms.TextBox();
             this.lblCadTelefone = new System.Windows.Forms.Label();
+            this.lblNivel = new System.Windows.Forms.Label();
+            this.cmbNivel = new System.Windows.Forms.ComboBox();
             this.pnlCadCliente.SuspendLayout();
             this.pnlReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -121,6 +123,8 @@
             // pnlReserva
             // 
             this.pnlReserva.BackColor = System.Drawing.Color.Black;
+            this.pnlReserva.Controls.Add(this.lblNivel);
+            this.pnlReserva.Controls.Add(this.cmbNivel);
             this.pnlReserva.Controls.Add(this.btnFoto);
             this.pnlReserva.Controls.Add(this.pictureBox1);
             this.pnlReserva.Controls.Add(this.pctVoltar);
@@ -200,7 +204,7 @@
             this.lblCadastro.BackColor = System.Drawing.Color.Transparent;
             this.lblCadastro.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCadastro.ForeColor = System.Drawing.Color.White;
-            this.lblCadastro.Location = new System.Drawing.Point(295, 222);
+            this.lblCadastro.Location = new System.Drawing.Point(271, 222);
             this.lblCadastro.Name = "lblCadastro";
             this.lblCadastro.Size = new System.Drawing.Size(172, 26);
             this.lblCadastro.TabIndex = 26;
@@ -210,10 +214,10 @@
             // 
             this.mkdDataDeCadastro.Enabled = false;
             this.mkdDataDeCadastro.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mkdDataDeCadastro.Location = new System.Drawing.Point(293, 251);
+            this.mkdDataDeCadastro.Location = new System.Drawing.Point(276, 251);
             this.mkdDataDeCadastro.Mask = "00/00/0000";
             this.mkdDataDeCadastro.Name = "mkdDataDeCadastro";
-            this.mkdDataDeCadastro.Size = new System.Drawing.Size(256, 31);
+            this.mkdDataDeCadastro.Size = new System.Drawing.Size(167, 31);
             this.mkdDataDeCadastro.TabIndex = 24;
             this.mkdDataDeCadastro.ValidatingType = typeof(System.DateTime);
             // 
@@ -601,6 +605,33 @@
             this.lblCadTelefone.TabIndex = 5;
             this.lblCadTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblNivel
+            // 
+            this.lblNivel.AutoSize = true;
+            this.lblNivel.BackColor = System.Drawing.Color.Transparent;
+            this.lblNivel.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel.ForeColor = System.Drawing.Color.White;
+            this.lblNivel.Location = new System.Drawing.Point(467, 222);
+            this.lblNivel.Name = "lblNivel";
+            this.lblNivel.Size = new System.Drawing.Size(56, 26);
+            this.lblNivel.TabIndex = 38;
+            this.lblNivel.Text = "NIVEL";
+            // 
+            // cmbNivel
+            // 
+            this.cmbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNivel.Enabled = false;
+            this.cmbNivel.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
+            this.cmbNivel.FormattingEnabled = true;
+            this.cmbNivel.Items.AddRange(new object[] {
+            "Administrador",
+            "Outros"});
+            this.cmbNivel.Location = new System.Drawing.Point(461, 251);
+            this.cmbNivel.Name = "cmbNivel";
+            this.cmbNivel.Size = new System.Drawing.Size(201, 30);
+            this.cmbNivel.TabIndex = 37;
+            this.cmbNivel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbNivel_KeyPress);
+            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -675,5 +706,7 @@
         private System.Windows.Forms.TextBox txtCodCadastro;
         private System.Windows.Forms.Label lblCadTelefone;
         private System.Windows.Forms.PictureBox btnFecharFone;
+        private System.Windows.Forms.Label lblNivel;
+        private System.Windows.Forms.ComboBox cmbNivel;
     }
 }

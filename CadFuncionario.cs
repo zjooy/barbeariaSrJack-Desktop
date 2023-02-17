@@ -60,7 +60,7 @@ namespace barbeariaSrJack
             try
             {
                 banco.Conectar();
-                string inserir = "INSERT INTO `funcionaria`(`idFuncionario`, `nomeFuncionario`, `emailFuncionario`, `senhaFuncionario`, `statusFuncionario`,`nivelFuncionario`,`horarioTrabalhoFuncionario`, `dataCadFuncionario`) VALUES (DEFAULT,@nomeFuncionario,@emailFuncionario,@senhaFuncionario,@statusFuncionario,@nivelFuncionario,@horarioTrabalhoFuncionario,@dataCadFuncionario)";
+                string inserir = "INSERT INTO `funcionario`(`idFuncionario`, `nomeFuncionario`, `emailFuncionario`, `senhaFuncionario`, `statusFuncionario`,`nivelFuncionario`,`horarioTrabalhoFuncionario`, `dataCadFuncionario`,`idEmpresa`) VALUES (DEFAULT,@nomeFuncionario,@emailFuncionario,@senhaFuncionario,@statusFuncionario,@nivelFuncionario,@horarioTrabalhoFuncionario,@dataCadFuncionario,@empresaFunc)";
                 MySqlCommand cmd = new MySqlCommand(inserir, banco.conexao);
                 cmd.Parameters.AddWithValue("@nomeFuncionario", variaveis.nomeFuncionario);
                 cmd.Parameters.AddWithValue("@emailFuncionario", variaveis.emailFuncionario);
@@ -69,6 +69,8 @@ namespace barbeariaSrJack
                 cmd.Parameters.AddWithValue("@nivelFuncionario", variaveis.nivelFuncionario);
                 cmd.Parameters.AddWithValue("@horarioTrabalhoFuncionario", variaveis.horarioTrabalhoFuncionario.ToString("HH:mm"));
                 cmd.Parameters.AddWithValue("@dataCadFuncionario", variaveis.dataCadFuncionario.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@empresaFunc)", variaveis.idEmpresaFunc);
+
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("CADASTRO DO FUNCIONÁRIO REALIZADO COM SUCESSO!!", "CADASTRO");
                 banco.Desconectar();
@@ -287,6 +289,12 @@ namespace barbeariaSrJack
                 MessageBox.Show("Favor selecionar a carga horária!");
                 cmbCargaHoraria.Focus();
             }
+            else if (cmbEmpresa.Text == String.Empty)
+            {
+                MessageBox.Show("Favor selecionar a empresa!");
+                cmbEmpresa.Focus();
+            }
+
             else
             {
                 variaveis.nomeFuncionario = txtNomeFuncionario.Text;
@@ -294,6 +302,24 @@ namespace barbeariaSrJack
                 variaveis.senhaFuncionario = txtSenha.Text;
                 variaveis.statusFuncionario = cmbStatus.Text;
                 variaveis.nivelFuncionario = cmbNivel.Text;
+                if (cmbEmpresa.Text == "BARBEARIA SR. JACK")
+                {
+                    variaveis.idEmpresaFunc = 1;
+                }
+                else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 1")
+                {
+                    variaveis.idEmpresaFunc = 2;
+                }
+                else if(cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 2")
+                {
+                    variaveis.idEmpresaFunc = 3;
+                }
+                else if(cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 3")
+                {
+                    variaveis.idEmpresaFunc = 4;
+                }
+
+
                 if (variaveis.funcao == "CADASTRAR")
                 {
                     mkdDataDeCadastro.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -365,8 +391,9 @@ namespace barbeariaSrJack
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                btnSalvar.Enabled = true;
-                btnSalvar.Focus();
+                cmbEmpresa.Enabled = true;
+                cmbEmpresa.Focus();
+                
             }
         }
 
@@ -451,6 +478,12 @@ namespace barbeariaSrJack
             pnlCadFone.Location = new Point(this.Width / 2 - pnlCadFone.Width / 2, this.Height / 2 - pnlCadFone.Height / 2);
             pnlCadFuncionario.Enabled = false;
             mkdCadTelefone.Focus();
+        }
+
+        private void cmbEmpresa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            btnSalvar.Enabled = true;
+            btnSalvar.Focus();
         }
     }
 }

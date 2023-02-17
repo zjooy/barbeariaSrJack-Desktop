@@ -128,6 +128,7 @@ namespace barbeariaSrJack
 
         private void lblCadastrar_Click(object sender, EventArgs e)
         {
+            variaveis.funcao = "CADASTRAR";
             new frmCadFuncionario().Show();
             Hide();
         }

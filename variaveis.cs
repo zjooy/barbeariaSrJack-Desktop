@@ -21,12 +21,12 @@ namespace barbeariaSrJack
         public static DateTime dataCadEmpresa, horarioAtendEmpresa;
 
         //Cliente
-        public static int codCliente;
+        public static int codCliente, usuariotp;
         public static string nomeCliente, emailCliente, senhaCliente, statusCliente, fotoCliente;
         public static DateTime dataCadCliente;
 
         //Funcionario
-        public static int codFuncionario;
+        public static int codFuncionario, idEmpresaFunc;
         public static string nomeFuncionario, emailFuncionario, senhaFuncionario, nivelFuncionario, statusFuncionario, fotoFuncionario;
         public static DateTime dataCadFuncionario, horarioTrabalhoFuncionario;
 

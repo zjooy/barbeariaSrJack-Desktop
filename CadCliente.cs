@@ -55,13 +55,14 @@ namespace barbeariaSrJack
             try
             {
                 banco.Conectar();
-                string inserir = "INSERT INTO `cliente`(`idCliente`, `nomeCliente`, `emailCliente`, `senhaCliente`, `statusCliente`, `dataCadCliente`) VALUES (DEFAULT,@nomeCliente,@emailCliente,@senhaCliente,@statusCliente,@dataCadCliente)";
+                string inserir = "INSERT INTO `cliente`(`idCliente`, `nomeCliente`, `emailCliente`, `senhaCliente`, `statusCliente`, `dataCadCliente`,`usuariotp`) VALUES (DEFAULT,@nomeCliente,@emailCliente,@senhaCliente,@statusCliente,@dataCadCliente,@usuariotp)";
                 MySqlCommand cmd = new MySqlCommand(inserir, banco.conexao);
                 cmd.Parameters.AddWithValue("@nomeCliente", variaveis.nomeCliente);
                 cmd.Parameters.AddWithValue("@emailCliente", variaveis.emailCliente);
                 cmd.Parameters.AddWithValue("@senhaCliente", variaveis.senhaCliente);
                 cmd.Parameters.AddWithValue("@statusCliente", variaveis.statusCliente);
                 cmd.Parameters.AddWithValue("@dataCadCliente", variaveis.dataCadCliente.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@usuariotp", variaveis.usuariotp);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("CADASTRO DO CLIENTE REALIZADO COM SUCESSO!!", "CADASTRO");
                 banco.Desconectar();
@@ -241,12 +242,25 @@ namespace barbeariaSrJack
                 MessageBox.Show("Favor selecionar o status do Cliente!");
                 cmbStatus.Focus();
             }
+            else if (cmbNivel.Text == String.Empty)
+            {
+                MessageBox.Show("Favor selecionar o Nivel do Cliente!");
+                cmbNivel.Focus();
+            }
             else
             {
                 variaveis.nomeCliente = txtNomeCliente.Text;
                 variaveis.emailCliente = txtEmail.Text;
                 variaveis.senhaCliente = txtSenha.Text;
                 variaveis.statusCliente = cmbStatus.Text;
+                if (cmbNivel.Text == "Outros")
+                {
+                    variaveis.usuariotp = 2;
+                }
+                else if (cmbNivel.Text == "Administrador")
+                {
+                    variaveis.usuariotp = 1;
+                }
                 if (variaveis.funcao == "CADASTRAR")
                 {
                     mkdDataDeCadastro.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -298,8 +312,9 @@ namespace barbeariaSrJack
 
         private void cmbStatus_KeyPress(object sender, KeyPressEventArgs e)
         {
-            btnSalvar.Enabled = true;
-            btnSalvar.Focus();
+            cmbNivel.Enabled = true;
+            cmbNivel.Focus();
+            
         }
 
         private void lblCadastrar_Click(object sender, EventArgs e)
@@ -403,5 +418,13 @@ namespace barbeariaSrJack
                 variaveis.codFoneCliente = Convert.ToInt32(dgvTelefone[0, variaveis.linhaSelecionada].Value);
             }
         }
+
+        private void cmbNivel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            btnSalvar.Enabled = true;
+            btnSalvar.Focus();
+        }
+
+        
     }
 }
