@@ -213,7 +213,6 @@ namespace barbeariaSrJack
                 txtEmail.Enabled = true;
                 txtSenha.Enabled = true;
                 cmbStatus.Enabled = true;
-                btnFoto.Enabled = true;
             }
 
 
@@ -425,6 +424,16 @@ namespace barbeariaSrJack
             btnSalvar.Focus();
         }
 
-        
+        private void lblAlterar_Click(object sender, EventArgs e)
+        {
+            variaveis.funcao = "ALTERAR FONE";
+            pnlCadFone.Visible = true;
+
+            CarregarTelefones();
+
+            pnlCadFone.Location = new Point(this.Width / 2 - pnlCadFone.Width / 2, this.Height / 2 - pnlCadFone.Height / 2);
+            pnlCadCliente.Enabled = false;
+            mkdCadTelefone.Focus();
+        }
     }
 }

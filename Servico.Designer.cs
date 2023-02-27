@@ -95,6 +95,7 @@
             this.lblAlterar.TabIndex = 20;
             this.lblAlterar.Text = "ALTERAR";
             this.lblAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAlterar.Click += new System.EventHandler(this.lblAlterar_Click);
             // 
             // lblCadastrar
             // 
@@ -107,6 +108,7 @@
             this.lblCadastrar.TabIndex = 19;
             this.lblCadastrar.Text = "CADASTRAR";
             this.lblCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCadastrar.Click += new System.EventHandler(this.lblCadastrar_Click);
             // 
             // dgvServico
             // 
@@ -116,6 +118,8 @@
             this.dgvServico.Name = "dgvServico";
             this.dgvServico.Size = new System.Drawing.Size(991, 498);
             this.dgvServico.TabIndex = 7;
+            this.dgvServico.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServico_CellClick);
+            this.dgvServico.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvServico_ColumnHeaderMouseClick);
             // 
             // pnlBusca
             // 
@@ -140,6 +144,7 @@
             this.pctVoltar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctVoltar.TabIndex = 29;
             this.pctVoltar.TabStop = false;
+            this.pctVoltar.Click += new System.EventHandler(this.pctVoltar_Click);
             // 
             // cmbStatus
             // 
@@ -154,6 +159,7 @@
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(179, 29);
             this.cmbStatus.TabIndex = 4;
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // txtServico
             // 
@@ -163,6 +169,7 @@
             this.txtServico.Name = "txtServico";
             this.txtServico.Size = new System.Drawing.Size(539, 29);
             this.txtServico.TabIndex = 3;
+            this.txtServico.TextChanged += new System.EventHandler(this.txtServico_TextChanged);
             // 
             // lblStatus
             // 

@@ -210,6 +210,7 @@
             this.pctServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctServico.TabIndex = 7;
             this.pctServico.TabStop = false;
+            this.pctServico.Click += new System.EventHandler(this.pctServico_Click);
             // 
             // pctRelatorio
             // 

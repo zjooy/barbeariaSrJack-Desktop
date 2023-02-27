@@ -57,6 +57,24 @@ namespace barbeariaSrJack
 
         private void InserirFuncionario()
         {
+            //DEPOIS AUTOMZATIZAR
+            if (cmbEmpresa.Text == "BARBEARIA SR. JACK")
+            {
+                variaveis.idEmpresaFunc = 1;
+            }
+            else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 1")
+            {
+                variaveis.idEmpresaFunc = 2;
+            }
+            else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 2")
+            {
+                variaveis.idEmpresaFunc = 3;
+            }
+            else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 3")
+            {
+                variaveis.idEmpresaFunc = 4;
+            }
+
             try
             {
                 banco.Conectar();
@@ -69,7 +87,7 @@ namespace barbeariaSrJack
                 cmd.Parameters.AddWithValue("@nivelFuncionario", variaveis.nivelFuncionario);
                 cmd.Parameters.AddWithValue("@horarioTrabalhoFuncionario", variaveis.horarioTrabalhoFuncionario.ToString("HH:mm"));
                 cmd.Parameters.AddWithValue("@dataCadFuncionario", variaveis.dataCadFuncionario.ToString("yyyy-MM-dd"));
-                cmd.Parameters.AddWithValue("@empresaFunc)", variaveis.idEmpresaFunc);
+                cmd.Parameters.AddWithValue("@empresaFunc", variaveis.idEmpresaFunc);
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("CADASTRO DO FUNCIONÁRIO REALIZADO COM SUCESSO!!", "CADASTRO");
@@ -79,6 +97,9 @@ namespace barbeariaSrJack
             {
                 MessageBox.Show("ERRO AO CADASTRAR O FUNCIONÁRIO. \n\n" + ex);
             }
+
+
+            
         }
 
         private void AlterarFuncionario()

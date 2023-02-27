@@ -32,10 +32,9 @@
             this.btnSalvar = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Label();
             this.pnlReserva = new System.Windows.Forms.Panel();
-            this.btnFoto = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblNivel = new System.Windows.Forms.Label();
+            this.cmbNivel = new System.Windows.Forms.ComboBox();
             this.pctVoltar = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.lblCadastro = new System.Windows.Forms.Label();
             this.mkdDataDeCadastro = new System.Windows.Forms.MaskedTextBox();
             this.pnlTelefone = new System.Windows.Forms.Panel();
@@ -69,11 +68,8 @@
             this.lblCodCadastro = new System.Windows.Forms.Label();
             this.txtCodCadastro = new System.Windows.Forms.TextBox();
             this.lblCadTelefone = new System.Windows.Forms.Label();
-            this.lblNivel = new System.Windows.Forms.Label();
-            this.cmbNivel = new System.Windows.Forms.ComboBox();
             this.pnlCadCliente.SuspendLayout();
             this.pnlReserva.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
             this.pnlTelefone.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
@@ -125,10 +121,7 @@
             this.pnlReserva.BackColor = System.Drawing.Color.Black;
             this.pnlReserva.Controls.Add(this.lblNivel);
             this.pnlReserva.Controls.Add(this.cmbNivel);
-            this.pnlReserva.Controls.Add(this.btnFoto);
-            this.pnlReserva.Controls.Add(this.pictureBox1);
             this.pnlReserva.Controls.Add(this.pctVoltar);
-            this.pnlReserva.Controls.Add(this.label5);
             this.pnlReserva.Controls.Add(this.lblCadastro);
             this.pnlReserva.Controls.Add(this.mkdDataDeCadastro);
             this.pnlReserva.Controls.Add(this.pnlTelefone);
@@ -149,30 +142,32 @@
             this.pnlReserva.Size = new System.Drawing.Size(982, 655);
             this.pnlReserva.TabIndex = 1;
             // 
-            // btnFoto
+            // lblNivel
             // 
-            this.btnFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            this.btnFoto.Enabled = false;
-            this.btnFoto.FlatAppearance.BorderSize = 0;
-            this.btnFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFoto.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFoto.ForeColor = System.Drawing.Color.White;
-            this.btnFoto.Location = new System.Drawing.Point(937, 449);
-            this.btnFoto.Name = "btnFoto";
-            this.btnFoto.Size = new System.Drawing.Size(35, 35);
-            this.btnFoto.TabIndex = 32;
-            this.btnFoto.Text = "+";
-            this.btnFoto.UseVisualStyleBackColor = false;
+            this.lblNivel.AutoSize = true;
+            this.lblNivel.BackColor = System.Drawing.Color.Transparent;
+            this.lblNivel.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel.ForeColor = System.Drawing.Color.White;
+            this.lblNivel.Location = new System.Drawing.Point(467, 222);
+            this.lblNivel.Name = "lblNivel";
+            this.lblNivel.Size = new System.Drawing.Size(56, 26);
+            this.lblNivel.TabIndex = 38;
+            this.lblNivel.Text = "NIVEL";
             // 
-            // pictureBox1
+            // cmbNivel
             // 
-            this.pictureBox1.Image = global::barbeariaSrJack.Properties.Resources.cliente;
-            this.pictureBox1.Location = new System.Drawing.Point(678, 251);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(294, 233);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
+            this.cmbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNivel.Enabled = false;
+            this.cmbNivel.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
+            this.cmbNivel.FormattingEnabled = true;
+            this.cmbNivel.Items.AddRange(new object[] {
+            "Administrador",
+            "Outros"});
+            this.cmbNivel.Location = new System.Drawing.Point(461, 251);
+            this.cmbNivel.Name = "cmbNivel";
+            this.cmbNivel.Size = new System.Drawing.Size(201, 30);
+            this.cmbNivel.TabIndex = 37;
+            this.cmbNivel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbNivel_KeyPress);
             // 
             // pctVoltar
             // 
@@ -185,18 +180,6 @@
             this.pctVoltar.TabIndex = 28;
             this.pctVoltar.TabStop = false;
             this.pctVoltar.Click += new System.EventHandler(this.pctVoltar_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(673, 222);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 26);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "FOTO";
             // 
             // lblCadastro
             // 
@@ -231,7 +214,7 @@
             this.pnlTelefone.Controls.Add(this.label4);
             this.pnlTelefone.Location = new System.Drawing.Point(20, 335);
             this.pnlTelefone.Name = "pnlTelefone";
-            this.pnlTelefone.Size = new System.Drawing.Size(623, 302);
+            this.pnlTelefone.Size = new System.Drawing.Size(937, 302);
             this.pnlTelefone.TabIndex = 23;
             // 
             // dgvTelefone
@@ -240,7 +223,7 @@
             this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTelefone.Location = new System.Drawing.Point(45, 72);
             this.dgvTelefone.Name = "dgvTelefone";
-            this.dgvTelefone.Size = new System.Drawing.Size(543, 150);
+            this.dgvTelefone.Size = new System.Drawing.Size(849, 150);
             this.dgvTelefone.TabIndex = 19;
             this.dgvTelefone.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefone_CellClick);
             // 
@@ -249,9 +232,9 @@
             this.lblExcluir.BackColor = System.Drawing.Color.Black;
             this.lblExcluir.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExcluir.ForeColor = System.Drawing.Color.White;
-            this.lblExcluir.Location = new System.Drawing.Point(418, 237);
+            this.lblExcluir.Location = new System.Drawing.Point(607, 237);
             this.lblExcluir.Name = "lblExcluir";
-            this.lblExcluir.Size = new System.Drawing.Size(170, 47);
+            this.lblExcluir.Size = new System.Drawing.Size(249, 47);
             this.lblExcluir.TabIndex = 18;
             this.lblExcluir.Text = "EXCLUIR";
             this.lblExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -261,21 +244,22 @@
             this.lblAlterar.BackColor = System.Drawing.Color.Black;
             this.lblAlterar.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlterar.ForeColor = System.Drawing.Color.White;
-            this.lblAlterar.Location = new System.Drawing.Point(230, 237);
+            this.lblAlterar.Location = new System.Drawing.Point(352, 237);
             this.lblAlterar.Name = "lblAlterar";
-            this.lblAlterar.Size = new System.Drawing.Size(170, 47);
+            this.lblAlterar.Size = new System.Drawing.Size(239, 47);
             this.lblAlterar.TabIndex = 17;
             this.lblAlterar.Text = "ALTERAR";
             this.lblAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAlterar.Click += new System.EventHandler(this.lblAlterar_Click);
             // 
             // lblCadastrar
             // 
             this.lblCadastrar.BackColor = System.Drawing.Color.Black;
             this.lblCadastrar.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCadastrar.ForeColor = System.Drawing.Color.White;
-            this.lblCadastrar.Location = new System.Drawing.Point(41, 237);
+            this.lblCadastrar.Location = new System.Drawing.Point(90, 237);
             this.lblCadastrar.Name = "lblCadastrar";
-            this.lblCadastrar.Size = new System.Drawing.Size(170, 47);
+            this.lblCadastrar.Size = new System.Drawing.Size(245, 47);
             this.lblCadastrar.TabIndex = 16;
             this.lblCadastrar.Text = "CADASTRAR";
             this.lblCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -290,7 +274,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(623, 48);
+            this.label4.Size = new System.Drawing.Size(937, 48);
             this.label4.TabIndex = 4;
             this.label4.Text = "TELEFONE";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -605,33 +589,6 @@
             this.lblCadTelefone.TabIndex = 5;
             this.lblCadTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblNivel
-            // 
-            this.lblNivel.AutoSize = true;
-            this.lblNivel.BackColor = System.Drawing.Color.Transparent;
-            this.lblNivel.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNivel.ForeColor = System.Drawing.Color.White;
-            this.lblNivel.Location = new System.Drawing.Point(467, 222);
-            this.lblNivel.Name = "lblNivel";
-            this.lblNivel.Size = new System.Drawing.Size(56, 26);
-            this.lblNivel.TabIndex = 38;
-            this.lblNivel.Text = "NIVEL";
-            // 
-            // cmbNivel
-            // 
-            this.cmbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNivel.Enabled = false;
-            this.cmbNivel.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
-            this.cmbNivel.FormattingEnabled = true;
-            this.cmbNivel.Items.AddRange(new object[] {
-            "Administrador",
-            "Outros"});
-            this.cmbNivel.Location = new System.Drawing.Point(461, 251);
-            this.cmbNivel.Name = "cmbNivel";
-            this.cmbNivel.Size = new System.Drawing.Size(201, 30);
-            this.cmbNivel.TabIndex = 37;
-            this.cmbNivel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbNivel_KeyPress);
-            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -651,7 +608,6 @@
             this.pnlCadCliente.ResumeLayout(false);
             this.pnlReserva.ResumeLayout(false);
             this.pnlReserva.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).EndInit();
             this.pnlTelefone.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).EndInit();
@@ -670,7 +626,6 @@
         private System.Windows.Forms.Label btnLimpar;
         private System.Windows.Forms.Panel pnlReserva;
         private System.Windows.Forms.PictureBox pctVoltar;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblCadastro;
         private System.Windows.Forms.MaskedTextBox mkdDataDeCadastro;
         private System.Windows.Forms.Panel pnlTelefone;
@@ -690,8 +645,6 @@
         private System.Windows.Forms.Label lblCadastrarCliente;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.PictureBox pctLogo;
-        private System.Windows.Forms.Button btnFoto;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlCadFone;
         private System.Windows.Forms.DataGridView dgvTelefone;
         private System.Windows.Forms.Label lblLimparFone;

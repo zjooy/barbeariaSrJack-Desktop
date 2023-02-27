@@ -153,6 +153,10 @@ namespace barbeariaSrJack
             lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-        
+        private void pctServico_Click(object sender, EventArgs e)
+        {
+            new frmServico().Show();
+            Hide();
+        }
     }
 }
