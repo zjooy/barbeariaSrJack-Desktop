@@ -139,6 +139,9 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="MeuCalendario.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reserva.cs">
@@ -279,6 +282,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\fechar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\salvar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

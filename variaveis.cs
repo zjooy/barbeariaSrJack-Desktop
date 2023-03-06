@@ -48,6 +48,10 @@ namespace barbeariaSrJack
         public static int codFoneCliente;
         public static string numeroFoneCliente, operadoraCliente, descricaoCliente;
 
+        //Reserva
+        public static int codReserva;
+        public static string obsReserva, statusReserva;
+        public static DateTime dataReserva, horarioReserva;
     }
 }
 

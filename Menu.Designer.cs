@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.lblAjuda = new System.Windows.Forms.Label();
             this.lblSobre = new System.Windows.Forms.Label();
@@ -45,7 +48,6 @@
             this.pctFuncionario = new System.Windows.Forms.PictureBox();
             this.pctCliente = new System.Windows.Forms.PictureBox();
             this.pnlReserva = new System.Windows.Forms.Panel();
-            this.dgvReserva = new System.Windows.Forms.DataGridView();
             this.pctAgenda = new System.Windows.Forms.PictureBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgendar = new System.Windows.Forms.Button();
@@ -55,11 +57,12 @@
             this.btnAprovar = new System.Windows.Forms.Button();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.lblCliente = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.pctSair = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dgvReserva = new System.Windows.Forms.DataGridView();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -71,10 +74,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCliente)).BeginInit();
             this.pnlReserva.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAgenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -272,22 +275,13 @@
             this.pnlReserva.Controls.Add(this.btnAprovar);
             this.pnlReserva.Controls.Add(this.cmbStatus);
             this.pnlReserva.Controls.Add(this.lblStatus);
-            this.pnlReserva.Controls.Add(this.textBox1);
+            this.pnlReserva.Controls.Add(this.txtCliente);
             this.pnlReserva.Controls.Add(this.lblCliente);
             this.pnlReserva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
             this.pnlReserva.Location = new System.Drawing.Point(258, 3);
             this.pnlReserva.Name = "pnlReserva";
             this.pnlReserva.Size = new System.Drawing.Size(979, 496);
             this.pnlReserva.TabIndex = 1;
-            // 
-            // dgvReserva
-            // 
-            this.dgvReserva.BackgroundColor = System.Drawing.Color.Black;
-            this.dgvReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReserva.Location = new System.Drawing.Point(5, 101);
-            this.dgvReserva.Name = "dgvReserva";
-            this.dgvReserva.Size = new System.Drawing.Size(949, 360);
-            this.dgvReserva.TabIndex = 13;
             // 
             // pctAgenda
             // 
@@ -325,7 +319,7 @@
             this.btnAgendar.ForeColor = System.Drawing.Color.White;
             this.btnAgendar.Location = new System.Drawing.Point(812, 44);
             this.btnAgendar.Name = "btnAgendar";
-            this.btnAgendar.Size = new System.Drawing.Size(142, 40);
+            this.btnAgendar.Size = new System.Drawing.Size(157, 44);
             this.btnAgendar.TabIndex = 10;
             this.btnAgendar.Text = "AGENDAR";
             this.btnAgendar.UseVisualStyleBackColor = false;
@@ -393,12 +387,19 @@
             // 
             // cmbStatus
             // 
-            this.cmbStatus.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatus.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "TODAS",
+            "APROVADA",
+            "CANCELADA",
+            "AGUARDANDO",
+            "FINALIZADA"});
             this.cmbStatus.Location = new System.Drawing.Point(736, 7);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(218, 33);
+            this.cmbStatus.Size = new System.Drawing.Size(218, 31);
             this.cmbStatus.TabIndex = 5;
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // lblStatus
             // 
@@ -412,13 +413,14 @@
             this.lblStatus.TabIndex = 4;
             this.lblStatus.Text = "Status";
             // 
-            // textBox1
+            // txtCliente
             // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(110, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(554, 32);
-            this.textBox1.TabIndex = 3;
+            this.txtCliente.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Location = new System.Drawing.Point(110, 7);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(554, 32);
+            this.txtCliente.TabIndex = 3;
+            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // lblCliente
             // 
@@ -462,6 +464,49 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // dgvReserva
+            // 
+            this.dgvReserva.AllowUserToAddRows = false;
+            this.dgvReserva.AllowUserToDeleteRows = false;
+            this.dgvReserva.AllowUserToResizeColumns = false;
+            this.dgvReserva.AllowUserToResizeRows = false;
+            this.dgvReserva.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvReserva.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvReserva.BackgroundColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReserva.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReserva.EnableHeadersVisualStyles = false;
+            this.dgvReserva.Location = new System.Drawing.Point(20, 107);
+            this.dgvReserva.MultiSelect = false;
+            this.dgvReserva.Name = "dgvReserva";
+            this.dgvReserva.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReserva.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvReserva.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReserva.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvReserva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvReserva.Size = new System.Drawing.Size(949, 370);
+            this.dgvReserva.TabIndex = 23;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,10 +534,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCliente)).EndInit();
             this.pnlReserva.ResumeLayout(false);
             this.pnlReserva.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAgenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -503,7 +548,7 @@
         private System.Windows.Forms.Panel pnlReserva;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.PictureBox pctLogo;
         private System.Windows.Forms.Button btnAprovar;
@@ -515,7 +560,6 @@
         private System.Windows.Forms.Button btnAgendar;
         private System.Windows.Forms.PictureBox pctSair;
         private System.Windows.Forms.PictureBox pctCliente;
-        private System.Windows.Forms.DataGridView dgvReserva;
         private System.Windows.Forms.PictureBox pctRelatorio;
         private System.Windows.Forms.PictureBox pctEmpresa;
         private System.Windows.Forms.PictureBox pctFuncionario;
@@ -530,5 +574,6 @@
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridView dgvReserva;
     }
 }

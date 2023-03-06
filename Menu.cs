@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,78 @@ namespace barbeariaSrJack
             InitializeComponent();
         }
 
+        public void CarregarReserva()
+        {
+            try
+            {
+                banco.Conectar();
+                string selecionar = "SELECT * FROM `reservadata` WHERE `CLIENTE` LIKE '%" + variaveis.nomeCliente + "'";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvReserva.DataSource = dt;
+                dgvReserva.Columns[0].Visible = false;
+                dgvReserva.ClearSelection();
+
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao selecionar a reserva. \n\n" + erro.Message);
+            }
+        }
+
+        public void CarregarReservaStatus()
+        {
+            try
+            {
+                banco.Conectar();
+                string selecionar = "SELECT * FROM `reservadata` WHERE `STATUS`=@status AND `CLIENTE` LIKE '%" + variaveis.nomeCliente + "'";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
+                cmd.Parameters.AddWithValue("@status", variaveis.statusReserva);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvReserva.DataSource = dt;
+                dgvReserva.Columns[0].Visible = false;
+                dgvReserva.ClearSelection();
+
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao selecionar a reserva. \n\n" + erro.Message);
+            }
+        }
+
+        public void AlterarStatus()
+        {
+            try
+            {
+                banco.Conectar();
+                string alterar = "UPDATE `reserva` SET  `statusReserva`=@status WHERE `idReserva`=@codigo";
+                MySqlCommand cmd = new MySqlCommand(alterar, banco.conexao);
+                cmd.Parameters.AddWithValue("@status", variaveis.statusReserva);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codReserva);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvReserva.DataSource = dt;
+                dgvReserva.ClearSelection();
+                MessageBox.Show("A reserva" + variaveis.codReserva + "foi alterada para" + variaveis.statusReserva);
+
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao atualizar o status da reserva. \n\n" + erro.Message);
+            }
+        }
+
         private void pctSair_Click(object sender, EventArgs e)
         {
             var resposta = MessageBox.Show("Deseja realmente sair?", "SAIR", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
@@ -39,6 +112,9 @@ namespace barbeariaSrJack
             pnlMenu.Location = new Point(this.Width / 2 - pnlMenu.Width / 2, this.Height / 2 - pnlMenu.Height / 2);
 
             timer1.Start();
+            cmbStatus.SelectedIndex = 0;
+            variaveis.linhaSelecionada = -1;
+            CarregarReserva();
 
             if (hora >= 6 && hora <= 12)
             {
@@ -97,7 +173,7 @@ namespace barbeariaSrJack
             clickAgenda = 0;
         }
 
-        
+
 
         private void pctEmpresa_Click(object sender, EventArgs e)
         {
@@ -108,31 +184,86 @@ namespace barbeariaSrJack
         private void btnAprovar_Click(object sender, EventArgs e)
         {
             esconderBotoes();
+            variaveis.statusReserva = "APROVADA";
+            AlterarStatus();
+            variaveis.statusReserva = cmbStatus.Text;
+            variaveis.nomeCliente = txtCliente.Text;
+            if (variaveis.statusReserva == "TODAS")
+            {
+                CarregarReserva();
+            }
+            else
+            {
+                CarregarReservaStatus();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             esconderBotoes();
+            variaveis.statusReserva = "CANCELADA";
+            AlterarStatus();
+            variaveis.statusReserva = cmbStatus.Text;
+            variaveis.nomeCliente = txtCliente.Text;
+            if (variaveis.statusReserva == "TODAS")
+            {
+                CarregarReserva();
+            }
+            else
+            {
+                CarregarReservaStatus();
+            }
+
         }
 
         private void btnAguardar_Click(object sender, EventArgs e)
         {
             esconderBotoes();
+            variaveis.statusReserva = "AGUARDANDO";
+            AlterarStatus();
+            variaveis.statusReserva = cmbStatus.Text;
+            variaveis.nomeCliente = txtCliente.Text;
+            if (variaveis.statusReserva == "TODAS")
+            {
+                CarregarReserva();
+            }
+            else
+            {
+                CarregarReservaStatus();
+            }
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             esconderBotoes();
+            variaveis.statusReserva = "FINALIZADA";
+            AlterarStatus();
+            variaveis.statusReserva = cmbStatus.Text;
+            variaveis.nomeCliente = txtCliente.Text;
+            if (variaveis.statusReserva == "TODAS")
+            {
+                CarregarReserva();
+            }
+            else
+            {
+                CarregarReservaStatus();
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             esconderBotoes();
+            new frmReserva().Show();
+            variaveis.funcao = "EDITAR";
+            Hide();
         }
 
         private void btnAgendar_Click(object sender, EventArgs e)
         {
             esconderBotoes();
+            new frmReserva().Show();
+            variaveis.funcao = "AGENDAR";
+            Hide();
         }
 
         private void pctCliente_Click(object sender, EventArgs e)
@@ -157,6 +288,49 @@ namespace barbeariaSrJack
         {
             new frmServico().Show();
             Hide();
+        }
+
+        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            variaveis.statusReserva = cmbStatus.Text;
+            variaveis.nomeCliente = txtCliente.Text;
+            if (variaveis.statusReserva == "TODAS")
+            {
+                CarregarReserva();
+            }
+            else
+            {
+                CarregarReservaStatus();
+            }
+        }
+
+        private void txtCliente_TextChanged(object sender, EventArgs e)
+        {
+            variaveis.statusReserva = cmbStatus.Text;
+            variaveis.nomeCliente = txtCliente.Text;
+            if (variaveis.statusReserva == "TODAS")
+            {
+                CarregarReserva();
+            }
+            else
+            {
+                CarregarReservaStatus();
+            }
+        }
+
+        private void dgvReserva_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.codReserva = Convert.ToInt32(dgvReserva[0, variaveis.linhaSelecionada].Value);
+            }
+        }
+
+        private void dgvReserva_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvReserva.Sort(dgvReserva.Columns[1], ListSortDirection.Ascending);
+            dgvReserva.ClearSelection();
         }
     }
 }
