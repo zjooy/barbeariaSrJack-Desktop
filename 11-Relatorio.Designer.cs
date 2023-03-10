@@ -98,6 +98,7 @@
             this.btnFechar.Size = new System.Drawing.Size(45, 45);
             this.btnFechar.TabIndex = 30;
             this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // lblRelatorio
             // 
@@ -315,6 +316,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "_11_Relatorio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmRelatorio_Load);
             this.pnlRelatorio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.pnlFiltro.ResumeLayout(false);

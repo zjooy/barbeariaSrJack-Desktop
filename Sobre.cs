@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace barbeariaSrJack
 {
-    public partial class frmRelatorio: Form
+    public partial class FrmSobre : Form
     {
-        public frmRelatorio()
+        public FrmSobre()
         {
             InitializeComponent();
         }
 
-        private void frmRelatorio_Load(object sender, EventArgs e)
+        private void FrmSobre_Load(object sender, EventArgs e)
         {
-            pnlRelatorio.Location = new Point(this.Width / 2 - pnlRelatorio.Width / 2, this.Height / 2 - pnlRelatorio.Height / 2);
-
+            pnlSobre.Location = new Point(this.Width / 2 -pnlSobre.Width / 2, this.Height / 2 - pnlSobre.Height / 2);
         }
 
         private void btnFechar_Click(object sender, EventArgs e)

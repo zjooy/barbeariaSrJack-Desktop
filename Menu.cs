@@ -21,6 +21,7 @@ namespace barbeariaSrJack
             InitializeComponent();
         }
 
+
         public void CarregarReserva()
         {
             try
@@ -252,17 +253,17 @@ namespace barbeariaSrJack
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            esconderBotoes();
-            new frmReserva().Show();
+            esconderBotoes();            
             variaveis.funcao = "EDITAR";
+            new frmReserva().Show();
             Hide();
         }
 
         private void btnAgendar_Click(object sender, EventArgs e)
         {
-            esconderBotoes();
-            new frmReserva().Show();
+            esconderBotoes();            
             variaveis.funcao = "AGENDAR";
+            new frmReserva().Show();
             Hide();
         }
 
@@ -332,5 +333,19 @@ namespace barbeariaSrJack
             dgvReserva.Sort(dgvReserva.Columns[1], ListSortDirection.Ascending);
             dgvReserva.ClearSelection();
         }
+
+        private void lblAjuda_Click(object sender, EventArgs e)
+        {
+            new FrmAjuda().Show();
+            Hide();
+        }
+
+        private void lblSobre_Click(object sender, EventArgs e)
+        {
+            new FrmSobre().Show();
+            Hide();
+        }
+
+        
     }
 }

@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace barbeariaSrJack
 {
-    public partial class frmRelatorio: Form
+    public partial class FrmAjuda : Form
     {
-        public frmRelatorio()
+        public FrmAjuda()
         {
             InitializeComponent();
         }
 
-        private void frmRelatorio_Load(object sender, EventArgs e)
+        private void FrmAjuda_Load(object sender, EventArgs e)
         {
-            pnlRelatorio.Location = new Point(this.Width / 2 - pnlRelatorio.Width / 2, this.Height / 2 - pnlRelatorio.Height / 2);
-
+            pnlAjuda.Location = new Point(this.Width / 2 - pnlAjuda.Width / 2, this.Height / 2 - pnlAjuda.Height / 2); 
         }
 
-        private void btnFechar_Click(object sender, EventArgs e)
+        private void btnFecharAjuda_Click(object sender, EventArgs e)
         {
             new frmMenu().Show();
             Hide();

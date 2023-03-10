@@ -90,6 +90,12 @@
     <Compile Include="11-Relatorio.Designer.cs">
       <DependentUpon>11-Relatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ajuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajuda.Designer.cs">
+      <DependentUpon>Ajuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="banco.cs" />
     <Compile Include="CadastrarEmpresa.cs">
       <SubType>Form</SubType>
@@ -156,9 +162,18 @@
     <Compile Include="Servico.Designer.cs">
       <DependentUpon>Servico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sobre.Designer.cs">
+      <DependentUpon>Sobre.cs</DependentUpon>
+    </Compile>
     <Compile Include="variaveis.cs" />
     <EmbeddedResource Include="11-Relatorio.resx">
       <DependentUpon>11-Relatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajuda.resx">
+      <DependentUpon>Ajuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CadastrarEmpresa.resx">
       <DependentUpon>CadastrarEmpresa.cs</DependentUpon>
@@ -199,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Servico.resx">
       <DependentUpon>Servico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sobre.resx">
+      <DependentUpon>Sobre.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -117,10 +117,95 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="lblMenu.Text" xml:space="preserve">
+    <value>Data, Hora e Mensagem são gerados automaticamente.
+
+1. Botão Cliente: Abre a tela com lista de clientes cadastrados no sistema;
+
+2. Botão Funcionário: Abre a tela com a lista de funcionários cadastrados no sistema;
+
+3.Botão Empresa: Abre a tela com a lista de empresas(matriz e filiais) cadastradas no sistema;
+
+4. Botão Serviço: Abre a tela com lista de serviços cadastrados no sistema;
+
+5. Botão Relatório Abre a lista de relatórios com base nos filtros escolhidos;
+
+6. Botão Sobre: Abre a lista de informações sobre o sistema;
+
+7. Botão Ajuda: Abre está guia sobre as funcionalidades disponíveis no sistema;</value>
+  </data>
+  <data name="lblEmpresa.Text" xml:space="preserve">
+    <value>Na janela empresa é possível filtrar empresas cadastradas no sistema e cadastrar novas empresas
+
+
+1.No campo empresa é possivel buscar as empresas atráves do seu nome;
+
+2. No campo Filtro é possível buscar empresas de acordo com sua situação (ATIVA, INATIVA ou TODAS)
+
+3. Botão cadastrar: leva para uma nova guia onde é possível cadastrar novas empresas;
+
+4. Botão alterar: altera informações referentes a empresa que já é cadastrada no sistema;
+
+5. Botão excluir: excluí uma empresa cadastrada no sistema.</value>
+  </data>
+  <data name="lblFuncionario.Text" xml:space="preserve">
+    <value>Na janela funcionário é possível filtrar funcionarios cadastrados no sistema e cadastrar novos funcionários
+
+
+1.No campo Funcionário é possivel buscar os funcionários atráves do seu nome;
+
+2. No campo status é possível buscar funcionários de acordo com sua situação (ATIVO, INATIVO ou TODAS)
+
+3. Botão cadastrar: leva para uma nova guia onde é possível cadastrar novos funcionários;
+
+4. Botão alterar: altera informações referentes ao funcionário que já é cadastrada no sistema;
+
+5. Botão excluir: excluí um funcionários que é cadastrado no sistema.</value>
+  </data>
+  <data name="lblCliente.Text" xml:space="preserve">
+    <value>Na janela cliente é possível filtrar os clientes cadastrados no sistema e cadastrar novos clientes
+
+
+1.No campo cliente é possivel buscar pelos clientes atráves do seu nome;
+
+2. No campo status é possível buscar clientes de acordo com sua situação (ATIVO, INATIVO ou TODOS)
+
+3. Botão cadastrar: leva para uma nova guia onde é possível cadastrar novos clientes;
+
+4. Botão alterar: altera informações referentes aos clientesque já é cadastrada no sistema;
+
+5. Botão excluir: excluí um cliente que é cadastrado no sistema.</value>
+  </data>
+  <data name="lblServico.Text" xml:space="preserve">
+    <value>Na janela de serviço é possível filtrar os serviços cadastrados no sistema e cadastrar novos serviços
+
+
+1.No campo serviço é possivel buscar pelos serviços atráves do seu nome;
+
+2. No campo status é possível buscar serviços de acordo com sua situação (ATIVO, INATIVO ou TODOS)
+
+3. Botão cadastrar: leva para uma nova guia onde é possível cadastrar novos serviços;
+
+4. Botão alterar: altera informações referentes aos serviços que já são cadastrados no sistema;
+
+5. Botão excluir: excluí um serviço que é cadastrado no sistema.</value>
+  </data>
+  <data name="lblRelatorio.Text" xml:space="preserve">
+    <value>Na janela de Relatório é possível filtrar os relatórios de acordo com o filtro escolhido
+
+1. Tabela: Escolha Sobre quem deseja escrever ou buscar o relatório: Cliente, Funcionário ou empresa;
+
+2. Filtro: Defina melhor sua busca utilizando os filtros (ATIVO, INATIVO, TODOS)</value>
+  </data>
+  <data name="lblLogin.Text" xml:space="preserve">
+    <value>1. Digite o nome do Usuário Cadastrado;
+
+2. Digite a senha desse usuário;
+ 
+
+Caso o Usuário ou a Senha seja digitada errada por 3x o sistema será bloqueado.
+
+Em caso de bloqueio, entrar em contato com o Desenvolvedor do sistema.
+</value>
+  </data>
 </root>

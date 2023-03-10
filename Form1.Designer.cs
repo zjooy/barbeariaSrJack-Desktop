@@ -110,6 +110,7 @@
             this.txtSenha.Size = new System.Drawing.Size(407, 20);
             this.txtSenha.TabIndex = 3;
             this.toolTip1.SetToolTip(this.txtSenha, "Digite sua senha");
+            this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // lblSenha
             // 
@@ -152,6 +153,7 @@
             this.txtEmail.Size = new System.Drawing.Size(407, 20);
             this.txtEmail.TabIndex = 2;
             this.toolTip1.SetToolTip(this.txtEmail, "Digite seu email");
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // lblEmail
             // 

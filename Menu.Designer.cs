@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.lblAjuda = new System.Windows.Forms.Label();
             this.lblSobre = new System.Windows.Forms.Label();
@@ -48,6 +48,7 @@
             this.pctFuncionario = new System.Windows.Forms.PictureBox();
             this.pctCliente = new System.Windows.Forms.PictureBox();
             this.pnlReserva = new System.Windows.Forms.Panel();
+            this.dgvReserva = new System.Windows.Forms.DataGridView();
             this.pctAgenda = new System.Windows.Forms.PictureBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgendar = new System.Windows.Forms.Button();
@@ -62,7 +63,6 @@
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.pctSair = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dgvReserva = new System.Windows.Forms.DataGridView();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -74,10 +74,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCliente)).BeginInit();
             this.pnlReserva.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAgenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -116,6 +116,7 @@
             this.lblAjuda.Text = "Ajuda";
             this.lblAjuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblAjuda.UseMnemonic = false;
+            this.lblAjuda.Click += new System.EventHandler(this.lblAjuda_Click);
             // 
             // lblSobre
             // 
@@ -129,6 +130,7 @@
             this.lblSobre.Text = "Sobre";
             this.lblSobre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblSobre.UseMnemonic = false;
+            this.lblSobre.Click += new System.EventHandler(this.lblSobre_Click);
             // 
             // lblMensagem
             // 
@@ -137,7 +139,7 @@
             this.lblMensagem.ForeColor = System.Drawing.Color.White;
             this.lblMensagem.Location = new System.Drawing.Point(4, 331);
             this.lblMensagem.Name = "lblMensagem";
-            this.lblMensagem.Size = new System.Drawing.Size(249, 72);
+            this.lblMensagem.Size = new System.Drawing.Size(249, 149);
             this.lblMensagem.TabIndex = 14;
             this.lblMensagem.Text = "Boa Tarde!";
             this.lblMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -282,6 +284,51 @@
             this.pnlReserva.Name = "pnlReserva";
             this.pnlReserva.Size = new System.Drawing.Size(979, 496);
             this.pnlReserva.TabIndex = 1;
+            // 
+            // dgvReserva
+            // 
+            this.dgvReserva.AllowUserToAddRows = false;
+            this.dgvReserva.AllowUserToDeleteRows = false;
+            this.dgvReserva.AllowUserToResizeColumns = false;
+            this.dgvReserva.AllowUserToResizeRows = false;
+            this.dgvReserva.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvReserva.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvReserva.BackgroundColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReserva.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReserva.EnableHeadersVisualStyles = false;
+            this.dgvReserva.Location = new System.Drawing.Point(20, 107);
+            this.dgvReserva.MultiSelect = false;
+            this.dgvReserva.Name = "dgvReserva";
+            this.dgvReserva.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReserva.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvReserva.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReserva.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvReserva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvReserva.Size = new System.Drawing.Size(949, 370);
+            this.dgvReserva.TabIndex = 23;
+            this.dgvReserva.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReserva_CellClick);
+            this.dgvReserva.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvReserva_ColumnHeaderMouseClick);
             // 
             // pctAgenda
             // 
@@ -464,49 +511,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // dgvReserva
-            // 
-            this.dgvReserva.AllowUserToAddRows = false;
-            this.dgvReserva.AllowUserToDeleteRows = false;
-            this.dgvReserva.AllowUserToResizeColumns = false;
-            this.dgvReserva.AllowUserToResizeRows = false;
-            this.dgvReserva.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvReserva.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvReserva.BackgroundColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReserva.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReserva.EnableHeadersVisualStyles = false;
-            this.dgvReserva.Location = new System.Drawing.Point(20, 107);
-            this.dgvReserva.MultiSelect = false;
-            this.dgvReserva.Name = "dgvReserva";
-            this.dgvReserva.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReserva.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvReserva.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReserva.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvReserva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReserva.Size = new System.Drawing.Size(949, 370);
-            this.dgvReserva.TabIndex = 23;
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -534,10 +538,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCliente)).EndInit();
             this.pnlReserva.ResumeLayout(false);
             this.pnlReserva.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAgenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).EndInit();
             this.ResumeLayout(false);
 
         }

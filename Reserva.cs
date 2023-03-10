@@ -74,7 +74,7 @@ namespace barbeariaSrJack
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT `idReserva`, `obsReserva`,DATE_FORMAT(horaReserva,'%H:%i'), `horaReserva`, `statusReserva`, `nomeFuncionario`, `nomeCliente`, `nomeServico` FROM `reserva` INNER JOIN funcionario ON reserva.idFuncionario = funcionario.idFuncionario INNER JOIN cliente ON reserva.idReserva = cliente.idCliente INNER JOIN servico ON reserva.idServico = servico.idServico WHERE idReserva = @codigo";
+                string selecionar = "SELECT `idReserva`, `obsReserva`,`dataReserva`,DATE_FORMAT(horaReserva,'%H:%i'), `statusReserva`, `nomeFuncionario`, `nomeCliente`, `nomeServico` FROM `reserva` INNER JOIN funcionario ON reserva.idFuncionario = funcionario.idFuncionario INNER JOIN cliente ON reserva.idReserva = cliente.idCliente INNER JOIN servico ON reserva.idServico = servico.idServico WHERE idReserva = @codigo";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codReserva);
 
@@ -90,13 +90,12 @@ namespace barbeariaSrJack
                     variaveis.nomeServico = reader.GetString(7);
                     txtCodigo.Text = variaveis.codReserva.ToString();
                     txtObservacao.Text = variaveis.obsReserva;
-                    calReserva.SelectionStart = variaveis.dataReserva;
+                    calReserva.MinDate = variaveis.dataReserva;
                     cmbHorario.Text = variaveis.horarioReserva.ToString("HH:mm");
                     cmbStatus.Text = variaveis.statusReserva;
                     cmbFuncionario.Text = variaveis.nomeFuncionario;
                     cmbCliente.Text = variaveis.nomeCliente;
                     cmbServico.Text = variaveis.nomeServico;
-
                 }
                 banco.Desconectar();
             }
