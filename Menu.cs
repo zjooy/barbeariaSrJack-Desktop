@@ -27,7 +27,7 @@ namespace barbeariaSrJack
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT * FROM `reservadata` WHERE `CLIENTE` LIKE '%" + variaveis.nomeCliente + "'";
+                string selecionar = "SELECT * FROM `reservadata` WHERE `CLIENTE` LIKE '%" + variaveis.nomeCliente + "' AND STATUS <> 'EXCLUIDA'";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

@@ -111,6 +111,47 @@ namespace barbeariaSrJack
             }
         }
 
+        private void ExcluirFuncionario()
+        {
+            try
+            {
+                banco.Conectar();
+                string excluir = "UPDATE `funcionario` SET `statusFuncionario`='INATIVO' WHERE idFuncionario = @codFuncionario;";
+                MySqlCommand cmd = new MySqlCommand(excluir, banco.conexao);
+                cmd.Parameters.AddWithValue("@codFuncionario", variaveis.codFuncionario);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvFuncionario.DataSource = dt;
+                dgvFuncionario.ClearSelection();
+                banco.Desconectar();
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao excluir funcionario!!"+erro.Message);
+            }
+        }
+        //STATUS RESERVA (EXCLUIR)
+        public void AtualizarStatusReserva()
+        {
+            try
+            {
+                banco.Conectar();
+                string inserir = "UPDATE `reserva` SET `statusReserva`='EXCLUIDA' WHERE idFuncionario = @codigo;";
+                MySqlCommand cmd = new MySqlCommand(inserir, banco.conexao);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codFuncionario);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao excluir a reserva!!\n\n" + erro, "ERRO");
+            }
+        }
         private void pctVoltar_Click(object sender, EventArgs e)
         {
             new frmMenu().Show();
@@ -193,6 +234,20 @@ namespace barbeariaSrJack
             else
             {
                 MessageBox.Show("Para alterar selecione uma linha!");
+            }
+        }
+
+        private void lblExcluir_Click(object sender, EventArgs e)
+        {
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                var resultado = MessageBox.Show("Deseja realmente excluir?", "EXCLUIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    AtualizarStatusReserva();
+                    ExcluirFuncionario();
+                    CarregarFuncionario();
+                }
             }
         }
     }

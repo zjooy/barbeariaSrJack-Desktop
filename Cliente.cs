@@ -110,6 +110,71 @@ namespace barbeariaSrJack
             }
         }
 
+        private void ExcluirCliente()
+        {
+            try
+            {
+                banco.Conectar();
+                string excluir = "DELETE FROM `cliente` WHERE `idCliente`=@codigo";
+                MySqlCommand cmd = new MySqlCommand(excluir, banco.conexao);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codCliente);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvCliente.DataSource = dt;
+                dgvCliente.ClearSelection();
+
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao excluir o cliente TODO!! \n\n" + erro.Message);
+            }
+        }
+
+        private void ExcluirFoneCliente()
+        {
+            try
+            {
+                banco.Conectar();
+                string excluir = "DELETE FROM `fonecliente` WHERE `idCliente`=@codigo";
+                MySqlCommand cmd = new MySqlCommand(excluir, banco.conexao);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codCliente);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvCliente.DataSource = dt;
+                dgvCliente.ClearSelection();
+
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao excluir o fone cliente!! \n\n" + erro.Message);
+            }
+        }
+
+        public void ExcluirReserva()
+        {
+            try
+            {
+                banco.Conectar();
+                string excluir = "DELETE FROM reserva WHERE idCliente = @codigo;";
+                MySqlCommand cmd = new MySqlCommand(excluir, banco.conexao);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codCliente);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao excluir o cliente reserva!!\n\n" + erro, "ERRO");
+            }
+        }
+
         private void frmCliente_Load(object sender, EventArgs e)
         {
             pnlCliente.Location = new Point(this.Width / 2 - pnlCliente.Width / 2, this.Height / 2 - pnlCliente.Height / 2);
@@ -194,6 +259,21 @@ namespace barbeariaSrJack
             if (variaveis.linhaSelecionada >= 0)
             {
                 variaveis.codCliente = Convert.ToInt32(dgvCliente[0, variaveis.linhaSelecionada].Value);
+            }
+        }
+
+        private void lblExcluir_Click(object sender, EventArgs e)
+        {
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                var resultado = MessageBox.Show("Deseja realmente excluir?", "EXCLUIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    ExcluirFoneCliente();
+                    ExcluirReserva();
+                    ExcluirCliente();
+                    CarregarCliente();
+                }
             }
         }
     }

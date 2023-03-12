@@ -131,6 +131,7 @@
             this.lblExcluir.TabIndex = 21;
             this.lblExcluir.Text = "EXCLUIR";
             this.lblExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblExcluir.Click += new System.EventHandler(this.lblExcluir_Click);
             // 
             // lblAlterar
             // 

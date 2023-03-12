@@ -105,6 +105,27 @@ namespace barbeariaSrJack
             }
         }
 
+       
+
+        //STATUS FUNC
+        public void CarregarStatusFuncionario()
+        {
+            try
+            {
+                banco.Conectar();
+                string selecionar = "SELECT `statusFuncionario` FROM `funcionario` WHERE idFuncionario = @codigo";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codFuncionario);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar status dos funcionários.\n\n" + ex.Message);
+            }
+        }
+
         public void CarregarFuncionarios()
         {
             try
@@ -178,6 +199,12 @@ namespace barbeariaSrJack
         private void frmReserva_Load(object sender, EventArgs e)
         {
             pnlReserva.Location = new Point(this.Width / 2 - pnlReserva.Width / 2, this.Height / 2 - pnlReserva.Height / 2);
+
+            //CarregarStatusFuncionario();
+            //if (variaveis.statusFuncionario == "INATIVO")
+            //{
+            //    //AtualizarStatusReserva();
+            //}
 
             CarregarFuncionarios();
             CarregarClientes();

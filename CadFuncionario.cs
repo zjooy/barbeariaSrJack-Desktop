@@ -32,8 +32,8 @@ namespace barbeariaSrJack
                     variaveis.nomeFuncionario = dr.GetString(1);
                     variaveis.emailFuncionario = dr.GetString(2);
                     variaveis.senhaFuncionario = dr.GetString(3);
-                    variaveis.statusFuncionario = dr.GetString(4);
-                    variaveis.nivelFuncionario = dr.GetString(5);
+                    variaveis.nivelFuncionario = dr.GetString(4);
+                    variaveis.statusFuncionario = dr.GetString(5);
                     variaveis.dataCadFuncionario = dr.GetDateTime(6);
                     variaveis.horarioTrabalhoFuncionario = DateTime.Parse(dr.GetString(7));
 
