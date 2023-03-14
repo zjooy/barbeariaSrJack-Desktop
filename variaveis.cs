@@ -52,6 +52,9 @@ namespace barbeariaSrJack
         public static int codReserva;
         public static string obsReserva, statusReserva;
         public static DateTime dataReserva, horarioReserva;
+
+        //RELATORIO
+        public static string relatorio;
     }
 }
 

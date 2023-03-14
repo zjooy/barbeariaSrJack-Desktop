@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlServico = new System.Windows.Forms.Panel();
             this.pnlClienteBusca = new System.Windows.Forms.Panel();
             this.lblExcluir = new System.Windows.Forms.Label();
             this.lblAlterar = new System.Windows.Forms.Label();
             this.lblCadastrar = new System.Windows.Forms.Label();
-            this.dgvServico = new System.Windows.Forms.DataGridView();
             this.pnlBusca = new System.Windows.Forms.Panel();
             this.pctVoltar = new System.Windows.Forms.PictureBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
@@ -41,12 +43,13 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblServico = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.dgvServico = new System.Windows.Forms.DataGridView();
             this.pnlServico.SuspendLayout();
             this.pnlClienteBusca.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).BeginInit();
             this.pnlBusca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlServico
@@ -62,10 +65,10 @@
             // pnlClienteBusca
             // 
             this.pnlClienteBusca.BackColor = System.Drawing.Color.Black;
+            this.pnlClienteBusca.Controls.Add(this.dgvServico);
             this.pnlClienteBusca.Controls.Add(this.lblExcluir);
             this.pnlClienteBusca.Controls.Add(this.lblAlterar);
             this.pnlClienteBusca.Controls.Add(this.lblCadastrar);
-            this.pnlClienteBusca.Controls.Add(this.dgvServico);
             this.pnlClienteBusca.Controls.Add(this.pnlBusca);
             this.pnlClienteBusca.Location = new System.Drawing.Point(218, 0);
             this.pnlClienteBusca.Name = "pnlClienteBusca";
@@ -83,6 +86,7 @@
             this.lblExcluir.TabIndex = 21;
             this.lblExcluir.Text = "EXCLUIR";
             this.lblExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblExcluir.Click += new System.EventHandler(this.lblExcluir_Click);
             // 
             // lblAlterar
             // 
@@ -109,17 +113,6 @@
             this.lblCadastrar.Text = "CADASTRAR";
             this.lblCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCadastrar.Click += new System.EventHandler(this.lblCadastrar_Click);
-            // 
-            // dgvServico
-            // 
-            this.dgvServico.BackgroundColor = System.Drawing.Color.Black;
-            this.dgvServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvServico.Location = new System.Drawing.Point(17, 69);
-            this.dgvServico.Name = "dgvServico";
-            this.dgvServico.Size = new System.Drawing.Size(991, 498);
-            this.dgvServico.TabIndex = 7;
-            this.dgvServico.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServico_CellClick);
-            this.dgvServico.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvServico_ColumnHeaderMouseClick);
             // 
             // pnlBusca
             // 
@@ -204,13 +197,58 @@
             this.pctLogo.TabIndex = 1;
             this.pctLogo.TabStop = false;
             // 
+            // dgvServico
+            // 
+            this.dgvServico.AllowUserToAddRows = false;
+            this.dgvServico.AllowUserToDeleteRows = false;
+            this.dgvServico.AllowUserToResizeColumns = false;
+            this.dgvServico.AllowUserToResizeRows = false;
+            this.dgvServico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvServico.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvServico.BackgroundColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvServico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServico.EnableHeadersVisualStyles = false;
+            this.dgvServico.Location = new System.Drawing.Point(37, 75);
+            this.dgvServico.MultiSelect = false;
+            this.dgvServico.Name = "dgvServico";
+            this.dgvServico.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServico.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvServico.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvServico.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvServico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvServico.Size = new System.Drawing.Size(949, 481);
+            this.dgvServico.TabIndex = 24;
+            this.dgvServico.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServico_CellClick);
+            this.dgvServico.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvServico_ColumnHeaderMouseClick);
+            // 
             // frmServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::barbeariaSrJack.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1300, 740);
+            this.ClientSize = new System.Drawing.Size(1579, 872);
             this.Controls.Add(this.pnlServico);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -221,11 +259,11 @@
             this.Load += new System.EventHandler(this.frmServico_Load);
             this.pnlServico.ResumeLayout(false);
             this.pnlClienteBusca.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).EndInit();
             this.pnlBusca.ResumeLayout(false);
             this.pnlBusca.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,7 +275,6 @@
         private System.Windows.Forms.Label lblExcluir;
         private System.Windows.Forms.Label lblAlterar;
         private System.Windows.Forms.Label lblCadastrar;
-        private System.Windows.Forms.DataGridView dgvServico;
         private System.Windows.Forms.Panel pnlBusca;
         private System.Windows.Forms.PictureBox pctVoltar;
         private System.Windows.Forms.ComboBox cmbStatus;
@@ -245,5 +282,6 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblServico;
         private System.Windows.Forms.PictureBox pctLogo;
+        private System.Windows.Forms.DataGridView dgvServico;
     }
 }

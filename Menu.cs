@@ -27,7 +27,7 @@ namespace barbeariaSrJack
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT * FROM `reservadata` WHERE `CLIENTE` LIKE '%" + variaveis.nomeCliente + "' AND STATUS <> 'EXCLUIDA'";
+                string selecionar = "SELECT * FROM `reservadata` WHERE `CLIENTE` LIKE '%" +variaveis.nomeCliente +"%' AND STATUS <> 'EXCLUIDA'";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -50,7 +50,7 @@ namespace barbeariaSrJack
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT * FROM `reservadata` WHERE `STATUS`=@status AND `CLIENTE` LIKE '%" + variaveis.nomeCliente + "'";
+                string selecionar = "SELECT * FROM `reservadata` WHERE `STATUS`=@status AND `CLIENTE` LIKE '%" + variaveis.nomeCliente + "%'";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
                 cmd.Parameters.AddWithValue("@status", variaveis.statusReserva);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -346,6 +346,10 @@ namespace barbeariaSrJack
             Hide();
         }
 
-        
+        private void pctRelatorio_Click(object sender, EventArgs e)
+        {
+            new frmRelatorio().Show();
+            Hide();
+        }
     }
 }

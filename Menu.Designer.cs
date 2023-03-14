@@ -227,6 +227,7 @@
             this.pctRelatorio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctRelatorio.TabIndex = 6;
             this.pctRelatorio.TabStop = false;
+            this.pctRelatorio.Click += new System.EventHandler(this.pctRelatorio_Click);
             // 
             // pctEmpresa
             // 

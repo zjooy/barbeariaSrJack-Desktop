@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlRelatorio = new System.Windows.Forms.Panel();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
@@ -58,6 +61,7 @@
             // 
             this.pnlRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
             this.pnlRelatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlRelatorio.Controls.Add(this.dgvRelatorio);
             this.pnlRelatorio.Controls.Add(this.btnAtualizar);
             this.pnlRelatorio.Controls.Add(this.btnFechar);
             this.pnlRelatorio.Controls.Add(this.lblRelatorio);
@@ -67,7 +71,6 @@
             this.pnlRelatorio.Controls.Add(this.pnlFiltro);
             this.pnlRelatorio.Controls.Add(this.pnlTabela);
             this.pnlRelatorio.Controls.Add(this.btnSalvar);
-            this.pnlRelatorio.Controls.Add(this.dgvRelatorio);
             this.pnlRelatorio.Location = new System.Drawing.Point(141, 129);
             this.pnlRelatorio.Name = "pnlRelatorio";
             this.pnlRelatorio.Size = new System.Drawing.Size(1224, 633);
@@ -85,6 +88,7 @@
             this.btnAtualizar.Size = new System.Drawing.Size(45, 45);
             this.btnAtualizar.TabIndex = 31;
             this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnFechar
             // 
@@ -280,7 +284,6 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            this.btnSalvar.Enabled = false;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -291,16 +294,50 @@
             this.btnSalvar.TabIndex = 21;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // dgvRelatorio
             // 
+            this.dgvRelatorio.AllowUserToAddRows = false;
+            this.dgvRelatorio.AllowUserToDeleteRows = false;
+            this.dgvRelatorio.AllowUserToResizeColumns = false;
+            this.dgvRelatorio.AllowUserToResizeRows = false;
+            this.dgvRelatorio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvRelatorio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvRelatorio.BackgroundColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRelatorio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRelatorio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRelatorio.Enabled = false;
-            this.dgvRelatorio.Location = new System.Drawing.Point(275, 195);
+            this.dgvRelatorio.EnableHeadersVisualStyles = false;
+            this.dgvRelatorio.Location = new System.Drawing.Point(271, 195);
+            this.dgvRelatorio.MultiSelect = false;
             this.dgvRelatorio.Name = "dgvRelatorio";
-            this.dgvRelatorio.Size = new System.Drawing.Size(931, 422);
-            this.dgvRelatorio.TabIndex = 0;
+            this.dgvRelatorio.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRelatorio.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvRelatorio.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRelatorio.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvRelatorio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRelatorio.Size = new System.Drawing.Size(949, 423);
+            this.dgvRelatorio.TabIndex = 32;
             // 
             // frmRelatorio
             // 
@@ -342,12 +379,12 @@
         private System.Windows.Forms.RadioButton radCliente;
         private System.Windows.Forms.Label lblTabela;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.DataGridView dgvRelatorio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label btnLimpar;
         private System.Windows.Forms.PictureBox pctLogo;
         private System.Windows.Forms.Label lblRelatorio;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.DataGridView dgvRelatorio;
     }
 }

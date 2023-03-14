@@ -129,7 +129,7 @@ namespace barbeariaSrJack
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro ao excluir o cliente TODO!! \n\n" + erro.Message);
+                MessageBox.Show("Erro ao excluir o cliente!! \n\n" + erro.Message);
             }
         }
 

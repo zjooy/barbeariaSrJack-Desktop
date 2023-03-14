@@ -110,6 +110,49 @@ namespace barbeariaSrJack
             }
         }
 
+    
+        //EXCLUIR RESERVA
+        private void ExcluirServico()
+        {
+            try
+            {
+                banco.Conectar();
+                string excluir = "DELETE FROM `servico` WHERE `idServico`=@codigo";
+                MySqlCommand cmd = new MySqlCommand(excluir, banco.conexao);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codServico);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvServico.DataSource = dt;
+                dgvServico.ClearSelection();
+
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao excluir o serviço!! \n\n" + erro.Message);
+            }
+        }
+
+        public void ExcluirReserva()
+        {
+            try
+            {
+                banco.Conectar();
+                string excluir = "DELETE FROM reserva WHERE idServico = @codigo;";
+                MySqlCommand cmd = new MySqlCommand(excluir, banco.conexao);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codServico);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao excluir o serviço da reserva!!\n\n" + erro, "ERRO");
+            }
+        }
 
         private void frmServico_Load(object sender, EventArgs e)
         {
@@ -130,8 +173,8 @@ namespace barbeariaSrJack
         {
             variaveis.funcao = "CADASTRAR";
 
-            //new frmCadCliente().Show();
-            //Hide();
+            new frmCadServico().Show();
+            Hide();
         }
 
         private void txtServico_TextChanged(object sender, EventArgs e)
@@ -188,12 +231,30 @@ namespace barbeariaSrJack
             if (variaveis.linhaSelecionada >= 0)
             {
                 variaveis.funcao = "ALTERAR";
-                new frmCadCliente().Show();
+                new frmCadServico().Show();
                 Hide();
             }
             else
             {
                 MessageBox.Show("Para alterar selecione uma linha!");
+            }
+        }
+
+        private void lblExcluir_Click(object sender, EventArgs e)
+        {
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                var resultado = MessageBox.Show("Deseja realmente excluir?", "EXCLUIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    ExcluirReserva();
+                    ExcluirServico();
+                    CarregarServico();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Para excluir selecione uma linha!");
             }
         }
     }
