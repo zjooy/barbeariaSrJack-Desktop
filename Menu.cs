@@ -351,5 +351,10 @@ namespace barbeariaSrJack
             new frmRelatorio().Show();
             Hide();
         }
+
+        private void dgvReserva_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

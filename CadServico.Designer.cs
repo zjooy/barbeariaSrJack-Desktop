@@ -32,10 +32,11 @@
             this.btnSalvar = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Label();
             this.pnlReserva = new System.Windows.Forms.Panel();
+            this.cmbEmpresa = new System.Windows.Forms.ComboBox();
+            this.lblEmpresa = new System.Windows.Forms.Label();
             this.lblExc = new System.Windows.Forms.Label();
             this.cmbExc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbValorServico = new System.Windows.Forms.ComboBox();
             this.pctVoltar = new System.Windows.Forms.PictureBox();
             this.lblCadastro = new System.Windows.Forms.Label();
             this.mkdDataDeCadastro = new System.Windows.Forms.MaskedTextBox();
@@ -49,8 +50,7 @@
             this.lblCadastrarServico = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
-            this.lblEmpresa = new System.Windows.Forms.Label();
-            this.cmbEmpresa = new System.Windows.Forms.ComboBox();
+            this.txtValorServico = new System.Windows.Forms.TextBox();
             this.pnlCadServico.SuspendLayout();
             this.pnlReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
@@ -98,12 +98,12 @@
             // pnlReserva
             // 
             this.pnlReserva.BackColor = System.Drawing.Color.Black;
+            this.pnlReserva.Controls.Add(this.txtValorServico);
             this.pnlReserva.Controls.Add(this.cmbEmpresa);
             this.pnlReserva.Controls.Add(this.lblEmpresa);
             this.pnlReserva.Controls.Add(this.lblExc);
             this.pnlReserva.Controls.Add(this.cmbExc);
             this.pnlReserva.Controls.Add(this.label1);
-            this.pnlReserva.Controls.Add(this.cmbValorServico);
             this.pnlReserva.Controls.Add(this.pctVoltar);
             this.pnlReserva.Controls.Add(this.lblCadastro);
             this.pnlReserva.Controls.Add(this.mkdDataDeCadastro);
@@ -121,6 +121,35 @@
             this.pnlReserva.Name = "pnlReserva";
             this.pnlReserva.Size = new System.Drawing.Size(982, 655);
             this.pnlReserva.TabIndex = 1;
+            // 
+            // cmbEmpresa
+            // 
+            this.cmbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEmpresa.Enabled = false;
+            this.cmbEmpresa.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
+            this.cmbEmpresa.FormattingEnabled = true;
+            this.cmbEmpresa.Items.AddRange(new object[] {
+            "BARBEARIA SR. JACK",
+            "BARBEARIA SR. JACK FILIAL 1",
+            "BARBEARIA SR. JACK FILIAL 2",
+            "BARBEARIA SR. JACK FILIAL 3"});
+            this.cmbEmpresa.Location = new System.Drawing.Point(18, 326);
+            this.cmbEmpresa.Name = "cmbEmpresa";
+            this.cmbEmpresa.Size = new System.Drawing.Size(948, 30);
+            this.cmbEmpresa.TabIndex = 45;
+            this.cmbEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEmpresa_KeyPress);
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpresa.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpresa.ForeColor = System.Drawing.Color.White;
+            this.lblEmpresa.Location = new System.Drawing.Point(25, 297);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(88, 26);
+            this.lblEmpresa.TabIndex = 44;
+            this.lblEmpresa.Text = "EMPRESA";
             // 
             // lblExc
             // 
@@ -162,24 +191,6 @@
             this.label1.Size = new System.Drawing.Size(136, 26);
             this.label1.TabIndex = 40;
             this.label1.Text = "VALOR SERVIÇO";
-            // 
-            // cmbValorServico
-            // 
-            this.cmbValorServico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbValorServico.Enabled = false;
-            this.cmbValorServico.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
-            this.cmbValorServico.FormattingEnabled = true;
-            this.cmbValorServico.Items.AddRange(new object[] {
-            "55",
-            "70",
-            "85",
-            "120",
-            "25"});
-            this.cmbValorServico.Location = new System.Drawing.Point(19, 168);
-            this.cmbValorServico.Name = "cmbValorServico";
-            this.cmbValorServico.Size = new System.Drawing.Size(147, 30);
-            this.cmbValorServico.TabIndex = 39;
-            this.cmbValorServico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbValorServico_KeyPress);
             // 
             // pctVoltar
             // 
@@ -333,34 +344,15 @@
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
             // 
-            // lblEmpresa
+            // txtValorServico
             // 
-            this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmpresa.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpresa.ForeColor = System.Drawing.Color.White;
-            this.lblEmpresa.Location = new System.Drawing.Point(25, 297);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(88, 26);
-            this.lblEmpresa.TabIndex = 44;
-            this.lblEmpresa.Text = "EMPRESA";
-            // 
-            // cmbEmpresa
-            // 
-            this.cmbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEmpresa.Enabled = false;
-            this.cmbEmpresa.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
-            this.cmbEmpresa.FormattingEnabled = true;
-            this.cmbEmpresa.Items.AddRange(new object[] {
-            "BARBEARIA SR. JACK",
-            "BARBEARIA SR. JACK FILIAL 1",
-            "BARBEARIA SR. JACK FILIAL 2",
-            "BARBEARIA SR. JACK FILIAL 3"});
-            this.cmbEmpresa.Location = new System.Drawing.Point(18, 326);
-            this.cmbEmpresa.Name = "cmbEmpresa";
-            this.cmbEmpresa.Size = new System.Drawing.Size(948, 30);
-            this.cmbEmpresa.TabIndex = 45;
-            this.cmbEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEmpresa_KeyPress);
+            this.txtValorServico.Enabled = false;
+            this.txtValorServico.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorServico.Location = new System.Drawing.Point(20, 168);
+            this.txtValorServico.Name = "txtValorServico";
+            this.txtValorServico.Size = new System.Drawing.Size(146, 31);
+            this.txtValorServico.TabIndex = 46;
+            this.txtValorServico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorServico_KeyPress);
             // 
             // frmCadServico
             // 
@@ -406,10 +398,10 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.PictureBox pctLogo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbValorServico;
         private System.Windows.Forms.Label lblExc;
         private System.Windows.Forms.ComboBox cmbExc;
         private System.Windows.Forms.Label lblEmpresa;
         private System.Windows.Forms.ComboBox cmbEmpresa;
+        private System.Windows.Forms.TextBox txtValorServico;
     }
 }

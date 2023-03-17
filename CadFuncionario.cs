@@ -36,7 +36,7 @@ namespace barbeariaSrJack
                     variaveis.statusFuncionario = dr.GetString(5);
                     variaveis.dataCadFuncionario = dr.GetDateTime(6);
                     variaveis.horarioTrabalhoFuncionario = DateTime.Parse(dr.GetString(7));
-
+                    variaveis.idEmpresaFunc = dr.GetInt32(8);
 
                     txtCodigo.Text = variaveis.codFuncionario.ToString();
                     txtNomeFuncionario.Text = variaveis.nomeFuncionario;
@@ -46,6 +46,24 @@ namespace barbeariaSrJack
                     cmbNivel.Text = variaveis.nivelFuncionario;
                     mkdDataDeCadastro.Text = variaveis.dataCadFuncionario.ToString("dd/MM/yyyy");
                     cmbCargaHoraria.Text = variaveis.horarioTrabalhoFuncionario.ToString("HH:mm");
+                    //DEPOIS AUTOMZATIZAR
+                    if (variaveis.idEmpresaFunc == 1)
+                    {
+                        cmbEmpresa.Text = "BARBEARIA SR. JACK";
+                    }
+                    else if (variaveis.idEmpresaFunc == 2)
+                    {
+                        cmbEmpresa.Text = "BARBEARIA SR. JACK FILIAL 1";
+                    }
+                    else if (variaveis.idEmpresaFunc == 3)
+                    {
+                        cmbEmpresa.Text = "BARBEARIA SR. JACK FILIAL 2";
+                    }
+                    else if (variaveis.idEmpresaFunc == 4)
+                    {
+                        cmbEmpresa.Text = "BARBEARIA SR. JACK FILIAL 3";
+                    }
+
                     banco.Desconectar();
                 }
             }
@@ -263,7 +281,7 @@ namespace barbeariaSrJack
             if (variaveis.funcao == "ALTERAR")
             {
                 CarregarDadosFuncionario();
-                lblCadastrarFuncionario.Text = "ALTERAR EMPRESA";
+                lblCadastrarFuncionario.Text = "ALTERAR FUNCIONÁRIO";
                 CarregarFoneFuncionario();
             }
 
@@ -280,6 +298,7 @@ namespace barbeariaSrJack
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+
             if (txtNomeFuncionario.Text == String.Empty)
             {
                 MessageBox.Show("Favor preencher o nome!");
@@ -323,6 +342,14 @@ namespace barbeariaSrJack
                 variaveis.senhaFuncionario = txtSenha.Text;
                 variaveis.statusFuncionario = cmbStatus.Text;
                 variaveis.nivelFuncionario = cmbNivel.Text;
+                if (variaveis.funcao == "CADASTRAR")
+                {
+                    mkdDataDeCadastro.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                    variaveis.dataCadFuncionario = DateTime.Parse(mkdDataDeCadastro.Text);
+                }
+
+                variaveis.horarioTrabalhoFuncionario = DateTime.Parse(cmbCargaHoraria.Text);
+
                 if (cmbEmpresa.Text == "BARBEARIA SR. JACK")
                 {
                     variaveis.idEmpresaFunc = 1;
@@ -341,12 +368,7 @@ namespace barbeariaSrJack
                 }
 
 
-                if (variaveis.funcao == "CADASTRAR")
-                {
-                    mkdDataDeCadastro.Text = DateTime.Now.ToString("dd/MM/yyyy");
-                    variaveis.dataCadEmpresa = DateTime.Parse(mkdDataDeCadastro.Text);
-                }
-                variaveis.horarioAtendEmpresa = DateTime.Parse(cmbCargaHoraria.Text);
+                
 
                 if (variaveis.funcao == "CADASTRAR")
                 {

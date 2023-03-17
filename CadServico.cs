@@ -29,6 +29,7 @@ namespace barbeariaSrJack
                 MySqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
+                    variaveis.idEmpresa = dr.GetInt32(0);
                     variaveis.nomeServico = dr.GetString(1);
                     variaveis.valorServico = dr.GetDecimal(2);
                     variaveis.statusServico = dr.GetString(3);
@@ -39,27 +40,27 @@ namespace barbeariaSrJack
 
                     txtCodigo.Text = variaveis.codServico.ToString();
                     txtNomeServico.Text = variaveis.nomeServico;
-                    cmbValorServico.Text = variaveis.valorServico.ToString();
+                    txtValorServico.Text = variaveis.valorServico.ToString();
                     cmbStatus.Text = variaveis.statusServico;
                     mkdDataDeCadastro.Text = variaveis.dataCadServico.ToString("dd/MM/yyyy");
                     txtDescricao.Text = variaveis.descricaoServico;
                     cmbExc.Text = variaveis.tempoExcServico.ToString("HH:mm");
                     //DEPOIS AUTOMZATIZAR
-                    if (cmbEmpresa.Text == "BARBEARIA SR. JACK")
+                    if (variaveis.idEmpresa == 1)
                     {
-                        variaveis.idEmpresa = 1;
+                        cmbEmpresa.Text = "BARBEARIA SR. JACK";
                     }
-                    else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 1")
+                    else if (variaveis.idEmpresa == 2)
                     {
-                        variaveis.idEmpresa = 2;
+                        cmbEmpresa.Text = "BARBEARIA SR. JACK FILIAL 1";
                     }
-                    else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 2")
+                    else if (variaveis.idEmpresa == 3)
                     {
-                        variaveis.idEmpresa = 3;
+                        cmbEmpresa.Text = "BARBEARIA SR. JACK FILIAL 2";
                     }
-                    else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 3")
+                    else if (variaveis.idEmpresa == 4)
                     {
-                        variaveis.idEmpresa = 4;
+                        cmbEmpresa.Text = "BARBEARIA SR. JACK FILIAL 3";
                     }
 
                     banco.Desconectar();
@@ -119,16 +120,17 @@ namespace barbeariaSrJack
             try
             {
                 banco.Conectar();
-                string alterar = "UPDATE `servico` SET `nomeServico`='@nomeServico',`valorServico`='@valor',`statusServico`='@statusServico',`descricaoServico`='@descricaoServico',`tempoExcServico`='@tempo',`idEmpresa`='@codEmpresa' WHERE `idServico` = @codigo;";
+                string alterar = "UPDATE `servico` SET `nomeServico`=@nomeServico,`valorServico`=@valor,`statusServico`=@statusServico,`descricaoServico`=@descricaoServico,`tempoExcServico`=@tempo WHERE `idServico` = @codigo;";
                 MySqlCommand cmd = new MySqlCommand(alterar, banco.conexao);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codServico);
                 cmd.Parameters.AddWithValue("@nomeServico", variaveis.nomeServico);
                 cmd.Parameters.AddWithValue("@valor", variaveis.valorServico);
                 cmd.Parameters.AddWithValue("@statusServico", variaveis.statusServico);
                 cmd.Parameters.AddWithValue("@descricaoServico", variaveis.descricaoServico);
                 cmd.Parameters.AddWithValue("@tempo", variaveis.tempoExcServico);
-                cmd.Parameters.AddWithValue("@codEmpresa", variaveis.idEmpresa);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("ALTERAÇÃO DO SERVIÇO REALIZADA COM SUCESSO!!", "ALTERAR");
+
                 banco.Desconectar();
             }
             catch (Exception ex)
@@ -170,7 +172,7 @@ namespace barbeariaSrJack
             if (txtCodigo.Text != "")
             {
                 btnSalvar.Enabled = true;
-                cmbValorServico.Enabled = true;
+                txtValorServico.Enabled = true;
                 txtDescricao.Enabled = true;
                 cmbStatus.Enabled = true;
                 cmbEmpresa.Enabled = true;
@@ -190,10 +192,10 @@ namespace barbeariaSrJack
                 MessageBox.Show("Favor preencher o serviço!");
                 txtNomeServico.Focus();
             }
-            else if (cmbValorServico.Text == String.Empty)
+            else if (txtValorServico.Text == String.Empty)
             {
                 MessageBox.Show("Favor preencher o valor do serviço!");
-                cmbValorServico.Focus();
+                txtValorServico.Focus();
             }
             else if (cmbStatus.Text == String.Empty)
             {
@@ -218,31 +220,33 @@ namespace barbeariaSrJack
             else
             {
                 variaveis.nomeServico = txtNomeServico.Text;
-                variaveis.valorServico = Convert.ToDecimal(cmbValorServico.Text);
+                variaveis.valorServico = Convert.ToDecimal(txtValorServico.Text);
                 variaveis.statusServico = cmbStatus.Text;
                 variaveis.tempoExcServico = DateTime.Parse(cmbExc.Text);
                 variaveis.descricaoServico = txtDescricao.Text;
-                if (cmbEmpresa.Text == "BARBEARIA SR. JACK")
-                {
-                    variaveis.idEmpresaFunc = 1;
-                }
-                else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 1")
-                {
-                    variaveis.idEmpresaFunc = 2;
-                }
-                else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 2")
-                {
-                    variaveis.idEmpresaFunc = 3;
-                }
-                else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 3")
-                {
-                    variaveis.idEmpresaFunc = 4;
-                }
                 if (variaveis.funcao == "CADASTRAR")
                 {
                     mkdDataDeCadastro.Text = DateTime.Now.ToString("dd/MM/yyyy");
-                    variaveis.dataCadEmpresa = DateTime.Parse(mkdDataDeCadastro.Text);
+                    variaveis.dataCadServico = DateTime.Parse(mkdDataDeCadastro.Text);
                 }
+
+                if (cmbEmpresa.Text == "BARBEARIA SR. JACK")
+                {
+                    variaveis.idEmpresa = 1;
+                }
+                else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 1")
+                {
+                    variaveis.idEmpresa = 2;
+                }
+                else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 2")
+                {
+                    variaveis.idEmpresa = 3;
+                }
+                else if (cmbEmpresa.Text == "BARBEARIA SR. JACK FILIAL 3")
+                {
+                    variaveis.idEmpresa = 4;
+                }
+
                 if (variaveis.funcao == "CADASTRAR")
                 {
                     InserirServico();
@@ -261,18 +265,13 @@ namespace barbeariaSrJack
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                cmbValorServico.Enabled = true;
-                cmbValorServico.Focus();
+                txtValorServico.Enabled = true;
+                txtValorServico.Focus();
             }
         }
 
         private void cmbValorServico_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                cmbStatus.Enabled = true;
-                cmbStatus.Focus();
-            }
+        {            
         }
 
         private void cmbStatus_KeyPress(object sender, KeyPressEventArgs e)
@@ -308,6 +307,15 @@ namespace barbeariaSrJack
             {
                 btnSalvar.Enabled = true;
                 btnSalvar.Focus();
+            }
+        }
+
+        private void txtValorServico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                cmbStatus.Enabled = true;
+                cmbStatus.Focus();
             }
         }
     }
