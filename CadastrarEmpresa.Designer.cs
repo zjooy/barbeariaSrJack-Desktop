@@ -38,6 +38,7 @@
             this.cmbCargaHoraria = new System.Windows.Forms.ComboBox();
             this.mkdDataDeCadastro = new System.Windows.Forms.MaskedTextBox();
             this.pnlTelefone = new System.Windows.Forms.Panel();
+            this.dgvTelefone = new System.Windows.Forms.DataGridView();
             this.lblExcluir = new System.Windows.Forms.Label();
             this.lblAlterar = new System.Windows.Forms.Label();
             this.lblCadastrar = new System.Windows.Forms.Label();
@@ -71,15 +72,14 @@
             this.lblCodCadastro = new System.Windows.Forms.Label();
             this.txtCodCadastro = new System.Windows.Forms.TextBox();
             this.lblCadTelefone = new System.Windows.Forms.Label();
-            this.dgvTelefone = new System.Windows.Forms.DataGridView();
             this.pnlCadastrarEmpresa.SuspendLayout();
             this.pnlReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
             this.pnlTelefone.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.pnlCadFone.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFecharFone)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCadastrarEmpresa
@@ -193,11 +193,8 @@
             this.cmbCargaHoraria.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
             this.cmbCargaHoraria.FormattingEnabled = true;
             this.cmbCargaHoraria.Items.AddRange(new object[] {
-            "04:00",
-            "06:00",
             "08:00",
-            "10:00",
-            "12:00"});
+            "10:00"});
             this.cmbCargaHoraria.Location = new System.Drawing.Point(292, 326);
             this.cmbCargaHoraria.Name = "cmbCargaHoraria";
             this.cmbCargaHoraria.Size = new System.Drawing.Size(676, 30);
@@ -227,6 +224,16 @@
             this.pnlTelefone.Name = "pnlTelefone";
             this.pnlTelefone.Size = new System.Drawing.Size(948, 263);
             this.pnlTelefone.TabIndex = 23;
+            // 
+            // dgvTelefone
+            // 
+            this.dgvTelefone.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTelefone.Location = new System.Drawing.Point(10, 56);
+            this.dgvTelefone.Name = "dgvTelefone";
+            this.dgvTelefone.Size = new System.Drawing.Size(928, 139);
+            this.dgvTelefone.TabIndex = 20;
+            this.dgvTelefone.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefone_CellClick);
             // 
             // lblExcluir
             // 
@@ -638,16 +645,6 @@
             this.lblCadTelefone.TabIndex = 5;
             this.lblCadTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgvTelefone
-            // 
-            this.dgvTelefone.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTelefone.Location = new System.Drawing.Point(10, 56);
-            this.dgvTelefone.Name = "dgvTelefone";
-            this.dgvTelefone.Size = new System.Drawing.Size(928, 139);
-            this.dgvTelefone.TabIndex = 20;
-            this.dgvTelefone.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefone_CellClick);
-            // 
             // frmCadastrarEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -667,11 +664,11 @@
             this.pnlReserva.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).EndInit();
             this.pnlTelefone.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.pnlCadFone.ResumeLayout(false);
             this.pnlCadFone.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFecharFone)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).EndInit();
             this.ResumeLayout(false);
 
         }

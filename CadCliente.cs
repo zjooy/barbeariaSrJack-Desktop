@@ -23,7 +23,7 @@ namespace barbeariaSrJack
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT * FROM `cliente` WHERE idCliente=@codigo";
+                string selecionar = "SELECT `idCliente`, `nomeCliente`, `emailCliente`, `senhaCliente`, `statusCliente`, `dataCadCliente`, `descricao` FROM `cliente` INNER JOIN usuariotp ON cliente.usuariotp = usuariotp.idUsuariotp  WHERE idCliente=@codigo";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexao);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codCliente);
                 MySqlDataReader dr = cmd.ExecuteReader();
@@ -34,6 +34,7 @@ namespace barbeariaSrJack
                     variaveis.senhaCliente = dr.GetString(3);
                     variaveis.statusCliente = dr.GetString(4);
                     variaveis.dataCadCliente = dr.GetDateTime(5);
+                    variaveis.nivelCliente = dr.GetString(6);
 
                     txtCodigo.Text = variaveis.codCliente.ToString();
                     txtNomeCliente.Text = variaveis.nomeCliente;                   
@@ -41,6 +42,8 @@ namespace barbeariaSrJack
                     txtSenha.Text = variaveis.senhaCliente;
                     cmbStatus.Text = variaveis.statusCliente;
                     mkdDataDeCadastro.Text = variaveis.dataCadCliente.ToString("dd/MM/yyyy");
+                    cmbNivel.Text = variaveis.nivelCliente;
+
                     banco.Desconectar();
                 }
             }

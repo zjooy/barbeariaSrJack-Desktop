@@ -32,6 +32,7 @@
             this.btnSalvar = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Label();
             this.pnlReserva = new System.Windows.Forms.Panel();
+            this.txtValorServico = new System.Windows.Forms.TextBox();
             this.cmbEmpresa = new System.Windows.Forms.ComboBox();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.lblExc = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.lblCadastrarServico = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
-            this.txtValorServico = new System.Windows.Forms.TextBox();
             this.pnlCadServico.SuspendLayout();
             this.pnlReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
@@ -122,6 +122,16 @@
             this.pnlReserva.Size = new System.Drawing.Size(982, 655);
             this.pnlReserva.TabIndex = 1;
             // 
+            // txtValorServico
+            // 
+            this.txtValorServico.Enabled = false;
+            this.txtValorServico.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorServico.Location = new System.Drawing.Point(20, 168);
+            this.txtValorServico.Name = "txtValorServico";
+            this.txtValorServico.Size = new System.Drawing.Size(146, 31);
+            this.txtValorServico.TabIndex = 46;
+            this.txtValorServico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorServico_KeyPress);
+            // 
             // cmbEmpresa
             // 
             this.cmbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -170,14 +180,15 @@
             this.cmbExc.Font = new System.Drawing.Font("Britannic Bold", 15.25F);
             this.cmbExc.FormattingEnabled = true;
             this.cmbExc.Items.AddRange(new object[] {
-            "01:00:00",
-            "00:45:00",
-            "00:50:00",
-            "00:30:00"});
+            "01:00",
+            "00:45",
+            "00:50",
+            "00:30"});
             this.cmbExc.Location = new System.Drawing.Point(18, 252);
             this.cmbExc.Name = "cmbExc";
             this.cmbExc.Size = new System.Drawing.Size(148, 30);
             this.cmbExc.TabIndex = 41;
+            this.cmbExc.SelectedIndexChanged += new System.EventHandler(this.cmbExc_SelectedIndexChanged);
             this.cmbExc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbExc_KeyPress);
             // 
             // label1
@@ -343,16 +354,6 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
-            // 
-            // txtValorServico
-            // 
-            this.txtValorServico.Enabled = false;
-            this.txtValorServico.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorServico.Location = new System.Drawing.Point(20, 168);
-            this.txtValorServico.Name = "txtValorServico";
-            this.txtValorServico.Size = new System.Drawing.Size(146, 31);
-            this.txtValorServico.TabIndex = 46;
-            this.txtValorServico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorServico_KeyPress);
             // 
             // frmCadServico
             // 

@@ -29,7 +29,7 @@ namespace barbeariaSrJack
                 MySqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    variaveis.idEmpresa = dr.GetInt32(0);
+                    variaveis.codServico = dr.GetInt32(0);
                     variaveis.nomeServico = dr.GetString(1);
                     variaveis.valorServico = dr.GetDecimal(2);
                     variaveis.statusServico = dr.GetString(3);
@@ -168,7 +168,7 @@ namespace barbeariaSrJack
                 CarregarDadosServico();
                 lblCadastrarServico.Text = "ALTERAR SERVIÇO";
             }
-
+            
             if (txtCodigo.Text != "")
             {
                 btnSalvar.Enabled = true;
@@ -270,10 +270,6 @@ namespace barbeariaSrJack
             }
         }
 
-        private void cmbValorServico_KeyPress(object sender, KeyPressEventArgs e)
-        {            
-        }
-
         private void cmbStatus_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -317,6 +313,11 @@ namespace barbeariaSrJack
                 cmbStatus.Enabled = true;
                 cmbStatus.Focus();
             }
+        }
+
+        private void cmbExc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

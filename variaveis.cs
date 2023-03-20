@@ -22,7 +22,7 @@ namespace barbeariaSrJack
 
         //Cliente
         public static int codCliente, usuariotp;
-        public static string nomeCliente, emailCliente, senhaCliente, statusCliente, fotoCliente;
+        public static string nomeCliente, emailCliente, senhaCliente, statusCliente, fotoCliente, nivelCliente;
         public static DateTime dataCadCliente;
 
         //Servico

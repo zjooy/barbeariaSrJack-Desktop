@@ -29,6 +29,7 @@ namespace barbeariaSrJack
                 MySqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
+                    variaveis.codEmpresa = dr.GetInt32(0);
                     variaveis.nomeEmpresa = dr.GetString(1);
                     variaveis.emailEmpresa = dr.GetString(2);
                     variaveis.cnpjCpfEmpresa = dr.GetString(3);
