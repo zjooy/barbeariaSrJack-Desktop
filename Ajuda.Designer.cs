@@ -50,6 +50,7 @@
             this.lblRelatorio = new System.Windows.Forms.Label();
             this.tabReserva = new System.Windows.Forms.TabPage();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlAjuda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -60,6 +61,7 @@
             this.tabCliente.SuspendLayout();
             this.tabServico.SuspendLayout();
             this.tabRelatorio.SuspendLayout();
+            this.tabReserva.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlAjuda
@@ -306,6 +308,7 @@
             // 
             this.tabReserva.AutoScroll = true;
             this.tabReserva.BackColor = System.Drawing.Color.Black;
+            this.tabReserva.Controls.Add(this.label1);
             this.tabReserva.Location = new System.Drawing.Point(4, 34);
             this.tabReserva.Name = "tabReserva";
             this.tabReserva.Size = new System.Drawing.Size(894, 473);
@@ -323,6 +326,19 @@
             this.btnFechar.Size = new System.Drawing.Size(45, 45);
             this.btnFechar.TabIndex = 22;
             this.btnFechar.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(894, 473);
+            this.label1.TabIndex = 31;
+            this.label1.Text = resources.GetString("label1.Text");
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmAjuda
             // 
@@ -347,6 +363,7 @@
             this.tabCliente.ResumeLayout(false);
             this.tabServico.ResumeLayout(false);
             this.tabRelatorio.ResumeLayout(false);
+            this.tabReserva.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -374,5 +391,6 @@
         private System.Windows.Forms.Label lblAjuda;
         private System.Windows.Forms.Button btnFecharAjuda;
         private System.Windows.Forms.PictureBox pctLogo;
+        private System.Windows.Forms.Label label1;
     }
 }

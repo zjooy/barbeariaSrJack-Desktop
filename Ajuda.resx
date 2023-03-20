@@ -117,6 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblLogin.Text" xml:space="preserve">
+    <value>1. Digite o nome do Usuário Cadastrado;
+
+2. Digite a senha desse usuário;
+ 
+
+Caso o Usuário ou a Senha seja digitada errada por 3x o sistema será bloqueado.
+
+Em caso de bloqueio, entrar em contato com o Desenvolvedor do sistema.
+</value>
+  </data>
   <data name="lblMenu.Text" xml:space="preserve">
     <value>Data, Hora e Mensagem são gerados automaticamente.
 
@@ -197,15 +208,16 @@
 
 2. Filtro: Defina melhor sua busca utilizando os filtros (ATIVO, INATIVO, TODOS)</value>
   </data>
-  <data name="lblLogin.Text" xml:space="preserve">
-    <value>1. Digite o nome do Usuário Cadastrado;
+  <data name="label1.Text" xml:space="preserve">
+    <value>Na Reserva é possível filtrar as reservas de acordo com o filtro escolhido
 
-2. Digite a senha desse usuário;
- 
+1. É possivel filtrar as reservas pelo nome do cliente;
+2. É possivel filtrar as reservas pelo seu status;
+3. Para realizar um agendamento é preciso clicar no icone da agenda e clicar no botão agendar;
+4. Para que a agenda seja preenchida escreva nos campos e pressione enter para que seja liberado o próximo campo;
+5. Para alterar a reserva segue-se a mesma regra na hora de cadastrar;
+6. O status das reservas podem ser alterados ao clicar nos botões referente a cada status na tela do menu.
 
-Caso o Usuário ou a Senha seja digitada errada por 3x o sistema será bloqueado.
-
-Em caso de bloqueio, entrar em contato com o Desenvolvedor do sistema.
 </value>
   </data>
 </root>
