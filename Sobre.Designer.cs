@@ -59,8 +59,8 @@
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(865, 510);
             this.lblInfo.TabIndex = 32;
-            this.lblInfo.Text = "SISTEMA DESENVOLVIDO PELA TURMA\r\n\r\nTÉCNICO EM INFORMÁTICA - TI16 - 2023\r\n\r\nSENAC " +
-    "SÃO MIGUEL PAULISTA\r\n\r\nDESENVOLVEDORA: JOYCE";
+            this.lblInfo.Text = "SISTEMA DESENVOLVIDO POR JOYCE E MARÍLIA\r\n\r\nTÉCNICO EM INFORMÁTICA - TI16 - 2023\r" +
+    "\n\r\nSENAC SÃO MIGUEL PAULISTA\r\n\r\nDESENVOLVEDORA: JOYCE E MARÍLIA";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnFechar
