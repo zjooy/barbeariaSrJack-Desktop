@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlCadServico = new System.Windows.Forms.Panel();
             this.btnSalvar = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.lblCadastrarServico = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlCadServico.SuspendLayout();
             this.pnlReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
@@ -81,6 +83,7 @@
             this.btnSalvar.TabIndex = 15;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnSalvar, "Salvar");
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
@@ -94,6 +97,7 @@
             this.btnLimpar.TabIndex = 14;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnLimpar, "Limpar");
             // 
             // pnlReserva
             // 
@@ -331,6 +335,7 @@
             this.lblCadastrarServico.TabIndex = 3;
             this.lblCadastrarServico.Text = "Cadastrar Serviço";
             this.lblCadastrarServico.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCadastrarServico, "Cadastrar Serviço");
             // 
             // lblCodigo
             // 
@@ -354,6 +359,7 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctLogo, "Logo");
             // 
             // frmCadServico
             // 
@@ -361,7 +367,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::barbeariaSrJack.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1565, 850);
+            this.ClientSize = new System.Drawing.Size(1300, 740);
             this.Controls.Add(this.pnlCadServico);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -404,5 +410,6 @@
         private System.Windows.Forms.Label lblEmpresa;
         private System.Windows.Forms.ComboBox cmbEmpresa;
         private System.Windows.Forms.TextBox txtValorServico;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

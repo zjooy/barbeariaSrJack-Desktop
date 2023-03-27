@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlSobre = new System.Windows.Forms.Panel();
             this.lblInfo = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.lblSobre = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlSobre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +64,7 @@
             this.lblInfo.Text = "SISTEMA DESENVOLVIDO POR JOYCE E MARÍLIA\r\n\r\nTÉCNICO EM INFORMÁTICA - TI16 - 2023\r" +
     "\n\r\nSENAC SÃO MIGUEL PAULISTA\r\n\r\nDESENVOLVEDORA: JOYCE E MARÍLIA";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblInfo, "Informações Desenvolvimento");
             // 
             // btnFechar
             // 
@@ -89,6 +92,7 @@
             this.lblSobre.TabIndex = 28;
             this.lblSobre.Text = "SOBRE";
             this.lblSobre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblSobre, "Sobre");
             // 
             // pctLogo
             // 
@@ -100,13 +104,14 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 25;
             this.pctLogo.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctLogo, "Logo");
             // 
             // FrmSobre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::barbeariaSrJack.Properties.Resources.background1;
-            this.ClientSize = new System.Drawing.Size(1468, 838);
+            this.ClientSize = new System.Drawing.Size(1300, 740);
             this.Controls.Add(this.pnlSobre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSobre";
@@ -127,5 +132,6 @@
         private System.Windows.Forms.Label lblSobre;
         private System.Windows.Forms.PictureBox pctLogo;
         private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

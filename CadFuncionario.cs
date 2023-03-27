@@ -155,7 +155,7 @@ namespace barbeariaSrJack
                 cmd.Parameters.AddWithValue("@numeroFone", variaveis.numeroFoneFuncionario);
                 cmd.Parameters.AddWithValue("@operFone", variaveis.operadoraFuncionario);
                 cmd.Parameters.AddWithValue("@descFone", variaveis.descricaoFuncionario);
-                cmd.Parameters.AddWithValue("@codCliente", variaveis.codFuncionario);
+                cmd.Parameters.AddWithValue("@codFuncionario", variaveis.codFuncionario);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("TELEFONE DO Funcionario CADASTRADO COM SUCESSO!!", "CADASTRO");
                 banco.Desconectar();
@@ -527,6 +527,33 @@ namespace barbeariaSrJack
         {
             btnSalvar.Enabled = true;
             btnSalvar.Focus();
+        }
+
+        private void mkdCadTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                cmbOperadora.Enabled = true;
+                cmbOperadora.Focus();
+            }
+        }
+
+        private void cmbOperadora_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                txtDescricao.Enabled = true;
+                txtDescricao.Focus();
+            }
+        }
+
+        private void txtDescricao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                lblSalvarFone.Enabled = true;
+                lblSalvarFone.Focus();
+            }
         }
     }
 }

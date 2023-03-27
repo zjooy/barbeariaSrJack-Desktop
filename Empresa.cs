@@ -110,6 +110,29 @@ namespace barbeariaSrJack
             }
         }
 
+        public void ExcluirEmpresa()
+        {
+            try
+            {
+                banco.Conectar();
+                string excluir = "UPDATE `empresa` SET `statusEmpresa`='INATIVA' WHERE idEmpresa = @codEmpresa;";
+                MySqlCommand cmd = new MySqlCommand(excluir, banco.conexao);
+                cmd.Parameters.AddWithValue("@codEmpresa", variaveis.codEmpresa);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvEmpresa.DataSource = dt;
+                dgvEmpresa.ClearSelection();
+                banco.Desconectar();
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao excluir empresa!!" + erro.Message);
+            }
+        }
+
         private void lblCadastrar_Click(object sender, EventArgs e)
         {
             variaveis.funcao = "CADASTRAR";
@@ -195,6 +218,17 @@ namespace barbeariaSrJack
             }
         }
 
-        
+        private void lblExcluir_Click(object sender, EventArgs e)
+        {
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                var resultado = MessageBox.Show("Deseja realmente excluir?", "EXCLUIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    ExcluirEmpresa();
+                    CarregarEmpresa();
+                }
+            }
+        }
     }
 }

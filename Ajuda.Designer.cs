@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAjuda));
             this.pnlAjuda = new System.Windows.Forms.Panel();
-            this.pctLogo = new System.Windows.Forms.PictureBox();
             this.btnFecharAjuda = new System.Windows.Forms.Button();
             this.lblAjuda = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -49,10 +49,11 @@
             this.tabRelatorio = new System.Windows.Forms.TabPage();
             this.lblRelatorio = new System.Windows.Forms.Label();
             this.tabReserva = new System.Windows.Forms.TabPage();
-            this.btnFechar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlAjuda.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabLogin.SuspendLayout();
             this.tabMenu.SuspendLayout();
@@ -62,6 +63,7 @@
             this.tabServico.SuspendLayout();
             this.tabRelatorio.SuspendLayout();
             this.tabReserva.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlAjuda
@@ -77,17 +79,6 @@
             this.pnlAjuda.Name = "pnlAjuda";
             this.pnlAjuda.Size = new System.Drawing.Size(1200, 600);
             this.pnlAjuda.TabIndex = 6;
-            // 
-            // pctLogo
-            // 
-            this.pctLogo.BackColor = System.Drawing.Color.Transparent;
-            this.pctLogo.Image = global::barbeariaSrJack.Properties.Resources.logoB;
-            this.pctLogo.Location = new System.Drawing.Point(23, 82);
-            this.pctLogo.Name = "pctLogo";
-            this.pctLogo.Size = new System.Drawing.Size(191, 165);
-            this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctLogo.TabIndex = 32;
-            this.pctLogo.TabStop = false;
             // 
             // btnFecharAjuda
             // 
@@ -115,6 +106,7 @@
             this.lblAjuda.TabIndex = 29;
             this.lblAjuda.Text = "AJUDA";
             this.lblAjuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblAjuda, "Ajuda");
             // 
             // tabControl1
             // 
@@ -132,6 +124,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(902, 511);
             this.tabControl1.TabIndex = 23;
+            this.toolTip1.SetToolTip(this.tabControl1, "Menu");
             // 
             // tabLogin
             // 
@@ -158,6 +151,7 @@
             this.lblLogin.TabIndex = 24;
             this.lblLogin.Text = resources.GetString("lblLogin.Text");
             this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblLogin, "Login");
             // 
             // tabMenu
             // 
@@ -183,6 +177,7 @@
             this.lblMenu.TabIndex = 25;
             this.lblMenu.Text = resources.GetString("lblMenu.Text");
             this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblMenu, "Menu");
             // 
             // tabEmpresa
             // 
@@ -207,6 +202,7 @@
             this.lblEmpresa.TabIndex = 26;
             this.lblEmpresa.Text = resources.GetString("lblEmpresa.Text");
             this.lblEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblEmpresa, "Empresa");
             // 
             // tabFuncionario
             // 
@@ -231,6 +227,7 @@
             this.lblFuncionario.TabIndex = 27;
             this.lblFuncionario.Text = resources.GetString("lblFuncionario.Text");
             this.lblFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblFuncionario, "Funcionário");
             // 
             // tabCliente
             // 
@@ -255,6 +252,7 @@
             this.lblCliente.TabIndex = 28;
             this.lblCliente.Text = resources.GetString("lblCliente.Text");
             this.lblCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCliente, "Cliente");
             // 
             // tabServico
             // 
@@ -279,6 +277,7 @@
             this.lblServico.TabIndex = 29;
             this.lblServico.Text = resources.GetString("lblServico.Text");
             this.lblServico.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblServico, "Serviço");
             // 
             // tabRelatorio
             // 
@@ -303,6 +302,7 @@
             this.lblRelatorio.TabIndex = 30;
             this.lblRelatorio.Text = resources.GetString("lblRelatorio.Text");
             this.lblRelatorio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblRelatorio, "Relatório");
             // 
             // tabReserva
             // 
@@ -314,18 +314,6 @@
             this.tabReserva.Size = new System.Drawing.Size(894, 473);
             this.tabReserva.TabIndex = 7;
             this.tabReserva.Text = "RESERVA";
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.BackColor = System.Drawing.Color.Transparent;
-            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFechar.FlatAppearance.BorderSize = 0;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Location = new System.Drawing.Point(1109, 15);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(45, 45);
-            this.btnFechar.TabIndex = 22;
-            this.btnFechar.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -339,13 +327,38 @@
             this.label1.TabIndex = 31;
             this.label1.Text = resources.GetString("label1.Text");
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.label1, "Reserva");
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.BackColor = System.Drawing.Color.Transparent;
+            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Location = new System.Drawing.Point(1109, 15);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(45, 45);
+            this.btnFechar.TabIndex = 22;
+            this.btnFechar.UseVisualStyleBackColor = false;
+            // 
+            // pctLogo
+            // 
+            this.pctLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pctLogo.Image = global::barbeariaSrJack.Properties.Resources.logoB;
+            this.pctLogo.Location = new System.Drawing.Point(23, 82);
+            this.pctLogo.Name = "pctLogo";
+            this.pctLogo.Size = new System.Drawing.Size(191, 165);
+            this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctLogo.TabIndex = 32;
+            this.pctLogo.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctLogo, "Logo");
             // 
             // FrmAjuda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::barbeariaSrJack.Properties.Resources.background1;
-            this.ClientSize = new System.Drawing.Size(1576, 700);
+            this.ClientSize = new System.Drawing.Size(1300, 700);
             this.Controls.Add(this.pnlAjuda);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAjuda";
@@ -354,7 +367,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmAjuda_Load);
             this.pnlAjuda.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabLogin.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
@@ -364,6 +376,7 @@
             this.tabServico.ResumeLayout(false);
             this.tabRelatorio.ResumeLayout(false);
             this.tabReserva.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -390,7 +403,8 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label lblAjuda;
         private System.Windows.Forms.Button btnFecharAjuda;
-        private System.Windows.Forms.PictureBox pctLogo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pctLogo;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

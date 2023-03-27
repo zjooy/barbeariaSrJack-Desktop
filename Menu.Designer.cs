@@ -63,6 +63,7 @@
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.pctSair = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -115,6 +116,7 @@
             this.lblAjuda.TabIndex = 16;
             this.lblAjuda.Text = "Ajuda";
             this.lblAjuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblAjuda, "Ajuda");
             this.lblAjuda.UseMnemonic = false;
             this.lblAjuda.Click += new System.EventHandler(this.lblAjuda_Click);
             // 
@@ -129,6 +131,7 @@
             this.lblSobre.TabIndex = 15;
             this.lblSobre.Text = "Sobre";
             this.lblSobre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblSobre, "Sobre");
             this.lblSobre.UseMnemonic = false;
             this.lblSobre.Click += new System.EventHandler(this.lblSobre_Click);
             // 
@@ -143,6 +146,7 @@
             this.lblMensagem.TabIndex = 14;
             this.lblMensagem.Text = "Boa Tarde!";
             this.lblMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblMensagem, "Mensagem");
             this.lblMensagem.UseMnemonic = false;
             // 
             // lblHora
@@ -156,6 +160,7 @@
             this.lblHora.TabIndex = 13;
             this.lblHora.Text = "00:00:00";
             this.lblHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblHora, "Horário Atual");
             // 
             // lblData
             // 
@@ -168,6 +173,7 @@
             this.lblData.TabIndex = 12;
             this.lblData.Text = "00/00/0000";
             this.lblData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblData, "Data de hoje");
             // 
             // pictureBox8
             // 
@@ -215,6 +221,7 @@
             this.pctServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctServico.TabIndex = 7;
             this.pctServico.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctServico, "Serviço");
             this.pctServico.Click += new System.EventHandler(this.pctServico_Click);
             // 
             // pctRelatorio
@@ -227,6 +234,7 @@
             this.pctRelatorio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctRelatorio.TabIndex = 6;
             this.pctRelatorio.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctRelatorio, "Relatório");
             this.pctRelatorio.Click += new System.EventHandler(this.pctRelatorio_Click);
             // 
             // pctEmpresa
@@ -239,6 +247,7 @@
             this.pctEmpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctEmpresa.TabIndex = 5;
             this.pctEmpresa.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctEmpresa, "Empresa");
             this.pctEmpresa.Click += new System.EventHandler(this.pctEmpresa_Click);
             // 
             // pctFuncionario
@@ -251,6 +260,7 @@
             this.pctFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctFuncionario.TabIndex = 4;
             this.pctFuncionario.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctFuncionario, "Funcionário");
             this.pctFuncionario.Click += new System.EventHandler(this.pctFuncionario_Click);
             // 
             // pctCliente
@@ -263,6 +273,7 @@
             this.pctCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctCliente.TabIndex = 2;
             this.pctCliente.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctCliente, "Cliente");
             this.pctCliente.Click += new System.EventHandler(this.pctCliente_Click);
             // 
             // pnlReserva
@@ -328,6 +339,7 @@
             this.dgvReserva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReserva.Size = new System.Drawing.Size(949, 370);
             this.dgvReserva.TabIndex = 23;
+            this.toolTip1.SetToolTip(this.dgvReserva, "Reservas");
             this.dgvReserva.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReserva_CellClick);
             this.dgvReserva.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReserva_CellContentClick);
             this.dgvReserva.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvReserva_ColumnHeaderMouseClick);
@@ -342,6 +354,7 @@
             this.pctAgenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctAgenda.TabIndex = 12;
             this.pctAgenda.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctAgenda, "Agenda");
             this.pctAgenda.Click += new System.EventHandler(this.pctAgenda_Click);
             // 
             // btnEditar
@@ -356,6 +369,7 @@
             this.btnEditar.Size = new System.Drawing.Size(142, 40);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "EDITAR";
+            this.toolTip1.SetToolTip(this.btnEditar, "Botão Editar");
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -371,6 +385,7 @@
             this.btnAgendar.Size = new System.Drawing.Size(157, 44);
             this.btnAgendar.TabIndex = 10;
             this.btnAgendar.Text = "AGENDAR";
+            this.toolTip1.SetToolTip(this.btnAgendar, "Botão Agendar");
             this.btnAgendar.UseVisualStyleBackColor = false;
             this.btnAgendar.Click += new System.EventHandler(this.btnAgendar_Click);
             // 
@@ -386,6 +401,7 @@
             this.btnFinalizar.Size = new System.Drawing.Size(142, 40);
             this.btnFinalizar.TabIndex = 9;
             this.btnFinalizar.Text = "FINALIZAR";
+            this.toolTip1.SetToolTip(this.btnFinalizar, "Botão Finalizar");
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
@@ -401,6 +417,7 @@
             this.btnAguardar.Size = new System.Drawing.Size(142, 40);
             this.btnAguardar.TabIndex = 8;
             this.btnAguardar.Text = "AGUARDAR";
+            this.toolTip1.SetToolTip(this.btnAguardar, "Botão Aguardar");
             this.btnAguardar.UseVisualStyleBackColor = false;
             this.btnAguardar.Click += new System.EventHandler(this.btnAguardar_Click);
             // 
@@ -416,6 +433,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(142, 40);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "CANCELAR";
+            this.toolTip1.SetToolTip(this.btnCancelar, "Botão cancelar");
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -431,6 +449,7 @@
             this.btnAprovar.Size = new System.Drawing.Size(142, 40);
             this.btnAprovar.TabIndex = 6;
             this.btnAprovar.Text = "APROVAR";
+            this.toolTip1.SetToolTip(this.btnAprovar, "Botão Aprovar");
             this.btnAprovar.UseVisualStyleBackColor = false;
             this.btnAprovar.Click += new System.EventHandler(this.btnAprovar_Click);
             // 
@@ -448,6 +467,7 @@
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(218, 31);
             this.cmbStatus.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.cmbStatus, "Filtrar Cliente Status");
             this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // lblStatus
@@ -469,6 +489,7 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(554, 32);
             this.txtCliente.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.txtCliente, "Filtrar Nome Cliente");
             this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // lblCliente
@@ -493,6 +514,7 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctLogo, "Logo");
             // 
             // pctSair
             // 
@@ -501,12 +523,13 @@
             this.pctSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pctSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctSair.Image = global::barbeariaSrJack.Properties.Resources.sair;
-            this.pctSair.Location = new System.Drawing.Point(1385, 760);
+            this.pctSair.Location = new System.Drawing.Point(1209, 639);
             this.pctSair.Name = "pctSair";
             this.pctSair.Size = new System.Drawing.Size(90, 95);
             this.pctSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctSair.TabIndex = 2;
             this.pctSair.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctSair, "Sair");
             this.pctSair.Click += new System.EventHandler(this.pctSair_Click);
             // 
             // timer1
@@ -519,7 +542,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
             this.BackgroundImage = global::barbeariaSrJack.Properties.Resources.background1;
-            this.ClientSize = new System.Drawing.Size(1476, 861);
+            this.ClientSize = new System.Drawing.Size(1300, 740);
             this.Controls.Add(this.pctSair);
             this.Controls.Add(this.pnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -581,5 +604,6 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridView dgvReserva;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

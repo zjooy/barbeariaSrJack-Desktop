@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlCadFuncionario = new System.Windows.Forms.Panel();
             this.btnSalvar = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Label();
             this.pnlReserva = new System.Windows.Forms.Panel();
+            this.pnlTelefone = new System.Windows.Forms.Panel();
+            this.dgvTelefone = new System.Windows.Forms.DataGridView();
+            this.lblExcluir = new System.Windows.Forms.Label();
+            this.lblAlterar = new System.Windows.Forms.Label();
+            this.lblCadastrar = new System.Windows.Forms.Label();
+            this.lblTelefone = new System.Windows.Forms.Label();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.cmbEmpresa = new System.Windows.Forms.ComboBox();
             this.lblNivel = new System.Windows.Forms.Label();
@@ -41,12 +48,6 @@
             this.pctVoltar = new System.Windows.Forms.PictureBox();
             this.lblCadastro = new System.Windows.Forms.Label();
             this.mkdDataDeCadastro = new System.Windows.Forms.MaskedTextBox();
-            this.pnlTelefone = new System.Windows.Forms.Panel();
-            this.dgvTelefone = new System.Windows.Forms.DataGridView();
-            this.lblExcluir = new System.Windows.Forms.Label();
-            this.lblAlterar = new System.Windows.Forms.Label();
-            this.lblCadastrar = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
@@ -72,11 +73,12 @@
             this.lblCodCadastro = new System.Windows.Forms.Label();
             this.txtCodCadastro = new System.Windows.Forms.TextBox();
             this.lblCadTelefone = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlCadFuncionario.SuspendLayout();
             this.pnlReserva.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
             this.pnlTelefone.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.pnlCadFone.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFecharFone)).BeginInit();
@@ -106,6 +108,7 @@
             this.btnSalvar.TabIndex = 15;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnSalvar, "Salvar");
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
@@ -119,10 +122,12 @@
             this.btnLimpar.TabIndex = 14;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnLimpar, "Limpar");
             // 
             // pnlReserva
             // 
             this.pnlReserva.BackColor = System.Drawing.Color.Black;
+            this.pnlReserva.Controls.Add(this.pnlTelefone);
             this.pnlReserva.Controls.Add(this.lblEmpresa);
             this.pnlReserva.Controls.Add(this.cmbEmpresa);
             this.pnlReserva.Controls.Add(this.lblNivel);
@@ -132,7 +137,6 @@
             this.pnlReserva.Controls.Add(this.pctVoltar);
             this.pnlReserva.Controls.Add(this.lblCadastro);
             this.pnlReserva.Controls.Add(this.mkdDataDeCadastro);
-            this.pnlReserva.Controls.Add(this.pnlTelefone);
             this.pnlReserva.Controls.Add(this.label3);
             this.pnlReserva.Controls.Add(this.lblEmail);
             this.pnlReserva.Controls.Add(this.cmbStatus);
@@ -149,6 +153,82 @@
             this.pnlReserva.Name = "pnlReserva";
             this.pnlReserva.Size = new System.Drawing.Size(982, 655);
             this.pnlReserva.TabIndex = 1;
+            // 
+            // pnlTelefone
+            // 
+            this.pnlTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            this.pnlTelefone.Controls.Add(this.dgvTelefone);
+            this.pnlTelefone.Controls.Add(this.lblExcluir);
+            this.pnlTelefone.Controls.Add(this.lblAlterar);
+            this.pnlTelefone.Controls.Add(this.lblCadastrar);
+            this.pnlTelefone.Controls.Add(this.lblTelefone);
+            this.pnlTelefone.Location = new System.Drawing.Point(20, 356);
+            this.pnlTelefone.Name = "pnlTelefone";
+            this.pnlTelefone.Size = new System.Drawing.Size(948, 263);
+            this.pnlTelefone.TabIndex = 39;
+            // 
+            // dgvTelefone
+            // 
+            this.dgvTelefone.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTelefone.Location = new System.Drawing.Point(10, 56);
+            this.dgvTelefone.Name = "dgvTelefone";
+            this.dgvTelefone.Size = new System.Drawing.Size(928, 139);
+            this.dgvTelefone.TabIndex = 20;
+            // 
+            // lblExcluir
+            // 
+            this.lblExcluir.BackColor = System.Drawing.Color.Black;
+            this.lblExcluir.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExcluir.ForeColor = System.Drawing.Color.White;
+            this.lblExcluir.Location = new System.Drawing.Point(632, 198);
+            this.lblExcluir.Name = "lblExcluir";
+            this.lblExcluir.Size = new System.Drawing.Size(306, 47);
+            this.lblExcluir.TabIndex = 18;
+            this.lblExcluir.Text = "EXCLUIR";
+            this.lblExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblExcluir, "Excluir Telefone");
+            // 
+            // lblAlterar
+            // 
+            this.lblAlterar.BackColor = System.Drawing.Color.Black;
+            this.lblAlterar.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlterar.ForeColor = System.Drawing.Color.White;
+            this.lblAlterar.Location = new System.Drawing.Point(317, 198);
+            this.lblAlterar.Name = "lblAlterar";
+            this.lblAlterar.Size = new System.Drawing.Size(306, 47);
+            this.lblAlterar.TabIndex = 17;
+            this.lblAlterar.Text = "ALTERAR";
+            this.lblAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblAlterar, "Alterar Telefone");
+            // 
+            // lblCadastrar
+            // 
+            this.lblCadastrar.BackColor = System.Drawing.Color.Black;
+            this.lblCadastrar.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadastrar.ForeColor = System.Drawing.Color.White;
+            this.lblCadastrar.Location = new System.Drawing.Point(6, 198);
+            this.lblCadastrar.Name = "lblCadastrar";
+            this.lblCadastrar.Size = new System.Drawing.Size(302, 47);
+            this.lblCadastrar.TabIndex = 16;
+            this.lblCadastrar.Text = "CADASTRAR";
+            this.lblCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCadastrar, "Cadastrar Telefone");
+            this.lblCadastrar.Click += new System.EventHandler(this.lblCadastrar_Click);
+            // 
+            // lblTelefone
+            // 
+            this.lblTelefone.BackColor = System.Drawing.Color.Black;
+            this.lblTelefone.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTelefone.Font = new System.Drawing.Font("Impact", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefone.ForeColor = System.Drawing.Color.White;
+            this.lblTelefone.Location = new System.Drawing.Point(0, 0);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(948, 48);
+            this.lblTelefone.TabIndex = 4;
+            this.lblTelefone.Text = "TELEFONE";
+            this.lblTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblTelefone, "Telefone");
             // 
             // lblEmpresa
             // 
@@ -271,81 +351,6 @@
             this.mkdDataDeCadastro.TabIndex = 24;
             this.mkdDataDeCadastro.ValidatingType = typeof(System.DateTime);
             // 
-            // pnlTelefone
-            // 
-            this.pnlTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            this.pnlTelefone.Controls.Add(this.dgvTelefone);
-            this.pnlTelefone.Controls.Add(this.lblExcluir);
-            this.pnlTelefone.Controls.Add(this.lblAlterar);
-            this.pnlTelefone.Controls.Add(this.lblCadastrar);
-            this.pnlTelefone.Controls.Add(this.label4);
-            this.pnlTelefone.Location = new System.Drawing.Point(20, 335);
-            this.pnlTelefone.Name = "pnlTelefone";
-            this.pnlTelefone.Size = new System.Drawing.Size(935, 302);
-            this.pnlTelefone.TabIndex = 23;
-            // 
-            // dgvTelefone
-            // 
-            this.dgvTelefone.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTelefone.Location = new System.Drawing.Point(40, 73);
-            this.dgvTelefone.Name = "dgvTelefone";
-            this.dgvTelefone.Size = new System.Drawing.Size(855, 150);
-            this.dgvTelefone.TabIndex = 20;
-            this.dgvTelefone.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefone_CellClick);
-            // 
-            // lblExcluir
-            // 
-            this.lblExcluir.BackColor = System.Drawing.Color.Black;
-            this.lblExcluir.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExcluir.ForeColor = System.Drawing.Color.White;
-            this.lblExcluir.Location = new System.Drawing.Point(635, 237);
-            this.lblExcluir.Name = "lblExcluir";
-            this.lblExcluir.Size = new System.Drawing.Size(260, 47);
-            this.lblExcluir.TabIndex = 18;
-            this.lblExcluir.Text = "EXCLUIR";
-            this.lblExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblAlterar
-            // 
-            this.lblAlterar.BackColor = System.Drawing.Color.Black;
-            this.lblAlterar.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlterar.ForeColor = System.Drawing.Color.White;
-            this.lblAlterar.Location = new System.Drawing.Point(343, 237);
-            this.lblAlterar.Name = "lblAlterar";
-            this.lblAlterar.Size = new System.Drawing.Size(262, 47);
-            this.lblAlterar.TabIndex = 17;
-            this.lblAlterar.Text = "ALTERAR";
-            this.lblAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAlterar.Click += new System.EventHandler(this.lblAlterar_Click);
-            // 
-            // lblCadastrar
-            // 
-            this.lblCadastrar.BackColor = System.Drawing.Color.Black;
-            this.lblCadastrar.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastrar.ForeColor = System.Drawing.Color.White;
-            this.lblCadastrar.Location = new System.Drawing.Point(58, 237);
-            this.lblCadastrar.Name = "lblCadastrar";
-            this.lblCadastrar.Size = new System.Drawing.Size(262, 47);
-            this.lblCadastrar.TabIndex = 16;
-            this.lblCadastrar.Text = "CADASTRAR";
-            this.lblCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCadastrar.Click += new System.EventHandler(this.lblCadastrar_Click);
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Enabled = false;
-            this.label4.Font = new System.Drawing.Font("Impact", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(935, 48);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "TELEFONE";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -463,6 +468,7 @@
             this.lblCadastrarFuncionario.TabIndex = 3;
             this.lblCadastrarFuncionario.Text = "Cadastrar Funcionário";
             this.lblCadastrarFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCadastrarFuncionario, "Cadastrar Funcionário");
             // 
             // lblCodigo
             // 
@@ -486,6 +492,7 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctLogo, "Logo");
             // 
             // pnlCadFone
             // 
@@ -502,10 +509,10 @@
             this.pnlCadFone.Controls.Add(this.lblCodCadastro);
             this.pnlCadFone.Controls.Add(this.txtCodCadastro);
             this.pnlCadFone.Controls.Add(this.lblCadTelefone);
-            this.pnlCadFone.Location = new System.Drawing.Point(1293, 269);
+            this.pnlCadFone.Location = new System.Drawing.Point(1268, 269);
             this.pnlCadFone.Name = "pnlCadFone";
             this.pnlCadFone.Size = new System.Drawing.Size(623, 302);
-            this.pnlCadFone.TabIndex = 4;
+            this.pnlCadFone.TabIndex = 6;
             this.pnlCadFone.Visible = false;
             // 
             // btnFecharFone
@@ -555,6 +562,7 @@
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(422, 31);
             this.txtDescricao.TabIndex = 24;
+            this.txtDescricao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescricao_KeyPress);
             // 
             // lblDescricao
             // 
@@ -584,6 +592,7 @@
             this.cmbOperadora.Name = "cmbOperadora";
             this.cmbOperadora.Size = new System.Drawing.Size(193, 30);
             this.cmbOperadora.TabIndex = 22;
+            this.cmbOperadora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbOperadora_KeyPress);
             // 
             // lblOperadora
             // 
@@ -618,6 +627,7 @@
             this.mkdCadTelefone.Size = new System.Drawing.Size(204, 31);
             this.mkdCadTelefone.TabIndex = 19;
             this.mkdCadTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mkdCadTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mkdCadTelefone_KeyPress);
             // 
             // lblCodCadastro
             // 
@@ -659,7 +669,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::barbeariaSrJack.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1939, 855);
+            this.ClientSize = new System.Drawing.Size(1940, 740);
             this.Controls.Add(this.pnlCadFone);
             this.Controls.Add(this.pnlCadFuncionario);
             this.DoubleBuffered = true;
@@ -672,9 +682,9 @@
             this.pnlCadFuncionario.ResumeLayout(false);
             this.pnlReserva.ResumeLayout(false);
             this.pnlReserva.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).EndInit();
             this.pnlTelefone.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.pnlCadFone.ResumeLayout(false);
             this.pnlCadFone.PerformLayout();
@@ -692,11 +702,6 @@
         private System.Windows.Forms.PictureBox pctVoltar;
         private System.Windows.Forms.Label lblCadastro;
         private System.Windows.Forms.MaskedTextBox mkdDataDeCadastro;
-        private System.Windows.Forms.Panel pnlTelefone;
-        private System.Windows.Forms.Label lblExcluir;
-        private System.Windows.Forms.Label lblAlterar;
-        private System.Windows.Forms.Label lblCadastrar;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.ComboBox cmbStatus;
@@ -713,7 +718,8 @@
         private System.Windows.Forms.ComboBox cmbCargaHoraria;
         private System.Windows.Forms.Label lblNivel;
         private System.Windows.Forms.ComboBox cmbNivel;
-        private System.Windows.Forms.DataGridView dgvTelefone;
+        private System.Windows.Forms.Label lblEmpresa;
+        private System.Windows.Forms.ComboBox cmbEmpresa;
         private System.Windows.Forms.Panel pnlCadFone;
         private System.Windows.Forms.PictureBox btnFecharFone;
         private System.Windows.Forms.Label lblLimparFone;
@@ -727,7 +733,12 @@
         private System.Windows.Forms.Label lblCodCadastro;
         private System.Windows.Forms.TextBox txtCodCadastro;
         private System.Windows.Forms.Label lblCadTelefone;
-        private System.Windows.Forms.Label lblEmpresa;
-        private System.Windows.Forms.ComboBox cmbEmpresa;
+        private System.Windows.Forms.Panel pnlTelefone;
+        private System.Windows.Forms.DataGridView dgvTelefone;
+        private System.Windows.Forms.Label lblExcluir;
+        private System.Windows.Forms.Label lblAlterar;
+        private System.Windows.Forms.Label lblCadastrar;
+        private System.Windows.Forms.Label lblTelefone;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,6 +45,7 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblServico = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlServico.SuspendLayout();
             this.pnlClienteBusca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServico)).BeginInit();
@@ -131,6 +133,7 @@
             this.lblExcluir.TabIndex = 21;
             this.lblExcluir.Text = "EXCLUIR";
             this.lblExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblExcluir, "Excluir Serviço");
             this.lblExcluir.Click += new System.EventHandler(this.lblExcluir_Click);
             // 
             // lblAlterar
@@ -144,6 +147,7 @@
             this.lblAlterar.TabIndex = 20;
             this.lblAlterar.Text = "ALTERAR";
             this.lblAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblAlterar, "Alterar Serviço");
             this.lblAlterar.Click += new System.EventHandler(this.lblAlterar_Click);
             // 
             // lblCadastrar
@@ -157,6 +161,7 @@
             this.lblCadastrar.TabIndex = 19;
             this.lblCadastrar.Text = "CADASTRAR";
             this.lblCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCadastrar, "Cadastrar Serviço");
             this.lblCadastrar.Click += new System.EventHandler(this.lblCadastrar_Click);
             // 
             // pnlBusca
@@ -197,6 +202,7 @@
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(179, 29);
             this.cmbStatus.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.cmbStatus, "Status Serviço");
             this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // txtServico
@@ -207,6 +213,7 @@
             this.txtServico.Name = "txtServico";
             this.txtServico.Size = new System.Drawing.Size(539, 29);
             this.txtServico.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.txtServico, "Nome Serviço");
             this.txtServico.TextChanged += new System.EventHandler(this.txtServico_TextChanged);
             // 
             // lblStatus
@@ -241,6 +248,7 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 1;
             this.pctLogo.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctLogo, "Logo");
             // 
             // frmServico
             // 
@@ -248,7 +256,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::barbeariaSrJack.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1579, 872);
+            this.ClientSize = new System.Drawing.Size(1300, 740);
             this.Controls.Add(this.pnlServico);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -283,5 +291,6 @@
         private System.Windows.Forms.Label lblServico;
         private System.Windows.Forms.PictureBox pctLogo;
         private System.Windows.Forms.DataGridView dgvServico;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

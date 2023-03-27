@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlRelatorio = new System.Windows.Forms.Panel();
+            this.dgvRelatorio = new System.Windows.Forms.DataGridView();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.lblRelatorio = new System.Windows.Forms.Label();
@@ -49,12 +51,12 @@
             this.radCliente = new System.Windows.Forms.RadioButton();
             this.lblTabela = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.dgvRelatorio = new System.Windows.Forms.DataGridView();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlRelatorio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRelatorio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.pnlTabela.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRelatorio)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlRelatorio
@@ -76,6 +78,50 @@
             this.pnlRelatorio.Size = new System.Drawing.Size(1224, 633);
             this.pnlRelatorio.TabIndex = 4;
             // 
+            // dgvRelatorio
+            // 
+            this.dgvRelatorio.AllowUserToAddRows = false;
+            this.dgvRelatorio.AllowUserToDeleteRows = false;
+            this.dgvRelatorio.AllowUserToResizeColumns = false;
+            this.dgvRelatorio.AllowUserToResizeRows = false;
+            this.dgvRelatorio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvRelatorio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvRelatorio.BackgroundColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRelatorio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvRelatorio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRelatorio.EnableHeadersVisualStyles = false;
+            this.dgvRelatorio.Location = new System.Drawing.Point(271, 195);
+            this.dgvRelatorio.MultiSelect = false;
+            this.dgvRelatorio.Name = "dgvRelatorio";
+            this.dgvRelatorio.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRelatorio.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvRelatorio.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRelatorio.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvRelatorio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRelatorio.Size = new System.Drawing.Size(949, 423);
+            this.dgvRelatorio.TabIndex = 32;
+            this.toolTip1.SetToolTip(this.dgvRelatorio, "Relatorio");
+            // 
             // btnAtualizar
             // 
             this.btnAtualizar.BackColor = System.Drawing.Color.Transparent;
@@ -87,6 +133,7 @@
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(45, 45);
             this.btnAtualizar.TabIndex = 31;
+            this.toolTip1.SetToolTip(this.btnAtualizar, "Atualizar");
             this.btnAtualizar.UseVisualStyleBackColor = false;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
@@ -101,6 +148,7 @@
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(45, 45);
             this.btnFechar.TabIndex = 30;
+            this.toolTip1.SetToolTip(this.btnFechar, "Fechar");
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
@@ -152,6 +200,7 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 25;
             this.pctLogo.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctLogo, "Logo Empresa");
             // 
             // pnlFiltro
             // 
@@ -164,6 +213,7 @@
             this.pnlFiltro.Name = "pnlFiltro";
             this.pnlFiltro.Size = new System.Drawing.Size(787, 64);
             this.pnlFiltro.TabIndex = 24;
+            this.toolTip1.SetToolTip(this.pnlFiltro, "Filtro");
             // 
             // radTelefone
             // 
@@ -176,6 +226,7 @@
             this.radTelefone.TabIndex = 26;
             this.radTelefone.TabStop = true;
             this.radTelefone.Text = "TELEFONE";
+            this.toolTip1.SetToolTip(this.radTelefone, "Telefone");
             this.radTelefone.UseVisualStyleBackColor = true;
             // 
             // radInativo
@@ -189,6 +240,7 @@
             this.radInativo.TabIndex = 25;
             this.radInativo.TabStop = true;
             this.radInativo.Text = "INATIVO";
+            this.toolTip1.SetToolTip(this.radInativo, "Inativo");
             this.radInativo.UseVisualStyleBackColor = true;
             // 
             // radAtivo
@@ -202,6 +254,7 @@
             this.radAtivo.TabIndex = 24;
             this.radAtivo.TabStop = true;
             this.radAtivo.Text = "ATIVO";
+            this.toolTip1.SetToolTip(this.radAtivo, "Ativo");
             this.radAtivo.UseVisualStyleBackColor = true;
             // 
             // lblFiltro
@@ -228,6 +281,7 @@
             this.pnlTabela.Name = "pnlTabela";
             this.pnlTabela.Size = new System.Drawing.Size(787, 64);
             this.pnlTabela.TabIndex = 23;
+            this.toolTip1.SetToolTip(this.pnlTabela, "Tabela");
             // 
             // radFuncionario
             // 
@@ -240,6 +294,7 @@
             this.radFuncionario.TabIndex = 26;
             this.radFuncionario.TabStop = true;
             this.radFuncionario.Text = "FUNCIONÁRIO";
+            this.toolTip1.SetToolTip(this.radFuncionario, "funcionario");
             this.radFuncionario.UseVisualStyleBackColor = true;
             // 
             // radEmpresa
@@ -253,6 +308,7 @@
             this.radEmpresa.TabIndex = 25;
             this.radEmpresa.TabStop = true;
             this.radEmpresa.Text = "EMPRESA";
+            this.toolTip1.SetToolTip(this.radEmpresa, "empresa");
             this.radEmpresa.UseVisualStyleBackColor = true;
             // 
             // radCliente
@@ -266,6 +322,7 @@
             this.radCliente.TabIndex = 24;
             this.radCliente.TabStop = true;
             this.radCliente.Text = "CLIENTE";
+            this.toolTip1.SetToolTip(this.radCliente, "cliente");
             this.radCliente.UseVisualStyleBackColor = true;
             // 
             // lblTabela
@@ -293,51 +350,9 @@
             this.btnSalvar.Size = new System.Drawing.Size(138, 51);
             this.btnSalvar.TabIndex = 21;
             this.btnSalvar.Text = "SALVAR";
+            this.toolTip1.SetToolTip(this.btnSalvar, "Salvar");
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // dgvRelatorio
-            // 
-            this.dgvRelatorio.AllowUserToAddRows = false;
-            this.dgvRelatorio.AllowUserToDeleteRows = false;
-            this.dgvRelatorio.AllowUserToResizeColumns = false;
-            this.dgvRelatorio.AllowUserToResizeRows = false;
-            this.dgvRelatorio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvRelatorio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvRelatorio.BackgroundColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRelatorio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvRelatorio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRelatorio.EnableHeadersVisualStyles = false;
-            this.dgvRelatorio.Location = new System.Drawing.Point(271, 195);
-            this.dgvRelatorio.MultiSelect = false;
-            this.dgvRelatorio.Name = "dgvRelatorio";
-            this.dgvRelatorio.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRelatorio.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvRelatorio.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRelatorio.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvRelatorio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRelatorio.Size = new System.Drawing.Size(949, 423);
-            this.dgvRelatorio.TabIndex = 32;
             // 
             // frmRelatorio
             // 
@@ -345,7 +360,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::barbeariaSrJack.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1484, 840);
+            this.ClientSize = new System.Drawing.Size(1300, 740);
             this.Controls.Add(this.pnlRelatorio);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -355,12 +370,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRelatorio_Load);
             this.pnlRelatorio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRelatorio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.pnlFiltro.ResumeLayout(false);
             this.pnlFiltro.PerformLayout();
             this.pnlTabela.ResumeLayout(false);
             this.pnlTabela.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRelatorio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -386,5 +401,6 @@
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.DataGridView dgvRelatorio;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -92,7 +92,7 @@ namespace barbeariaSrJack
             try
             {
                 banco.Conectar();
-                string alterar = "UPDATE `empresa` SET `nomeFantasia`=@nomeEmpresa,`cnpjCpfEmpresa`=@cnpjCpfEmpresa,`razaoSocialEmpresa`=@razaoSocialEmpresa,`emailEmpresa`=@emailEmpresa,`statusEmpresa`=@statusEmpresa,`horarioAtendEmpresa`=@horarioAtendEmpresa WHERE idEmpresa=@codigo";
+                string alterar = "UPDATE `empresa` SET `nomeFantasiaEmpresa`=@nomeEmpresa,`cnpjCpfEmpresa`=@cnpjCpfEmpresa,`razaoSocialEmpresa`=@razaoSocialEmpresa,`emailEmpresa`=@emailEmpresa,`statusEmpresa`=@statusEmpresa,`horarioAtendEmpresa`=@horarioAtendEmpresa WHERE idEmpresa=@codigo";
                 MySqlCommand cmd = new MySqlCommand(alterar, banco.conexao);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codEmpresa);
                 cmd.Parameters.AddWithValue("@nomeEmpresa", variaveis.nomeEmpresa);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlCadCliente = new System.Windows.Forms.Panel();
             this.btnSalvar = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@
             this.lblCodCadastro = new System.Windows.Forms.Label();
             this.txtCodCadastro = new System.Windows.Forms.TextBox();
             this.lblCadTelefone = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlCadCliente.SuspendLayout();
             this.pnlReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
@@ -102,6 +104,7 @@
             this.btnSalvar.TabIndex = 15;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnSalvar, "Salvar");
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
@@ -115,6 +118,7 @@
             this.btnLimpar.TabIndex = 14;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnLimpar, "Limpar");
             // 
             // pnlReserva
             // 
@@ -238,6 +242,7 @@
             this.lblExcluir.TabIndex = 18;
             this.lblExcluir.Text = "EXCLUIR";
             this.lblExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblExcluir, "Excluir Telefone");
             // 
             // lblAlterar
             // 
@@ -250,6 +255,7 @@
             this.lblAlterar.TabIndex = 17;
             this.lblAlterar.Text = "ALTERAR";
             this.lblAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblAlterar, "Alterar Telefone");
             this.lblAlterar.Click += new System.EventHandler(this.lblAlterar_Click);
             // 
             // lblCadastrar
@@ -263,13 +269,13 @@
             this.lblCadastrar.TabIndex = 16;
             this.lblCadastrar.Text = "CADASTRAR";
             this.lblCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCadastrar, "Cadastrar Telefone");
             this.lblCadastrar.Click += new System.EventHandler(this.lblCadastrar_Click);
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Impact", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(0, 0);
@@ -278,6 +284,7 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "TELEFONE";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.label4, "Telefone");
             // 
             // label3
             // 
@@ -396,6 +403,7 @@
             this.lblCadastrarCliente.TabIndex = 3;
             this.lblCadastrarCliente.Text = "Cadastrar Cliente";
             this.lblCadastrarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCadastrarCliente, "Cadastrar Cliente");
             // 
             // lblCodigo
             // 
@@ -419,6 +427,7 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctLogo, "Logo");
             // 
             // pnlCadFone
             // 
@@ -595,7 +604,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::barbeariaSrJack.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1931, 850);
+            this.ClientSize = new System.Drawing.Size(1939, 740);
             this.Controls.Add(this.pnlCadFone);
             this.Controls.Add(this.pnlCadCliente);
             this.DoubleBuffered = true;
@@ -661,5 +670,6 @@
         private System.Windows.Forms.PictureBox btnFecharFone;
         private System.Windows.Forms.Label lblNivel;
         private System.Windows.Forms.ComboBox cmbNivel;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

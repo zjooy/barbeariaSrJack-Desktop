@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlCadastrarEmpresa = new System.Windows.Forms.Panel();
             this.btnSalvar = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Label();
@@ -72,6 +73,7 @@
             this.lblCodCadastro = new System.Windows.Forms.Label();
             this.txtCodCadastro = new System.Windows.Forms.TextBox();
             this.lblCadTelefone = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlCadastrarEmpresa.SuspendLayout();
             this.pnlReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctVoltar)).BeginInit();
@@ -106,6 +108,7 @@
             this.btnSalvar.TabIndex = 15;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnSalvar, "Salvar");
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
@@ -119,6 +122,7 @@
             this.btnLimpar.TabIndex = 14;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnLimpar, "Limpar");
             // 
             // pnlReserva
             // 
@@ -199,6 +203,7 @@
             this.cmbCargaHoraria.Name = "cmbCargaHoraria";
             this.cmbCargaHoraria.Size = new System.Drawing.Size(676, 30);
             this.cmbCargaHoraria.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.cmbCargaHoraria, "Carga Horária");
             this.cmbCargaHoraria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCargaHoraria_KeyPress);
             // 
             // mkdDataDeCadastro
@@ -233,6 +238,7 @@
             this.dgvTelefone.Name = "dgvTelefone";
             this.dgvTelefone.Size = new System.Drawing.Size(928, 139);
             this.dgvTelefone.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.dgvTelefone, "Telefones");
             this.dgvTelefone.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefone_CellClick);
             // 
             // lblExcluir
@@ -246,6 +252,7 @@
             this.lblExcluir.TabIndex = 18;
             this.lblExcluir.Text = "EXCLUIR";
             this.lblExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblExcluir, "Excluir Telefone");
             // 
             // lblAlterar
             // 
@@ -258,6 +265,7 @@
             this.lblAlterar.TabIndex = 17;
             this.lblAlterar.Text = "ALTERAR";
             this.lblAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblAlterar, "Alterar Telefone");
             this.lblAlterar.Click += new System.EventHandler(this.lblAlterar_Click);
             // 
             // lblCadastrar
@@ -271,6 +279,7 @@
             this.lblCadastrar.TabIndex = 16;
             this.lblCadastrar.Text = "CADASTRAR";
             this.lblCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCadastrar, "Cadastrar Telefone");
             this.lblCadastrar.Click += new System.EventHandler(this.lblCadastrar_Click);
             // 
             // lblTelefone
@@ -285,6 +294,7 @@
             this.lblTelefone.TabIndex = 4;
             this.lblTelefone.Text = "TELEFONE";
             this.lblTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblTelefone, "Telefone");
             // 
             // label3
             // 
@@ -334,6 +344,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(684, 31);
             this.txtEmail.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.txtEmail, "Email");
             this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // label2
@@ -385,6 +396,7 @@
             this.cmbDocumento.Name = "cmbDocumento";
             this.cmbDocumento.Size = new System.Drawing.Size(144, 30);
             this.cmbDocumento.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.cmbDocumento, "Documento");
             this.cmbDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDocumento_KeyPress);
             // 
             // txtRazaoSocial
@@ -396,6 +408,7 @@
             this.txtRazaoSocial.Name = "txtRazaoSocial";
             this.txtRazaoSocial.Size = new System.Drawing.Size(583, 31);
             this.txtRazaoSocial.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.txtRazaoSocial, "Razão Social");
             this.txtRazaoSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRazaoSocial_KeyPress);
             // 
             // mkdCpfCnpj
@@ -407,6 +420,7 @@
             this.mkdCpfCnpj.Name = "mkdCpfCnpj";
             this.mkdCpfCnpj.Size = new System.Drawing.Size(206, 31);
             this.mkdCpfCnpj.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.mkdCpfCnpj, "CNPJ OU CPF");
             this.mkdCpfCnpj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mkdCpfCnpj_KeyPress);
             // 
             // lblNomeFantasiaEmpresa
@@ -429,6 +443,7 @@
             this.txtNomeFantasia.Name = "txtNomeFantasia";
             this.txtNomeFantasia.Size = new System.Drawing.Size(795, 31);
             this.txtNomeFantasia.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.txtNomeFantasia, "Nome Empresa");
             this.txtNomeFantasia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeFantasia_KeyPress);
             // 
             // txtCodigo
@@ -452,6 +467,7 @@
             this.lblCadastrarEmpresa.TabIndex = 3;
             this.lblCadastrarEmpresa.Text = "Cadastrar Empresa";
             this.lblCadastrarEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCadastrarEmpresa, "Cadastrar Empresa");
             // 
             // lblCodigo
             // 
@@ -475,6 +491,7 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
+            this.toolTip1.SetToolTip(this.pctLogo, "Logo");
             // 
             // pnlCadFone
             // 
@@ -650,7 +667,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::barbeariaSrJack.Properties.Resources.background1;
-            this.ClientSize = new System.Drawing.Size(1904, 884);
+            this.ClientSize = new System.Drawing.Size(1922, 820);
             this.Controls.Add(this.pnlCadFone);
             this.Controls.Add(this.pnlCadastrarEmpresa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -719,5 +736,6 @@
         private System.Windows.Forms.TextBox txtCodCadastro;
         private System.Windows.Forms.Label lblCadTelefone;
         private System.Windows.Forms.DataGridView dgvTelefone;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

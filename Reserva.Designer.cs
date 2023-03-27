@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlReserva = new System.Windows.Forms.Panel();
             this.pnlFundo = new System.Windows.Forms.Panel();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.calReserva = new barbeariaSrJack.MeuCalendario();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.btnLimpar = new System.Windows.Forms.Label();
             this.lblDataReserva = new System.Windows.Forms.Label();
@@ -51,7 +53,7 @@
             this.lblReserva = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
-            this.calReserva = new barbeariaSrJack.MeuCalendario();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlReserva.SuspendLayout();
             this.pnlFundo.SuspendLayout();
             this.pnlInfoReserva.SuspendLayout();
@@ -105,8 +107,19 @@
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(181, 50);
             this.btnSalvar.TabIndex = 38;
+            this.toolTip1.SetToolTip(this.btnSalvar, "Salvar");
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // calReserva
+            // 
+            this.calReserva.Location = new System.Drawing.Point(497, 189);
+            this.calReserva.Name = "calReserva";
+            this.calReserva.TabIndex = 36;
+            this.calReserva.TitleBackColor = System.Drawing.Color.Black;
+            this.calReserva.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
+            this.toolTip1.SetToolTip(this.calReserva, "Data");
+            this.calReserva.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calReserva_DateSelected);
             // 
             // cmbStatus
             // 
@@ -136,6 +149,7 @@
             this.btnLimpar.TabIndex = 33;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnLimpar, "Limpar");
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // lblDataReserva
@@ -348,6 +362,7 @@
             this.lblReserva.TabIndex = 3;
             this.lblReserva.Text = "RESERVA";
             this.lblReserva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblReserva, "Reserva");
             // 
             // lblCodigo
             // 
@@ -371,15 +386,7 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
-            // 
-            // calReserva
-            // 
-            this.calReserva.Location = new System.Drawing.Point(497, 189);
-            this.calReserva.Name = "calReserva";
-            this.calReserva.TabIndex = 36;
-            this.calReserva.TitleBackColor = System.Drawing.Color.Black;
-            this.calReserva.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(148)))), ((int)(((byte)(43)))));
-            this.calReserva.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calReserva_DateSelected);
+            this.toolTip1.SetToolTip(this.pctLogo, "Logo");
             // 
             // frmReserva
             // 
@@ -387,7 +394,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::barbeariaSrJack.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1522, 814);
+            this.ClientSize = new System.Drawing.Size(1300, 740);
             this.Controls.Add(this.pnlReserva);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -433,5 +440,6 @@
         private System.Windows.Forms.ComboBox cmbStatus;
         private MeuCalendario calReserva;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
